@@ -1,10 +1,12 @@
 ## Interface: 70300
 ## Title: Paragon
 ## Notes: Keeps track of reputation for all your characters
-## Version: Alexandrite 1
+## Version: Alexandrite 2
 ## Author: Leo Bolin
 
 ## SavedVariables: ParagonDB
+
+LibStub.lua
 
 BoringData.lua
 Locale.lua

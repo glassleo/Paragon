@@ -22,6 +22,10 @@ LL["enUS"] = {
 	-- Slash Commands
 	["/paragon help"] = "|cFF00FFFFParagon|r Usage:\n|cff00ffff/paragon <faction>|r  List Highest Reputation for the specified faction in chat\n|cff00ffff/paragon delete <name or name-realm>|r  Delete a character's data\n|cff00ffff/paragon config|r  Open the Options Panel",
 
+	["/paragon delete no argument"] 		= "|cFF00FFFFParagon|r: No character name specified.",
+	["delete character not found"]			= "|cFF00FFFFParagon|r: There is nothing to remove for \"%s\". Make sure you include the character's realm if it's not on %s.",
+	["delete character successful"] 		= "|cFF00FFFFParagon|r: Removed all data for \"%s\".",
+
 	-- Settings Panel
 	["cfgFrameSubtext"] 					= "You can list characters that have reputation with a specific faction by typing |cff00ffff/paragon <faction>|r in chat.",
 	["cfgChatOutputLimitLabel"] 			= "Maximum Chat Lines",

@@ -132,6 +132,41 @@ local function updateFactions()
 end
 
 
+-- Function to delete saved data for a specified character
+local function deleteCharacter(characterName, verbose)
+	if not characterName then
+		if verbose then
+			DEFAULT_CHAT_FRAME:AddMessage(L["/paragon delete no argument"])
+		end
+		return
+	else
+		characterName = string.lower(characterName)
+	end
+
+	if setContains(ParagonDB["character"], characterName) then
+		ParagonDB["character"][characterName] = nil
+		if verbose then
+			DEFAULT_CHAT_FRAME:AddMessage(string.format(L["delete character successful"], characterName))
+		end
+		return
+	else
+		characterName = characterName .. string.lower("-"..T.realm)
+	end
+
+	if setContains(ParagonDB["character"], characterName) and characterName ~= string.lower("-"..T.realm) then
+		ParagonDB["character"][characterName] = nil
+		if verbose then
+			DEFAULT_CHAT_FRAME:AddMessage(string.format(L["delete character successful"], characterName))
+		end
+		return
+	elseif verbose and characterName == string.lower("-"..T.realm) then
+		DEFAULT_CHAT_FRAME:AddMessage(L["/paragon delete no argument"])
+	elseif verbose then
+		DEFAULT_CHAT_FRAME:AddMessage(string.format(L["delete character not found"], characterName, T.realm))
+	end
+end
+
+
 -- Function to output saved data for a specific faction
 local function outputFaction(factionName, limit, outputFormat, currentLine)
 	local faction = string.lower(factionName) -- Convert to lower case
@@ -214,7 +249,7 @@ local function GameTooltip_OnTooltipSetItem(tooltip)
 	
 	-- String matching to get item ID
 	local itemString = match(link, "item[%-?%d:]+")
-	local _, itemId = strsplit(":", itemString)
+	local _, itemId = strsplit(":", itemString or "")
 
 	-- TradeSkillFrame workaround
 	if itemId == "0" and TradeSkillFrame ~= nil and TradeSkillFrame:IsVisible() then
@@ -251,7 +286,7 @@ local function GameTooltip_OnTooltipSetItem(tooltip)
 			tooltip:AddLine("|cffffffff" .. L["f "..faction] .. "|r")
 
 			local displayAmount = "  " .. format_int(d[faction]["current"]) .. " / " .. format_int(d[faction]["max"])
-			if d[faction]["standingId"] == 8 then
+			if d[faction]["standingId"] == 8 then -- Exalted
 				displayAmount = ""
 			end
 
@@ -325,8 +360,7 @@ function SlashCmdList.PARAGON(msg, editbox)
 	if cmd == "config" or cmd == "cfg" or cmd == "settings" or cmd == "options" then
 		InterfaceOptionsFrame_OpenToCategory("Paragon")
 	elseif cmd == "delete" then
-		--delete_character(args)
-		print("NYI")
+		deleteCharacter(args, true)
 	else
 		-- short commands
 		if msg == "argus" or msg == "argussian" or msg == "reach" then msg = "argussian reach" end
