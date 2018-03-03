@@ -10,8 +10,36 @@ local LL, _, T = {}, ...
 
 -- English
 LL["enUS"] = {
-	-- Global
+	-- Faction standing labels
 	["faction_standing_paragon"] 			= "Paragon",
+	-- Defaults (also used by Halfhill factions, etc)
+	["faction_standing_stranger"] 			= "Stranger",
+	["faction_standing_acquaintance"] 		= "Acquaintance",
+	["faction_standing_buddy"] 				= "Buddy",
+	["faction_standing_friend"] 			= "Friend",
+	["faction_standing_good_friend"]		= "Good Friend",
+	["faction_standing_best_friend"] 		= "Best Friend",
+	-- Nat Pagle/Conjurer Margoss/Fisherfriends
+	["faction_standing_pal"] 				= "Pal",
+	-- Corbyn
+	["faction_standing_curiosity"] 			= "Curiosity",
+	["faction_standing_non-threat"] 		= "Non-Threat",
+	["faction_standing_helpful_friend"]		= "Helpful Friend",
+	-- Chromie
+	["faction_standing_whelpling"] 			= "Whelpling",
+	["faction_standing_temporal_trainee"] 	= "Temporal Trainee",
+	["faction_standing_timehopper"] 		= "Timehopper",
+	["faction_standing_chrono-friend"] 		= "Chrono-Friend",
+	["faction_standing_bronze_ally"] 		= "Bronze Ally",
+	["faction_standing_epoch-mender"] 		= "Epoch-Mender",
+	["faction_standing_timelord"] 			= "Timelord",
+	-- Barracks Bodyguards
+	["faction_standing_bodyguard"] 			= "Bodyguard",
+	["faction_standing_trusted_bodyguard"]	= "Trusted Bodyguard",
+	["faction_standing_personal_wingman"]	= "Personal Wingman",
+
+
+	-- Global
 	["highest reputation"] 					= "Highest Reputation",
 	["lowest reputation"] 					= "Lowest Reputation",
 
@@ -25,6 +53,10 @@ LL["enUS"] = {
 	["/paragon delete no argument"] 		= "|cFF00FFFFParagon|r: No character name specified.",
 	["delete character not found"]			= "|cFF00FFFFParagon|r: There is nothing to remove for \"%s\". Make sure you include the character's realm if it's not on %s.",
 	["delete character successful"] 		= "|cFF00FFFFParagon|r: Removed all data for \"%s\".",
+
+	-- Results Window
+	["reputation not discovered"]			= "None of your characters have discovered %s yet.",
+	["no results"]							= "Nothing to display for %s.",
 
 	-- Settings Panel
 	["cfgFrameSubtext"] 					= "You can list characters that have reputation with a specific faction by typing |cff00ffff/paragon <faction>|r in chat.",
@@ -75,7 +107,7 @@ LL["enUS"] = {
 	-- Warlords of Draenor
 	["f arakkoa outcasts"] 					= "Arakkoa Outcasts",
 	["f council of exarchs"]				= "Council of Exarchs",
-	["f frostwold orcs"]					= "Frostwolf Orcs",
+	["f frostwolf orcs"]					= "Frostwolf Orcs",
 	["f hand of the prophet"]				= "Hand of the Prophet",
 	["f laughing skull orcs"]				= "Laughing Skull Orcs",
 	["f order of the awakened"]				= "Order of the Awakened",

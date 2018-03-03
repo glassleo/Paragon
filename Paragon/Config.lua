@@ -16,13 +16,13 @@ cfgFrameHeader:SetText("Paragon")
 
 local cfgFrameSubtext = cfgFrame:CreateFontString("OVERLAY", nil, "GameFontHighlightSmall")
 cfgFrameSubtext:SetPoint("TOPLEFT", 15, -40)
-cfgFrameSubtext:SetText(L"cfgFrameSubtext")
+cfgFrameSubtext:SetText(L["cfgFrameSubtext"])
 
 
 
 local cfgChatOutputLimitLabel = cfgFrame:CreateFontString("OVERLAY", nil, "GameFontNormal")
 cfgChatOutputLimitLabel:SetPoint("TOPLEFT", 15, -65)
-cfgChatOutputLimitLabel:SetText(L"cfgChatOutputLimitLabel")
+cfgChatOutputLimitLabel:SetText(L["cfgChatOutputLimitLabel"])
 
 
 
@@ -32,7 +32,7 @@ cfgChatOutputLimit:SetSize(60, 14)
 cfgChatOutputLimit:SetFontObject(GameFontHighlightSmall)
 cfgChatOutputLimit:SetAutoFocus(false)
 cfgChatOutputLimit:SetJustifyH('CENTER')
-cfgChatOutputLimit:SetBackdrop({ bgFile = 'Interface/ChatFrame/ChatFrameBackground', edgeFile = 'Interface/ChatFrame/ChatFrameBackground', tile = true, edgeSize = 1, tileSize = 5, })
+cfgChatOutputLimit:SetBackdrop({ bgFile = "Interface/ChatFrame/ChatFrameBackground", edgeFile = "Interface/ChatFrame/ChatFrameBackground", tile = true, edgeSize = 1, tileSize = 5, })
 cfgChatOutputLimit:SetBackdropColor(0, 0, 0, 0.5)
 cfgChatOutputLimit:SetBackdropBorderColor(0.3, 0.3, 0.3, 0.8)
 cfgChatOutputLimit:SetScript('OnEscapePressed', function(self)
@@ -62,13 +62,13 @@ cfgChatOutputLimit:SetNumeric(true)
 
 local cfgTooltipHeader = cfgFrame:CreateFontString("OVERLAY", nil, "GameFontNormalLarge")
 cfgTooltipHeader:SetPoint("TOPLEFT", 15, -130)
-cfgTooltipHeader:SetText(L"cfgTooltipHeader")
+cfgTooltipHeader:SetText(L["cfgTooltipHeader"])
 
 
 
 local cfgTooltipSubtext = cfgFrame:CreateFontString("OVERLAY", nil, "GameFontHighlightSmall")
 cfgTooltipSubtext:SetPoint("TOPLEFT", 15, -155)
-cfgTooltipSubtext:SetText(L"cfgTooltipSubtext")
+cfgTooltipSubtext:SetText(L["cfgTooltipSubtext"])
 
 
 

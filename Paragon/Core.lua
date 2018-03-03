@@ -2,8 +2,7 @@ local _, T = ...
 local L = T.L
 
 SLASH_PARAGON1 = "/paragon"
-
-Paragon = {}
+SLASH_PARAGON2 = "/par"
 
 -- Default settings
 T.defaults = {
@@ -11,7 +10,7 @@ T.defaults = {
 	["tooltip_personal_enabled"] = true,
 	["tooltip_hide_unfriendly"] = true,
 	["tooltip_hide_neutral"] = false,
-	["tooltip_hide_exalted"] = true,
+	["tooltip_hide_exalted"] = false,
 	["tooltip_alts_enabled"] = true,
 	["tooltip_alts_enabled_shift"] = true,
 	["tooltip_alts_enabled_alt"] = false,
@@ -72,6 +71,69 @@ frame:RegisterEvent("UPDATE_FACTION")
 frame:RegisterEvent("CHAT_MSG_COMBAT_FACTION_CHANGE")
 
 
+-- Results Frame
+local resultsFrame = CreateFrame("FRAME", "ParagonResultsFrame", UIParent, "BasicFrameTemplate")
+resultsFrame:SetSize(420, 580)
+resultsFrame:SetPoint("CENTER", UIParent, "CENTER")
+resultsFrame:EnableMouse(true)
+resultsFrame:Hide()
+tinsert(UISpecialFrames, "ParagonResultsFrame")
+
+local resultsFrameTitle = resultsFrame:CreateFontString("OVERLAY", nil, "GameFontNormal")
+resultsFrameTitle:SetPoint("TOPLEFT", 0, -4)
+resultsFrameTitle:SetWidth(420)
+resultsFrameTitle:SetJustifyH("CENTER")
+resultsFrameTitle:SetText("Paragon")
+
+--scrollframe
+resultsScrollFrame = CreateFrame("ScrollFrame", nil, resultsFrame)
+resultsScrollFrame:SetPoint("TOPLEFT", 6, -64)
+resultsScrollFrame:SetPoint("BOTTOMRIGHT", -28, 6)
+resultsScrollFrame:SetBackdrop({
+	bgFile = "Interface/Tooltips/UI-Tooltip-Background", 
+	edgeFile = "Interface/Tooltips/UI-Tooltip-Border", 
+	tile = true, tileSize = 8, edgeSize = 8, 
+	insets = { left = 2, right = 2, top = 2, bottom = 2 }}
+)
+resultsScrollFrame:SetBackdropColor(0, 0, 0, 0.8)
+resultsScrollFrame:SetBackdropBorderColor(0, 0, 0, 0.8)
+resultsFrame.scrollFrame = resultsScrollFrame
+
+--scrollbar
+resultsScrollbar = CreateFrame("Slider", nil, resultsScrollFrame, "UIPanelScrollBarTemplate")
+resultsScrollbar:SetPoint("TOPLEFT", resultsFrame, "TOPRIGHT", -24, -80)
+resultsScrollbar:SetPoint("BOTTOMRIGHT", resultsFrame, "BOTTOMRIGHT", -8, 24)
+resultsScrollbar:SetMinMaxValues(1, 1000)
+resultsScrollbar:SetValueStep(1)
+resultsScrollbar.scrollStep = 24
+resultsScrollbar:SetValue(0)
+resultsScrollbar:SetWidth(16)
+resultsScrollbar:SetScript("OnValueChanged", 
+function (self, value)
+	self:GetParent():SetVerticalScroll(value)
+end)
+local scrollbg = resultsScrollbar:CreateTexture(nil, "BACKGROUND")
+scrollbg:SetAllPoints(resultsScrollbar)
+scrollbg:SetTexture(0, 0, 0, 0.4)
+frame.scrollbar = resultsScrollbar
+
+--content frame
+local resultsContent = CreateFrame("Frame", nil, resultsScrollFrame)
+resultsScrollFrame.content = resultsContent
+resultsScrollFrame:SetScrollChild(resultsContent)
+
+
+-- Labels
+local resultsFrameFactionLabel = resultsFrame:CreateFontString("OVERLAY", nil, "GameFontNormalLarge")
+resultsFrameFactionLabel:SetPoint("TOPLEFT", 10, -32)
+resultsFrameFactionLabel:SetHeight(24)
+resultsFrameFactionLabel:SetJustifyV("MIDDLE")
+
+
+
+
+
+
 -- Realm formatting
 local function format_realm(realmName)
 	if realmName == T.realm then
@@ -103,30 +165,33 @@ local function updateFactions()
 	if not ParagonDB then return end
 
 	-- Replace current character's saved data with current data
-	ParagonDB["character"][T.charStr] = { ["name"] = T.player, ["realm"] = T.realm, ["class"] = T.class, ["level"] = T.level }
+	ParagonDB["character"][T.charStr] = { ["name"] = T.player, ["realm"] = T.realm, ["class"] = T.class, ["level"] = T.level, ["factionGroup"] = T.factionGroup }
 
 	for faction, data in pairs(T.faction) do
-		local id, icon, paragon = data["id"], data["icon"], data["paragon"]
+		local id, icon, paragon, factionGroup = data["id"], data["icon"], data["paragon"], data["factionGroup"]
 		local name, _, standingId, barMin, barMax, barValue, _, _, _, _, _, _, _, _, _, _ = GetFactionInfoByID(id)
 		local currentValue, threshold, _, hasRewardPending = C_Reputation.GetFactionParagonInfo(id)
 
-		if currentValue then
-			local displayValue = currentValue % threshold
-			if hasRewardPending then displayValue = displayValue + threshold end
 
-			ParagonDB["character"][T.charStr][faction] = {
-				["standingId"] = 9, -- Paragon
-				["current"] = displayValue,
-				["max"] = threshold,
-				["hasRewardPending"] = hasRewardPending,
-			}
-		elseif barValue then
-			ParagonDB["character"][T.charStr][faction] = {
-				["standingId"] = standingId,
-				["current"] = barValue - barMin,
-				["max"] = barMax - barMin,
-				["hasRewardPending"] = false,
-			}
+		if factionGroup == false or factionGroup == T.factionGroup then -- Only include same side and neutral factions
+			if currentValue then
+				local displayValue = currentValue % threshold
+				if hasRewardPending then displayValue = displayValue + threshold end
+
+				ParagonDB["character"][T.charStr][faction] = {
+					["standingId"] = 9, -- Paragon
+					["current"] = displayValue,
+					["max"] = threshold,
+					["hasRewardPending"] = hasRewardPending,
+				}
+			elseif barValue then
+				ParagonDB["character"][T.charStr][faction] = {
+					["standingId"] = standingId,
+					["current"] = barValue - barMin,
+					["max"] = barMax - barMin,
+					["hasRewardPending"] = false,
+				}
+			end
 		end
 	end
 end
@@ -167,22 +232,56 @@ local function deleteCharacter(characterName, verbose)
 end
 
 
+-- Functions to format standings
+local function standing(standingId, faction)
+	if setContains(T.faction, faction) then
+		if T.faction[faction]["friend"] ~= 0 then
+			if setContains(T.friendStanding, faction) then
+				return L[T.friendStanding[faction][standingId]]
+			else
+				return L[T.friendStanding["default"][standingId]]
+			end
+		else
+			return T.standing[standingId]
+		end
+	else
+		return T.standing[standingId]
+	end
+end
+
+local function standingColor(standingId, faction)
+	if setContains(T.faction, faction) then
+		if T.faction[faction]["friend"] ~= 0 then
+			if setContains(T.friendStandingColor, faction) then
+				return T.friendStandingColor[faction][standingId]
+			else
+				return T.friendStandingColor["default"][standingId]
+			end
+		else
+			return T.standingColor[standingId]
+		end
+	else
+		return T.standingColor[standingId]
+	end
+end
+
+
 -- Function to output saved data for a specific faction
 local function outputFaction(factionName, limit, outputFormat, currentLine)
 	local faction = string.lower(factionName) -- Convert to lower case
 
+	updateFactions() -- Make sure player data is up to date
+
 	-- Check if the faction exists
 	if not setContains(T.faction, faction) then
-		if outputFormat == "chat" then
-			DEFAULT_CHAT_FRAME:AddMessage("|cFF00FFFFParagon|r: Unknown faction \"" .. factionName .. "\".")
-		end
 		return -- Break
+	elseif outputFormat == "test" then
+		return true
 	end
-
-	updateFactions() -- Make sure player data is up to date
 
 	-- Local variables
 	local factionTable, sortTable = {}, {}
+	local ui, scrollcontainer, scroll = nil, nil, nil
 
 	-- Sorting table
 	for char, tbl in pairs(ParagonDB["character"]) do
@@ -194,7 +293,7 @@ local function outputFaction(factionName, limit, outputFormat, currentLine)
 
 	-- Sort the table
 	local sortedKeys
-	if outputFormat ~= "chat" and ParagonDB["config"]["tooltip_alts_enabled_alt"] and IsAltKeyDown() then -- Reverse order when holding <Alt>
+	if outputFormat == "tooltip" and ParagonDB["config"]["tooltip_alts_enabled_alt"] and IsAltKeyDown() then -- Reverse order when holding <Alt>
 		sortedKeys = getKeysSortedByValue(sortTable, function(a, b) return a < b end)
 	else
 		sortedKeys = getKeysSortedByValue(sortTable, function(a, b) return a > b end)
@@ -205,37 +304,129 @@ local function outputFaction(factionName, limit, outputFormat, currentLine)
 		local d = ParagonDB["character"][char]
 		local standingId = factionTable[char]["standingId"]
 
-		if not (ParagonDB["config"]["tooltip_hide_exalted"] and standingId == 8) and not (ParagonDB["config"]["tooltip_hide_neutral"] and standingId == 4) and not (ParagonDB["config"]["tooltip_hide_unfriendly"] and standingId <= 3) then
+		if (not (ParagonDB["config"]["tooltip_hide_exalted"] and standingId == 8) and not (ParagonDB["config"]["tooltip_hide_neutral"] and standingId == 4) and not (ParagonDB["config"]["tooltip_hide_unfriendly"] and standingId <= 3)) or outputFormat == "ui" then
 			i = i + 1
 
 			if i == 1 then
-				out = "|cFF00FFFFParagon|r\n|T" .. T.faction[faction]["icon"] .. ":0|t " .. L["f "..faction] .. " - " .. L["highest reputation"]
+				if outputFormat == "ui" then
+					--content frame
+					resultsContent:Hide()
+
+					resultsFrameFactionLabel:SetText("|T" .. T.faction[faction]["icon"] .. ":24:24|t  " .. L["f "..faction])
+
+					resultsContent = CreateFrame("Frame", nil, resultsScrollFrame)
+					resultsScrollFrame.content = resultsContent
+					resultsScrollFrame:SetScrollChild(resultsContent)
+
+					resultsFrame:Show()
+				else
+					out = "|cFF00FFFFParagon|r\n|T" .. T.faction[faction]["icon"] .. ":0|t " .. L["f "..faction] .. " - " .. L["highest reputation"]
+				end
 			end
 
-			if i <= limit then
+			if i <= limit or outputFormat == "ui" then
 				local displayAmount = "  " .. format_int(factionTable[char]["current"]) .. " / " .. format_int(factionTable[char]["max"])
-				if standingId == 8 then -- Exalted
+				if standingId == 8 or (T.faction[faction]["friend"] ~= 0 and standingId >= T.faction[faction]["friend"]) then -- Exalted/Best Friend
 					displayAmount = "" -- Exalted reputations do not have amounts
 				end
 
-				local line = "|c" .. RAID_CLASS_COLORS[d["class"]].colorStr .. d["name"] .. format_realm(d["realm"]) .. "|r  " .. T.standingColor[standingId] .. T.standing[standingId] .. displayAmount .. "|r"
+				local line = "|c" .. RAID_CLASS_COLORS[d["class"]].colorStr .. d["name"] .. format_realm(d["realm"]) .. "|r  " .. standingColor(standingId, faction) .. standing(standingId, faction) .. displayAmount .. "|r"
 
-				if outputFormat == "chat" then
-					out = out .. "\n|cff808080" .. i .. ".|r " .. line
+				if outputFormat == "ui" then
+					local offset = (i - 1) * -24
+
+					local rowBg = CreateFrame("Frame", nil, resultsContent)
+					rowBg:SetPoint("TOPLEFT", 0, offset or 0)
+					rowBg:SetPoint("TOPRIGHT", 0, offset or 0)
+					rowBg:SetHeight(24)
+					rowBg:SetBackdrop({
+						bgFile = "Interface/Tooltips/UI-Tooltip-Background",
+						tile = true, tileSize = 8, edgeSize = 0, 
+						insets = { left = 0, right = 0, top = 0, bottom = 0 }}
+					)
+					if i % 2 == 1 then
+						rowBg:SetBackdropColor(0, 0, 0, 0.4)
+					else
+						rowBg:SetBackdropColor(0, 0, 0, 0)
+					end
+
+					-- Character Name
+					local label = rowBg:CreateFontString("OVERLAY", nil, "GameFontNormalSmall")
+					label:SetPoint("TOPLEFT", 10, 0)
+					label:SetText("|c" .. RAID_CLASS_COLORS[d["class"]].colorStr .. d["name"] .. format_realm(d["realm"]) .. "|r")
+					label:SetHeight(24)
+					label:SetJustifyV("MIDDLE")
+
+					-- Standing
+					local label = rowBg:CreateFontString("OVERLAY", nil, "GameFontNormalSmall")
+					label:SetPoint("TOPLEFT", 160, 0)
+					label:SetText(standingColor(standingId, faction) .. standing(standingId, faction) .. "|r")
+					label:SetHeight(24)
+					label:SetJustifyV("MIDDLE")
+
+					-- Amount
+					if standingId ~= 8 then
+						local label = rowBg:CreateFontString("OVERLAY", nil, "GameFontNormalSmall")
+						label:SetPoint("TOPLEFT", 240, 0)
+						label:SetText(standingColor(standingId, faction) .. displayAmount .. "|r")
+						label:SetHeight(24)
+						label:SetWidth(100)
+						label:SetJustifyH("CENTER")
+						label:SetJustifyV("MIDDLE")
+					end
 				elseif outputFormat == "tooltip" and i == currentLine then
 					return "|cff808080" .. i .. ".|r " .. line
+				else
+					out = out .. "\n|cff808080" .. i .. ".|r " .. line
 				end
 			end
 		end
 	end
 
 	if i == 0 then
-		out = "|cFF00FFFFParagon|r: Nothing to display for \"" .. (L["f "..faction]) .. "\"."
+		if outputFormat == "ui" then
+			--content frame
+			resultsContent:Hide()
+
+			resultsFrameFactionLabel:SetText("|T" .. T.faction[faction]["icon"] .. ":24:24|t  " .. L["f "..faction])
+
+			resultsContent = CreateFrame("Frame", nil, resultsScrollFrame)
+			resultsScrollFrame.content = resultsContent
+			resultsScrollFrame:SetScrollChild(resultsContent)
+
+			resultsFrame:Show()
+
+			local label = resultsContent:CreateFontString("OVERLAY", nil, "GameFontNormalLarge")
+			label:SetPoint("TOPLEFT", 10, -10)
+			label:SetText(string.format(L["reputation not discovered"], L["f "..faction]))
+			label:SetJustifyV("MIDDLE")
+			label:SetJustifyH("CENTER")
+			label:SetWidth(360)
+			label:SetHeight(460)
+		else
+			out = "|cFF00FFFFParagon|r: " .. string.format(L["no results"], "\"" .. L["f "..faction] .. "\"")
+		end
 	end
+
+	
 
 	if outputFormat == "chat" then
 		-- Write data to the chat frame
 		DEFAULT_CHAT_FRAME:AddMessage(out)
+	elseif outputFormat == "ui" then
+		local height = (i*24)-510
+
+		resultsScrollbar:SetValue(0)
+
+		if i <= 21 then
+			resultsScrollbar:SetMinMaxValues(1, 1)
+			resultsScrollbar:Hide()
+			resultsContent:SetSize(420, 510)
+		else
+			resultsScrollbar:SetMinMaxValues(1, height)
+			resultsScrollbar:Show()
+			resultsContent:SetSize(420, height)
+		end
 	end
 end
 
@@ -286,11 +477,11 @@ local function GameTooltip_OnTooltipSetItem(tooltip)
 			tooltip:AddLine("|cffffffff" .. L["f "..faction] .. "|r")
 
 			local displayAmount = "  " .. format_int(d[faction]["current"]) .. " / " .. format_int(d[faction]["max"])
-			if d[faction]["standingId"] == 8 then -- Exalted
+			if d[faction]["standingId"] == 8 or (T.faction[faction]["friend"] ~= 0 and d[faction]["standingId"] >= T.faction[faction]["friend"]) then -- Exalted/Best Friend
 				displayAmount = ""
 			end
 
-			tooltip:AddLine(T.standingColor[d[faction]["standingId"]] .. T.standing[d[faction]["standingId"]] .. displayAmount .. "|r")
+			tooltip:AddLine(standingColor(d[faction]["standingId"], faction) .. standing(d[faction]["standingId"], faction) .. displayAmount .. "|r")
 		end
 
 		if ParagonDB["config"]["tooltip_alts_enabled"] and limit >= 1 then
@@ -371,8 +562,8 @@ function SlashCmdList.PARAGON(msg, editbox)
 		if msg == "nightfallen" or msg == "nightborne" then msg = "the nightfallen" end
 		if msg == "wardens" or msg == "warden" then msg = "the wardens" end
 
-		if outputFaction(msg, 1, "tooltip", 1) then
-			outputFaction(msg, tonumber(ParagonDB["config"]["chat_output_limit"]), "chat")
+		if outputFaction(msg, 1, "test") then
+			outputFaction(msg, tonumber(ParagonDB["config"]["chat_output_limit"]), "ui")
 		else
 			DEFAULT_CHAT_FRAME:AddMessage(L["/paragon help"])
 		end
