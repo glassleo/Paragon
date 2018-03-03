@@ -356,12 +356,12 @@ T.faction = {
 	["wildhammer clan"]						= { ["id"] = 1174, 	["icon"] = 456575, 		["paragon"] = false, },
 
 	-- Wrath of the Lich King
-	["argent crusade"]						= { ["id"] = 1106, 	["icon"] = 133441, 		["paragon"] = false, },
+	["argent crusade"]						= { ["id"] = 1106, 	["icon"] = 236689, 		["paragon"] = false, },
 	["kirin tor"]							= { ["id"] = 1090, 	["icon"] = 236693, 		["paragon"] = false, },
 	["knights of the ebon blade"]			= { ["id"] = 1098, 	["icon"] = 236694, 		["paragon"] = false, },
 	["the ashen verdict"]					= { ["id"] = 1156, 	["icon"] = 343640, 		["paragon"] = false, }, -- actual icon is same as argent crusade, use 343640 instead
 	["the kalu'ak"]							= { ["id"] = 1073, 	["icon"] = 236697, 		["paragon"] = false, },
-	["the sons of hodir"]					= { ["id"] = 1119, 	["icon"] = 135865, 		["paragon"] = false, }, -- alt maybe try 254091 instead?
+	["the sons of hodir"]					= { ["id"] = 1119, 	["icon"] = 254107, 		["paragon"] = false, },
 	["the wyrmrest accord"]					= { ["id"] = 1091, 	["icon"] = 236699, 		["paragon"] = false, },
 	["alliance vanguard"]					= { ["id"] = 1037, 	["icon"] = 463450, 		["paragon"] = false, }, -- generic alliance icon
 	["explorer's league"]					= { ["id"] = 1068, 	["icon"] = 463450, 		["paragon"] = false, }, -- generic alliance icon
