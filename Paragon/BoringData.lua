@@ -76,7 +76,7 @@ T.friendStanding = {
 		[5] = "faction_standing_good_friend",
 		[6] = "faction_standing_best_friend",
 	},
-	["nat pagle"] = { -- also Conjurer Margoss and other Fisherfriends
+	["nat pagle"] = { -- also Conjurer Margoss and Fisherfriends
 		[1] = "faction_standing_stranger",
 		[2] = "faction_standing_pal",
 		[3] = "faction_standing_buddy",
@@ -123,9 +123,46 @@ T.friendStanding["talonpriest ishaal"] = T.friendStanding["vivianne"]
 T.friendStanding["tormmok"] = T.friendStanding["vivianne"]
 
 
--- Reputation item IDs (BoA and BoE)
+-- Reputation item IDs - BoA and BoE
 T.reputationItemBoA = {
+	-- Battle for Azeroth
+	[165016] = "7th legion", -- Contract: 7th Legion
+	[174507] = "7th legion", -- Fallen Soldier's Insignia (250)
+	[153668] = "champions of azeroth", -- Contract: Champions of Azeroth
+	[174502] = "champions of azeroth", -- Tear of Azeroth (250)
+	[168822] = "honeyback hive", -- Thin Jelly (20)
+	[168825] = "honeyback hive", -- Rich Jelly (80)
+	[168828] = "honeyback hive", -- Royal Jelly (160)
+	[153662] = "order of embers", -- Contract: Order of Embers
+	[174503] = "order of embers", -- Exotically Spiced Carrot (250)
+	[153661] = "proudmoore admiralty", -- Contract: Proudmoore Admiralty
+	[174504] = "proudmoore admiralty", -- Proudmoore War Copper (250)
+	[172008] = "rajani", -- Contract: Rajani
+	[173374] = "rajani", -- Rajani Insignia (250)
+	[168960] = "rustbolt resistance", -- Contract: Rustbolt Resistance
+	[168497] = "rustbolt resistance", -- Rustbolt Resistance Insignia (100)
+	[174521] = "rustbolt resistance", -- Transferable Kernel of E-steam (250)
+	[153663] = "storm's wake", -- Contract: Storm's Wake
+	[174505] = "storm's wake", -- Tide-Speaker's Tome (250)
+	[153665] = "talanji's expedition", -- Contract: Talanji's Expedition
+	[174506] = "talanji's expedition", -- Golden Insect Wings (250)
+	[165017] = "the honorbound", -- Contract: The Honorbound
+	[174508] = "the honorbound", -- Fallen Soldier's Insignia (250)
+	[168959] = "the unshackled", -- Contract: Unshackled
+	[174523] = "the unshackled", -- Waveswept Abyssal Conch (250)
+	[153667] = "tortollan seekers", -- Contract: Tortollan Seekers
+	[174519] = "tortollan seekers", -- Verdant Hills of Chokingvine - Page 17 (250)
+	[172010] = "uldum accord", -- Contract: Uldum Accord
+	[173376] = "uldum accord", -- Uldum Accord Insignia (250)
+	[153666] = "voldunai", -- Contract: Voldunai
+	[174501] = "voldunai", -- Ornate Voldunai Jewelry (250)
+	[153664] = "zandalari empire", -- Contract: Zandalari Empire
+	[174518] = "zandalari empire", -- Jani Figurine (250)
+	[168956] = "waveblade ankoan", -- Contract: Ankoan
+	[174522] = "waveblade ankoan", -- Waveswept Abyssal Conch (250)
+
 	-- Legion
+	[153113] = "argussian reach|armies of legionfall|army of the light|court of farondis|dreamweavers|highmountain tribe|the nightfallen|the wardens|valarjar", -- Demon's Soulstone (1000)
 	[152954] = "argussian reach", -- Greater Argussian Reach Insignia (750)
 	[152960] = "argussian reach", -- Argussian Reach Insignia (250)
 	[152464] = "armies of legionfall", -- Greater Legionfall Insignia (750)
@@ -152,8 +189,16 @@ T.reputationItemBoA = {
 	[146941] = "valarjar", -- Valarjar Insignia (250)
 
 	-- Warlords of Draenor
-	--[128315] = "<meta>", -- Medallion of the Legion (1000 to multiple factions)
+	[128315] = "arakkoa outcasts|council of exarchs|frostwolf orcs|hand of the prophet|laughing skull orcs|order of the awakened|sha'tari defense|steamwheedle preservation society|the saberstalkers|vol'jin's headhunters", -- Medallion of the Legion (1000)
+	[167924] = "arakkoa outcasts", -- Commendation of the Arakkoa Outcasts (300)
 	[117492] = "arakkoa outcasts", -- Relic of Rukhmar (2500)
+	[167929] = "council of exarchs", -- Commendation of the Council of Exarchs (300)
+	[167928] = "frostwolf orcs", -- Commendation of the Frostwolf Orcs (300)
+	[168018] = "hand of the prophet", -- Commendation of the Hand of the Prophet (300)
+	[167930] = "laughing skull orcs", -- Commendation of the Laughing Skull Orcs (300)
+	[167925] = "order of the awakened", -- Commendation of the Order of the Awakened (300)
+	[167932] = "sha'tari defense", -- Commendation of the Sha'tari Defense (300)
+	[167926] = "steamwheedle preservation society", -- Commendation of the Steamwheedle Preservation Society (300)
 	[118100] = "steamwheedle preservation society", -- Highmaul Relic (350)
 	[118654] = "steamwheedle preservation society", -- Aogexon's Fang (500)
 	[118655] = "steamwheedle preservation society", -- Bergruu's Horn (500)
@@ -164,18 +209,24 @@ T.reputationItemBoA = {
 	[118660] = "steamwheedle preservation society", -- Thek'talon's Talon (500)
 	[118661] = "steamwheedle preservation society", -- Xelganak's Stinger (500)
 	[120172] = "steamwheedle preservation society", -- Vileclaw's Claw (500)
+	[167927] = "the saberstalkers", -- Commendation of the Saberstalkers (300)
+	[168017] = "vol'jin's headhunters", -- Commendation of Vol'jin's Headhunters (300)
 
 	-- Mists of Pandaria
 	[143943] = "dominance offensive", -- Commendation of the Dominance Offensive (300)
 	[143947] = "emperor shaohao", -- Commendation of Emperor Shaohao (500)
 	[94227]  = "golden lotus", -- Stolen Golden Lotus Insignia (1000)
 	[143937] = "golden lotus", -- Commendation of the Golden Lotus (300)
+	[90816]  = "golden lotus", -- Relic of the Thunder King (300)
+	[90815]  = "golden lotus", -- Relic of Guo-Lai (150)
 	[143940] = "kirin tor offensive", -- Commendation of the Kirin Tor Offensive (300)
 	[143944] = "operation: shieldwall", -- Commendation of Operation: Shieldwall (300)
 	[143942] = "order of the cloud serpent", -- Commendation of the Order of the Cloud Serpent (300)
+	[104286] = "order of the cloud serpent", -- Quivering Firestorm Egg (1000)
 	[94223]  = "shado-pan", -- Stolen Shado-Pan Insignia (1000)
 	[143936] = "shado-pan", -- Commendation of the Shado-Pan (300)
-	[143945] = "shadow-pan assault", -- Commendation of the Shado-Pan Assault (300)
+	[143945] = "shado-pan assault", -- Commendation of the Shado-Pan Assault (300)
+	[95496]  = "shado-pan assault", -- Shado-Pan Assault Insignia (100)
 	[143939] = "sunreaver onslaught", -- Commendation of the Sunreaver Onslaught (300)
 	[94225]  = "the august celestials", -- Stolen Celestial Insignia (1000)
 	[143938] = "the august celestials", -- Commendation of The August Celestials (300)
@@ -205,11 +256,13 @@ T.reputationItemBoA = {
 	[129955] = "alliance vanguard", -- Commendation of the Alliance Vanguard (500)
 
 	-- The Burning Crusade
+	[24401]  = "cenarion expedition", -- Unidentified Plant Parts (250 per 10, up to Honored)
 	[129949] = "cenarion expedition", -- Commendation of the Cenarion Expedition (500)
 	[129948] = "honor hold", -- Commendation of Honor Hold (500)
 	[129950] = "keepers of time", -- Commendation of the Keepers of Time (500)
-	[24449]  = "sporeggar", -- Fertile Spores (250 per 6)
-	[24246]  = "sporeggar", -- Sanguine Hibiscus (250 per 5)
+	[24449]  = "sporeggar", -- Fertile Spores (750 per 6)
+	[24291]  = "sporeggar", -- Bog Lord Tendril (750 per 6, up to Friendly)
+	[24246]  = "sporeggar", -- Sanguine Hibiscus (750 per 5)
 	[129945] = "the consortium", -- Commendation of The Consortium (500)
 	[129947] = "thrallmar", -- Commendation of Thrallmar (500)
 	[129951] = "lower city", -- Commendation of Lower City (500)
@@ -226,10 +279,34 @@ T.reputationItemBoA = {
 	[17010] = "thorium brotherhood", -- Fiery Core (500)
 	[17011] = "thorium brotherhood", -- Lava Core (500)
 	[18945] = "thorium brotherhood", -- Dark Iron Residue (625 per 100 or 15 per 4)
+
+	-- Guild
+	[69209] = "guild", -- Illustrious Guild Tabard (50% increase)
+	[69210] = "guild", -- Renowned Guild Tabard (100% increase)
 }
 
--- Reputation item IDs (soulbound)
+-- Reputation item IDs - Soulbound
 T.reputationItemBoP = {
+	-- Battle for Azeroth
+	[170184] = "the unshackled|waveblade ankoan", -- Ancient Reefwalker Bark (350 The Unshackled/Waveblade Ankoan)
+	[163617] = "7th legion", -- Rusted Alliance Insignia (250)
+	[163217] = "champions of azeroth", -- Azeroth's Tear (250)
+	[163614] = "order of embers", -- Exotic Spices (250)
+	[163616] = "proudmoore admiralty", -- Dented Coin (250)
+	[173375] = "rajani", -- Rajani Insignia (250)
+	[173736] = "rustbolt resistance", -- Layered Information Kernel of E-steam (250)
+	[163615] = "storm's wake", -- Lost Sea Scroll (250)
+	[163619] = "talanji's expedition", -- Golden Beetle (250)
+	[163621] = "the honorbound", -- Rusted Horde Insignia (250)
+	[170079] = "the unshackled", -- Abyssal Conch (150)
+	[169942] = "the unshackled", -- Vibrant Sea Blossom (400)
+	[166501] = "tortollan seekers", -- Soggy Page (250)
+	[173377] = "uldum accord", -- Uldum Accord Insignia (250)
+	[163618] = "voldunai", -- Shimmering Shell (250)
+	[170081] = "waveblade ankoan", -- Abyssal Conch (150)
+	[169941] = "waveblade ankoan", -- Ceremonial Ankoan Scabbard (400)
+	[163620] = "zandalari empire", -- Island Flotsam (250)
+
 	-- Legion
 	[152961] = "argussian reach", -- Greater Argussian Reach Insignia (750)
 	[152959] = "argussian reach", -- Argussian Reach Insignia (250)
@@ -278,21 +355,21 @@ T.reputationItemBoP = {
 	[118099] = "steamwheedle preservation society", -- Gorian Artifact Fragment (250 per 20)
 
 	-- Mists of Pandaria
-	--[[ NYI
-	[79265]  = "<meta>", -- Blue Feather (900 with Chee Chee or Old Hillpaw, 540 with other Tillers members)
-	[79266]  = "<meta>", -- Jade Cat (900 with Ella or Fish Fellreed, 540 with other Tillers members)
-	[79267]  = "<meta>", -- Lovely Apple (900 with Jogu the Drunk or Sho, 540 with other Tillers members)
-	[79268]  = "<meta>", -- Marsh Lily (900 with Farmer Fung or Gina Mudclaw, 540 with other Tillers members)
-	[79264]  = "<meta>", -- Ruby Shard (900 with Haohan Mudclaw or Tina Mudclaw, 540 with other Tillers members)
-	]]
+	[86592]  = "golden lotus|order of the cloud serpent|shado-pan|the anglers|the august celestials|the klaxxi|the lorewalkers|the tillers", -- Hozen Peace Pipe (1000)
+	[79265]  = "chee chee|old hillpaw", -- Blue Feather (900 with Chee Chee or Old Hillpaw, 540 with other Tillers members)
+	[79266]  = "ella|fish fellreed", -- Jade Cat (900 with Ella or Fish Fellreed, 540 with other Tillers members)
+	[79267]  = "jogu the drunk|sho", -- Lovely Apple (900 with Jogu the Drunk or Sho, 540 with other Tillers members)
+	[79268]  = "farmer fung|gina mudclaw", -- Marsh Lily (900 with Farmer Fung or Gina Mudclaw, 540 with other Tillers members)
+	[79264]  = "haohan mudclaw|tina mudclaw", -- Ruby Shard (900 with Haohan Mudclaw or Tina Mudclaw, 540 with other Tillers members)
+	[89155]  = "order of the cloud serpent", -- Onyx Egg (500)
 
 	-- Cataclysm
-	[65909] = "dragonmaw clan", -- Tabard of the Dragonmaw Clan
-	[65906] = "guardians of hyjal", -- Tabard of the Guardians of Hyjal
-	[65904] = "ramkahen", -- Tabard of Ramkahen
-	[65905] = "the earthen ring", -- Tabard of the Earthen Ring
-	[65907] = "therazane", -- Tabard of Therazane
-	[65908] = "wildhammer clan", -- Tabard of the Wildhammer Clan
+	[65909]  = "dragonmaw clan", -- Tabard of the Dragonmaw Clan
+	[65906]  = "guardians of hyjal", -- Tabard of the Guardians of Hyjal
+	[65904]  = "ramkahen", -- Tabard of Ramkahen
+	[65905]  = "the earthen ring", -- Tabard of the Earthen Ring
+	[65907]  = "therazane", -- Tabard of Therazane
+	[65908]  = "wildhammer clan", -- Tabard of the Wildhammer Clan
 
 	-- Wrath of the Lich King
 	[44711]  = "argent crusade", -- Argent Crusade Commendation Badge (520)
@@ -306,11 +383,12 @@ T.reputationItemBoP = {
 	[43156]  = "wyrmrest accord", -- Tabard of the Wyrmrest Accord
 
 	-- The Burning Crusade
+	[24290]  = "sporeggar", -- Mature Spore Sack (750 per 10, up to Friendly)
 	[32506]  = "netherwing", -- Netherwing Egg (250)
-	--[25433] = "<meta>", -- Consortium and Kurenai/Mag'har
-	[29209] = "the consortium", -- Zaxxis Insignia (250 per 10)
-	[25416] = "the consortium", -- Oshu'gun Crystal Fragment (250 per 10, up to Friendly)
-	[25463] = "the consortium", -- Pair of Ivory Tusks (250 per 3, up to Friendly)
+	[25433]  = "kurenai|the consortium|the mag'har", -- Obsidian Warbeads (250 Consortium per 10, or 500 Kurenai/Mag'har per 10)
+	[29209]  = "the consortium", -- Zaxxis Insignia (250 per 10)
+	[25416]  = "the consortium", -- Oshu'gun Crystal Fragment (250 per 10, up to Friendly)
+	[25463]  = "the consortium", -- Pair of Ivory Tusks (250 per 3, up to Friendly)
 
 	-- Classic
 	[71088]  = "bilgewater cartel", -- Bilgewater Writ of Commendation (250)
@@ -349,13 +427,33 @@ T.reputationItemBoP = {
 	[45723]  = "undercity", -- Undercity Commendation Badge (250)
 	[70154]  = "undercity", -- Undercity Writ of Commendation (250)
 	[45583]  = "undercity", -- Undercity Tabard
+	[21377]  = "timbermaw hold", -- Deadwood Headdress Feather (2000 per 5)
+	[21383]  = "timbermaw hold", -- Winterfall Spirit Beads (2000 per 5)
 }
 
 
 -- Factions
 T.faction = {
 	-- Guild
-	["guild"] 								= { ["id"] = 1168, 	["icon"] = 135026, 		["paragon"] = false,	["friend"] = 0, ["factionGroup"] = nil, },
+	["guild"] 								= { ["id"] = 1168, 	["icon"] = 135026, 		["paragon"] = false,	["friend"] = 0, ["factionGroup"] = false, },
+
+	-- Battle for Azeroth
+	["7th legion"]							= { ["id"] = 2159, 	["icon"] = 2032591, 	["paragon"] = true, 	["friend"] = 0, ["factionGroup"] = "Alliance", },
+	["champions of azeroth"]				= { ["id"] = 2164, 	["icon"] = 2032592, 	["paragon"] = true, 	["friend"] = 0, ["factionGroup"] = false, },
+	["honeyback hive"]						= { ["id"] = 2395,  ["icon"] = 2027853,		["paragon"] = false, 	["friend"] = 0, ["factionGroup"] = "Alliance", },
+	["order of embers"]						= { ["id"] = 2161, 	["icon"] = 2032594, 	["paragon"] = true, 	["friend"] = 0, ["factionGroup"] = "Alliance", },
+	["proudmoore admiralty"]				= { ["id"] = 2160, 	["icon"] = 2065573, 	["paragon"] = true, 	["friend"] = 0, ["factionGroup"] = "Alliance", },
+	["rajani"]								= { ["id"] = 2415, 	["icon"] = 3196265, 	["paragon"] = true, 	["friend"] = 0, ["factionGroup"] = false, },
+	["rustbolt resistance"]					= { ["id"] = 2391, 	["icon"] = 2909316, 	["paragon"] = true, 	["friend"] = 0, ["factionGroup"] = false, },
+	["storm's wake"]						= { ["id"] = 2162, 	["icon"] = 2032596, 	["paragon"] = true, 	["friend"] = 0, ["factionGroup"] = "Alliance", },
+	["talanji's expedition"]				= { ["id"] = 2156, 	["icon"] = 2032597, 	["paragon"] = true, 	["friend"] = 0, ["factionGroup"] = "Horde", },
+	["the honorbound"]						= { ["id"] = 2157, 	["icon"] = 2032593, 	["paragon"] = true, 	["friend"] = 0, ["factionGroup"] = "Horde", },
+	["the unshackled"]						= { ["id"] = 2373,  ["icon"] = 2821782,		["paragon"] = true, 	["friend"] = 0, ["factionGroup"] = "Horde", },
+	["tortollan seekers"]					= { ["id"] = 2163, 	["icon"] = 2032598, 	["paragon"] = true, 	["friend"] = 0, ["factionGroup"] = false, },
+	["uldum accord"]						= { ["id"] = 2417, 	["icon"] = 3196264, 	["paragon"] = true, 	["friend"] = 0, ["factionGroup"] = false, },
+	["voldunai"]							= { ["id"] = 2158, 	["icon"] = 2032599, 	["paragon"] = true, 	["friend"] = 0, ["factionGroup"] = "Horde", },
+	["waveblade ankoan"]					= { ["id"] = 2400,  ["icon"] = 2909045,		["paragon"] = true, 	["friend"] = 0, ["factionGroup"] = "Alliance", },
+	["zandalari empire"]					= { ["id"] = 2103, 	["icon"] = 2032601, 	["paragon"] = true, 	["friend"] = 0, ["factionGroup"] = "Horde", },
 
 	-- Legion
 	["argussian reach"] 					= { ["id"] = 2170, 	["icon"] = 1708496, 	["paragon"] = true,		["friend"] = 0, ["factionGroup"] = false, },
@@ -419,6 +517,7 @@ T.faction = {
 	["the anglers"]							= { ["id"] = 1302, 	["icon"] = 643874, 		["paragon"] = false, 	["friend"] = 0, ["factionGroup"] = false, },
 	["nat pagle"]							= { ["id"] = 1358, 	["icon"] = 133152, 		["paragon"] = false, 	["friend"] = 6, ["factionGroup"] = false, },
 	["the tillers"]							= { ["id"] = 1272, 	["icon"] = 645198, 		["paragon"] = false, 	["friend"] = 0, ["factionGroup"] = false, },
+	-- The Tillers
 	["chee chee"]							= { ["id"] = 1277, 	["icon"] = 132926, 		["paragon"] = false, 	["friend"] = 6, ["factionGroup"] = false, }, -- blue feather
 	["ella"]								= { ["id"] = 1275, 	["icon"] = 454045, 		["paragon"] = false, 	["friend"] = 6, ["factionGroup"] = false, }, -- jade cat
 	["farmer fung"]							= { ["id"] = 1283, 	["icon"] = 134210, 		["paragon"] = false, 	["friend"] = 6, ["factionGroup"] = false, }, -- marsh lily
@@ -429,7 +528,8 @@ T.faction = {
 	["old hillpaw"]							= { ["id"] = 1276, 	["icon"] = 132926, 		["paragon"] = false, 	["friend"] = 6, ["factionGroup"] = false, }, -- blue feather
 	["sho"]									= { ["id"] = 1278, 	["icon"] = 133975, 		["paragon"] = false, 	["friend"] = 6, ["factionGroup"] = false, }, -- lovely apple
 	["tina mudclaw"]						= { ["id"] = 1280, 	["icon"] = 237204, 		["paragon"] = false, 	["friend"] = 6, ["factionGroup"] = false, }, -- ruby shard
-	["nomi"]								= { ["id"] = 1357, 	["icon"] = 571695, 		["paragon"] = false, 	["friend"] = 6, ["factionGroup"] = false, }, -- hidden from Reputation Panel
+	-- Hidden
+	["nomi"]								= { ["id"] = 1357, 	["icon"] = 571695, 		["paragon"] = false, 	["friend"] = 6, ["factionGroup"] = false, }, -- hidden from the Reputation Panel
 
 	-- Cataclysm
 	["avengers of hyjal"]					= { ["id"] = 1204, 	["icon"] = 512609, 		["paragon"] = false, 	["friend"] = 0, ["factionGroup"] = false, },
@@ -488,7 +588,7 @@ T.faction = {
 	["the sha'tar"]							= { ["id"] = 935, 	["icon"] = 1708140, 	["paragon"] = false, 	["friend"] = 0, ["factionGroup"] = false, },
 
 	-- Classic
-	["argent dawn"]							= { ["id"] = 529, 	["icon"] = 133441,	 	["paragon"] = false, 	["friend"] = 0, ["factionGroup"] = false, },
+	["argent dawn"]							= { ["id"] = 529, 	["icon"] = 133440,	 	["paragon"] = false, 	["friend"] = 0, ["factionGroup"] = false, },
 	["bloodsail buccaneers"]				= { ["id"] = 87, 	["icon"] = 133168,	 	["paragon"] = false, 	["friend"] = 0, ["factionGroup"] = false, },
 	["brood of nozdormu"]					= { ["id"] = 910, 	["icon"] = 134156,	 	["paragon"] = false, 	["friend"] = 0, ["factionGroup"] = false, },
 	["cenarion circle"]						= { ["id"] = 609, 	["icon"] = 132280,	 	["paragon"] = false, 	["friend"] = 0, ["factionGroup"] = false, },
@@ -496,7 +596,7 @@ T.faction = {
 	["hydraxian waterlords"]				= { ["id"] = 749, 	["icon"] = 135862,	 	["paragon"] = false, 	["friend"] = 0, ["factionGroup"] = false, },
 	["ravenholdt"]							= { ["id"] = 349, 	["icon"] = 132299,	 	["paragon"] = false, 	["friend"] = 0, ["factionGroup"] = false, },
 	["thorium brotherhood"]					= { ["id"] = 59, 	["icon"] = 1786406,	 	["paragon"] = false, 	["friend"] = 0, ["factionGroup"] = false, },
-	["timbermaw hold"]						= { ["id"] = 576, 	["icon"] = 134227,	 	["paragon"] = false, 	["friend"] = 0, ["factionGroup"] = false, },
+	["timbermaw hold"]						= { ["id"] = 576, 	["icon"] = 236696,	 	["paragon"] = false, 	["friend"] = 0, ["factionGroup"] = false, },
 	["wintersaber trainers"]				= { ["id"] = 589, 	["icon"] = 132252,	 	["paragon"] = false, 	["friend"] = 0, ["factionGroup"] = "Alliance", },
 	-- Alliance
 	["darnassus"]							= { ["id"] = 69, 	["icon"] = 255141,	 	["paragon"] = false, 	["friend"] = 0, ["factionGroup"] = "Alliance", },

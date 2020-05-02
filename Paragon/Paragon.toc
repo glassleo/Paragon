@@ -1,7 +1,7 @@
-## Interface: 70300
+## Interface: 80300
 ## Title: Paragon
 ## Notes: Keeps track of reputation for all your characters
-## Version: Bismuth 1
+## Version: Bismuth 8
 ## Author: Leo Bolin
 
 ## SavedVariables: ParagonDB

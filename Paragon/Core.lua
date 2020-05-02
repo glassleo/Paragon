@@ -40,14 +40,6 @@ local function capitalize(str)
     return (str:gsub("^%l", string.upper))
 end
 
--- Function to add decimals to large numbers
-local function format_int(number)
-	local i, j, minus, int, fraction = tostring(number):find('([-]?)(%d+)([.]?%d*)')
-
-	int = int:reverse():gsub("(%d%d%d)", "%1,")
-	return minus .. int:reverse():gsub("^,", "") .. fraction
-end
-
 -- Table sorting
 function getKeysSortedByValue(tbl, sortFunction)
 	local keys = {}
@@ -73,11 +65,17 @@ frame:RegisterEvent("CHAT_MSG_COMBAT_FACTION_CHANGE")
 
 -- Results Frame
 local resultsFrame = CreateFrame("FRAME", "ParagonResultsFrame", UIParent, "BasicFrameTemplate")
+resultsFrame:SetMovable(true)
 resultsFrame:SetSize(420, 580)
 resultsFrame:SetPoint("CENTER", UIParent, "CENTER")
 resultsFrame:EnableMouse(true)
+resultsFrame:RegisterForDrag("LeftButton")
+resultsFrame:SetScript("OnDragStart", resultsFrame.StartMoving)
+resultsFrame:SetScript("OnDragStop", resultsFrame.StopMovingOrSizing)
 resultsFrame:Hide()
 tinsert(UISpecialFrames, "ParagonResultsFrame")
+
+
 
 local resultsFrameTitle = resultsFrame:CreateFontString("OVERLAY", nil, "GameFontNormal")
 resultsFrameTitle:SetPoint("TOPLEFT", 0, -4)
@@ -108,10 +106,11 @@ resultsScrollbar:SetValueStep(1)
 resultsScrollbar.scrollStep = 24
 resultsScrollbar:SetValue(0)
 resultsScrollbar:SetWidth(16)
-resultsScrollbar:SetScript("OnValueChanged", 
-function (self, value)
-	self:GetParent():SetVerticalScroll(value)
-end)
+resultsScrollbar:SetScript("OnValueChanged",
+	function (self, value)
+		self:GetParent():SetVerticalScroll(value)
+	end
+)
 local scrollbg = resultsScrollbar:CreateTexture(nil, "BACKGROUND")
 scrollbg:SetAllPoints(resultsScrollbar)
 scrollbg:SetTexture(0, 0, 0, 0.4)
@@ -325,7 +324,7 @@ local function outputFaction(factionName, limit, outputFormat, currentLine)
 			end
 
 			if i <= limit or outputFormat == "ui" then
-				local displayAmount = "  " .. format_int(factionTable[char]["current"]) .. " / " .. format_int(factionTable[char]["max"])
+				local displayAmount = "  " .. FormatLargeNumber(factionTable[char]["current"]) .. " / " .. FormatLargeNumber(factionTable[char]["max"])
 				if standingId == 8 or (T.faction[faction]["friend"] ~= 0 and standingId >= T.faction[faction]["friend"]) then -- Exalted/Best Friend
 					displayAmount = "" -- Exalted reputations do not have amounts
 				end
@@ -371,7 +370,7 @@ local function outputFaction(factionName, limit, outputFormat, currentLine)
 						label:SetText(standingColor(standingId, faction) .. displayAmount .. "|r")
 						label:SetHeight(24)
 						label:SetWidth(100)
-						label:SetJustifyH("CENTER")
+						--label:SetJustifyH("CENTER")
 						label:SetJustifyV("MIDDLE")
 					end
 				elseif outputFormat == "tooltip" and i == currentLine then
@@ -472,19 +471,26 @@ local function GameTooltip_OnTooltipSetItem(tooltip)
 		local limit = tonumber(ParagonDB["config"]["tooltip_alts_limit"])
 		local limit_shift = tonumber(ParagonDB["config"]["tooltip_alts_limit_shift"])
 
-		if setContains(d, faction) and ParagonDB["config"]["tooltip_personal_enabled"] then
-			tooltip:AddLine(" ")
-			tooltip:AddLine("|cffffffff" .. L["f "..faction] .. "|r")
+		local factions = { strsplit("|", faction) }
+		local totalFactions = 0
 
-			local displayAmount = "  " .. format_int(d[faction]["current"]) .. " / " .. format_int(d[faction]["max"])
-			if d[faction]["standingId"] == 8 or (T.faction[faction]["friend"] ~= 0 and d[faction]["standingId"] >= T.faction[faction]["friend"]) then -- Exalted/Best Friend
-				displayAmount = ""
+		for _, faction in pairs(factions) do
+			if setContains(d, faction) and ParagonDB["config"]["tooltip_personal_enabled"] then
+				totalFactions = totalFactions + 1
+
+				tooltip:AddLine(" ")
+				tooltip:AddLine("|cffffffff" .. L["f "..faction] .. "|r")
+
+				local displayAmount = "  " .. FormatLargeNumber(d[faction]["current"]) .. " / " .. FormatLargeNumber(d[faction]["max"])
+				if d[faction]["standingId"] == 8 or (T.faction[faction]["friend"] ~= 0 and d[faction]["standingId"] >= T.faction[faction]["friend"]) then -- Exalted/Best Friend
+					displayAmount = ""
+				end
+
+				tooltip:AddLine(standingColor(d[faction]["standingId"], faction) .. standing(d[faction]["standingId"], faction) .. displayAmount .. "|r")
 			end
-
-			tooltip:AddLine(standingColor(d[faction]["standingId"], faction) .. standing(d[faction]["standingId"], faction) .. displayAmount .. "|r")
 		end
 
-		if ParagonDB["config"]["tooltip_alts_enabled"] and limit >= 1 then
+		if ParagonDB["config"]["tooltip_alts_enabled"] and limit >= 1 and totalFactions == 1 then
 			if bound == "BoA" and outputFaction(faction, 1, "tooltip", 1) then
 				tooltip:AddLine(" ")
 				if ParagonDB["config"]["tooltip_alts_enabled_alt"] and IsAltKeyDown() then
@@ -512,7 +518,7 @@ local function GameTooltip_OnTooltipSetItem(tooltip)
 					tooltip:AddLine("|cff00ff00"..L["hold shift for more"].."|r")
 				end
 			end
-		elseif ParagonDB["config"]["tooltip_alts_enabled_shift"] and limit_shift >= 1 then
+		elseif ParagonDB["config"]["tooltip_alts_enabled_shift"] and limit_shift >= 1 and totalFactions == 1 then
 			if IsShiftKeyDown() then
 				tooltip:AddLine(" ")
 				if ParagonDB["config"]["tooltip_alts_enabled_alt"] and IsAltKeyDown() then
@@ -553,7 +559,7 @@ function SlashCmdList.PARAGON(msg, editbox)
 	elseif cmd == "delete" then
 		deleteCharacter(args, true)
 	else
-		-- short commands
+		-- this is ugly and needs a better implementation
 		if msg == "argus" or msg == "argussian" or msg == "reach" then msg = "argussian reach" end
 		if msg == "armies" or msg == "legionfall"then msg = "armies of legionfall" end
 		if msg == "army" or msg == "light" or msg == "army of light" then msg = "army of the light" end
@@ -561,6 +567,12 @@ function SlashCmdList.PARAGON(msg, editbox)
 		if msg == "highmountain" then msg = "highmountain tribe" end
 		if msg == "nightfallen" or msg == "nightborne" then msg = "the nightfallen" end
 		if msg == "wardens" or msg == "warden" then msg = "the wardens" end
+		if msg == "champions" or msg == "azeroth" then msg = "champions of azeroth" end
+		if msg == "proudmoore" then msg = "proudmoore admiralty" end
+		if msg == "tortollan" then msg = "tortollan seekers" end
+		if msg == "zandalari" then msg = "zandalari empire" end
+		if msg == "talanji" or msg == "talanji's" then msg = "talanji's expedition" end
+		if msg == "honorbound" then msg = "the honorbound" end
 
 		if outputFaction(msg, 1, "test") then
 			outputFaction(msg, tonumber(ParagonDB["config"]["chat_output_limit"]), "ui")

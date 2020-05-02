@@ -8,6 +8,7 @@ local LL, _, T = {}, ...
 -- Don't worry about translating the faction names - that is easily done via Wowhead!
 
 
+
 -- English
 LL["enUS"] = {
 	-- Faction standing labels
@@ -55,7 +56,7 @@ LL["enUS"] = {
 	["delete character successful"] 		= "|cFF00FFFFParagon|r: Removed all data for \"%s\".",
 
 	-- Results Window
-	["reputation not discovered"]			= "None of your characters have discovered %s yet.",
+	["reputation not discovered"]			= "None of your characters have discovered\n%s yet.",
 	["no results"]							= "Nothing to display for %s.",
 
 	-- Settings Panel
@@ -82,6 +83,24 @@ LL["enUS"] = {
 
 	-- Guild
 	["f guild"] 							= "Guild",
+
+	-- Battle for Azeroth
+	["f 7th legion"]						= "7th Legion",
+	["f champions of azeroth"]				= "Champions of Azeroth",
+	["f honeyback hive"] 					= "Honeyback Hive",
+	["f order of embers"]					= "Order of Embers",
+	["f proudmoore admiralty"]				= "Proudmoore Admiralty",
+	["f rajani"]							= "Rajani",
+	["f rustbolt resistance"] 				= "Rustbolt Resistance",
+	["f storm's wake"]						= "Storm's Wake",
+	["f talanji's expedition"]				= "Talanji's Expedition",
+	["f the honorbound"]					= "The Honorbound",
+	["f the unshackled"] 					= "The Unshackled",
+	["f tortollan seekers"]					= "Tortollan Seekers",
+	["f uldum accord"] 						= "Uldum Accord",
+	["f voldunai"]							= "Voldunai",
+	["f waveblade ankoan"] 					= "Waveblade Ankoan",
+	["f zandalari empire"]					= "Zandalari Empire",
 
 	-- Legion
 	["f argussian reach"] 					= "Argussian Reach",
@@ -267,8 +286,8 @@ LL["enUS"] = {
 -- https://wow.curseforge.com/projects/paragon
 
 -- To Do:
--- -- Russian realms need to be added (future Russian translator please help!)
--- -- If someone wants to sort them alphabetically for OCD reasons, be my guest
+--  - Russian realms need to be added (future Russian translator please help!)
+--  - If someone wants to sort them alphabetically for OCD reasons, be my guest
 
 T.realm_acronyms = {
 	["azuremyst"] = "AM",
