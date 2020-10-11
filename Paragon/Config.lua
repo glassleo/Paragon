@@ -26,7 +26,7 @@ cfgChatOutputLimitLabel:SetText(L["cfgChatOutputLimitLabel"])
 
 
 
-local cfgChatOutputLimit = CreateFrame("EditBox", nil, cfgFrame)
+local cfgChatOutputLimit = CreateFrame("EditBox", nil, cfgFrame, BackdropTemplateMixin and "BackdropTemplate")
 cfgChatOutputLimit:SetPoint("TOPLEFT", 15, -85)
 cfgChatOutputLimit:SetSize(60, 14)
 cfgChatOutputLimit:SetFontObject(GameFontHighlightSmall)
@@ -120,7 +120,7 @@ cfgTooltipAltsLimitLabel:SetText(L["cfgTooltipAltsLimitLabel"])
 
 
 
-local cfgTooltipAltsLimit = CreateFrame("EditBox", nil, cfgFrame)
+local cfgTooltipAltsLimit = CreateFrame("EditBox", nil, cfgFrame, BackdropTemplateMixin and "BackdropTemplate")
 cfgTooltipAltsLimit:SetPoint("TOPLEFT", 15, -360)
 cfgTooltipAltsLimit:SetSize(60, 14)
 cfgTooltipAltsLimit:SetFontObject(GameFontHighlightSmall)
@@ -160,7 +160,7 @@ cfgTooltipAltsLimitShiftLabel:SetText(L["cfgTooltipAltsLimitShiftLabel"])
 
 
 
-local cfgTooltipAltsLimitShift = CreateFrame("EditBox", nil, cfgFrame)
+local cfgTooltipAltsLimitShift = CreateFrame("EditBox", nil, cfgFrame, BackdropTemplateMixin and "BackdropTemplate")
 cfgTooltipAltsLimitShift:SetPoint("TOPLEFT", 150, -360)
 cfgTooltipAltsLimitShift:SetSize(60, 14)
 cfgTooltipAltsLimitShift:SetFontObject(GameFontHighlightSmall)

@@ -84,6 +84,16 @@ LL["enUS"] = {
 	-- Guild
 	["f guild"] 							= "Guild",
 
+	-- Shadowlands
+	["f court of harvesters"]				= "Court of Harvesters",
+	["f stitchmasters"]						= "Stitchmasters",
+	["f the ascended"]						= "The Ascended",
+	["f the avowed"]						= "The Avowed",
+	["f the ember court"]					= "The Ember Court",
+	["f the undying army"]					= "The Undying Army",
+	["f the wild hunt"]						= "The Wild Hunt",
+	["f ve'nari"]							= "Ve'nari",
+
 	-- Battle for Azeroth
 	["f 7th legion"]						= "7th Legion",
 	["f champions of azeroth"]				= "Champions of Azeroth",

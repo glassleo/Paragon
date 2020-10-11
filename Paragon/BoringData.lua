@@ -125,6 +125,12 @@ T.friendStanding["tormmok"] = T.friendStanding["vivianne"]
 
 -- Reputation item IDs - BoA and BoE
 T.reputationItemBoA = {
+	-- Shadowlands
+	[173062] = "court of harvesters", -- Contract: Court of Harvesters
+	[173051] = "the ascended", -- Contract: The Ascended
+	[175924] = "the undying army", -- Contract: The Undying Army
+	[173053] = "the wild hunt", -- Contract: The Wild Hunt
+
 	-- Battle for Azeroth
 	[165016] = "7th legion", -- Contract: 7th Legion
 	[174507] = "7th legion", -- Fallen Soldier's Insignia (250)
@@ -436,6 +442,22 @@ T.reputationItemBoP = {
 T.faction = {
 	-- Guild
 	["guild"] 								= { ["id"] = 1168, 	["icon"] = 135026, 		["paragon"] = false,	["friend"] = 0, ["factionGroup"] = false, },
+
+	-- Shadowlands
+	["court of harvesters"]					= { ["id"] = 2413, 	["icon"] = 3641397, 	["paragon"] = true, 	["friend"] = 0, ["factionGroup"] = false, },
+	["stitchmasters"]						= { ["id"] = 2462, 	["icon"] = 3675492, 	["paragon"] = false, 	["friend"] = 0, ["factionGroup"] = false, },
+	["the ascended"]						= { ["id"] = 2407, 	["icon"] = 3641395, 	["paragon"] = true, 	["friend"] = 0, ["factionGroup"] = false, },
+	["the avowed"]							= { ["id"] = 2439, 	["icon"] = 3257751, 	["paragon"] = false, 	["friend"] = 0, ["factionGroup"] = false, },
+	["the ember court"]						= { ["id"] = 2445, 	["icon"] = 3675493, 	["paragon"] = false, 	["friend"] = 0, ["factionGroup"] = false, },
+	["the undying army"]					= { ["id"] = 2410, 	["icon"] = 3641396, 	["paragon"] = true, 	["friend"] = 0, ["factionGroup"] = false, },
+	["the wild hunt"]						= { ["id"] = 2422, 	["icon"] = 3641394, 	["paragon"] = true, 	["friend"] = 0, ["factionGroup"] = false, },
+	["ve'nari"]								= { ["id"] = 2432, 	["icon"] = 3527519, 	["paragon"] = false, 	["friend"] = 6, ["factionGroup"] = false, },
+
+	-- Shadowlands To Do:
+	-- - Unsure about friendship levels for Ve'nari, probably needs custom labels (max is "Envied" according to achievement 14656)
+	-- - Double check icons (zone factions = covenant sigils, Ve'nari = achievement icon, The Avowed probably needs a better icon)
+	-- - Do we track the various soulbind friendship factions?
+	-- - Any new reputation related items besides contracts?
 
 	-- Battle for Azeroth
 	["7th legion"]							= { ["id"] = 2159, 	["icon"] = 2032591, 	["paragon"] = true, 	["friend"] = 0, ["factionGroup"] = "Alliance", },

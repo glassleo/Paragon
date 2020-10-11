@@ -84,7 +84,7 @@ resultsFrameTitle:SetJustifyH("CENTER")
 resultsFrameTitle:SetText("Paragon")
 
 --scrollframe
-resultsScrollFrame = CreateFrame("ScrollFrame", nil, resultsFrame)
+resultsScrollFrame = CreateFrame("ScrollFrame", nil, resultsFrame, BackdropTemplateMixin and "BackdropTemplate")
 resultsScrollFrame:SetPoint("TOPLEFT", 6, -64)
 resultsScrollFrame:SetPoint("BOTTOMRIGHT", -28, 6)
 resultsScrollFrame:SetBackdrop({
@@ -334,7 +334,7 @@ local function outputFaction(factionName, limit, outputFormat, currentLine)
 				if outputFormat == "ui" then
 					local offset = (i - 1) * -24
 
-					local rowBg = CreateFrame("Frame", nil, resultsContent)
+					local rowBg = CreateFrame("Frame", nil, resultsContent, BackdropTemplateMixin and "BackdropTemplate")
 					rowBg:SetPoint("TOPLEFT", 0, offset or 0)
 					rowBg:SetPoint("TOPRIGHT", 0, offset or 0)
 					rowBg:SetHeight(24)
