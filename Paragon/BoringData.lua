@@ -101,6 +101,14 @@ T.friendStanding = {
 		[6] = "faction_standing_epoch-mender",
 		[7] = "faction_standing_timelord",
 	},
+	["ve'nari"] = {
+		[1] = "faction_standing_dubious",
+		[2] = "faction_standing_apprehensive",
+		[3] = "faction_standing_tentative",
+		[4] = "faction_standing_ambivalent",
+		[5] = "faction_standing_cordial",
+		[6] = "faction_standing_appreciative",
+	},
 	["vivianne"] = { -- also all other Bodyguards
 		[1] = "faction_standing_bodyguard",
 		[2] = "faction_standing_trusted_bodyguard",

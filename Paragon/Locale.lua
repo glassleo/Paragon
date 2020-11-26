@@ -34,6 +34,13 @@ LL["enUS"] = {
 	["faction_standing_bronze_ally"] 		= "Bronze Ally",
 	["faction_standing_epoch-mender"] 		= "Epoch-Mender",
 	["faction_standing_timelord"] 			= "Timelord",
+	-- Ve'nari
+	["faction_standing_dubious"] 			= "Dubious",
+	["faction_standing_apprehensive"] 		= "Apprehensive",
+	["faction_standing_tentative"] 			= "Tentative",
+	["faction_standing_ambivalent"] 		= "Ambivalent",
+	["faction_standing_cordial"] 			= "Cordial",
+	["faction_standing_appreciative"] 		= "Appreciative",
 	-- Barracks Bodyguards
 	["faction_standing_bodyguard"] 			= "Bodyguard",
 	["faction_standing_trusted_bodyguard"]	= "Trusted Bodyguard",
