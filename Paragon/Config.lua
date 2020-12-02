@@ -16,10 +16,12 @@ cfgFrameHeader:SetText("Paragon")
 
 local cfgFrameSubtext = cfgFrame:CreateFontString("OVERLAY", nil, "GameFontHighlightSmall")
 cfgFrameSubtext:SetPoint("TOPLEFT", 15, -40)
+cfgFrameSubtext:SetJustifyH("LEFT")
+cfgFrameSubtext:SetJustifyV("TOP")
 cfgFrameSubtext:SetText(L["cfgFrameSubtext"])
 
 
-
+--[[
 local cfgChatOutputLimitLabel = cfgFrame:CreateFontString("OVERLAY", nil, "GameFontNormal")
 cfgChatOutputLimitLabel:SetPoint("TOPLEFT", 15, -65)
 cfgChatOutputLimitLabel:SetText(L["cfgChatOutputLimitLabel"])
@@ -57,6 +59,7 @@ cfgChatOutputLimit:SetScript('OnEnterPressed', function(self)
 end)
 cfgChatOutputLimit:SetMaxLetters(3)
 cfgChatOutputLimit:SetNumeric(true)
+--]]
 
 
 
@@ -240,7 +243,7 @@ end)
 
 
 local function Paragon_cfgInitView()
-	cfgChatOutputLimit:SetNumber(tonumber(ParagonDB["config"]["chat_output_limit"]) or 1)
+	--cfgChatOutputLimit:SetNumber(tonumber(ParagonDB["config"]["chat_output_limit"]) or 1)
 	cfgTooltipPersonalEnabled:SetChecked(ParagonDB["config"]["tooltip_personal_enabled"] ~= false)
 	cfgTooltipAltsEnabled:SetChecked(ParagonDB["config"]["tooltip_alts_enabled"] ~= false)
 	cfgTooltipAltsEnabledShift:SetChecked(ParagonDB["config"]["tooltip_alts_enabled_shift"] ~= false)

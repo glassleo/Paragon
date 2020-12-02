@@ -67,7 +67,7 @@ LL["enUS"] = {
 	["no results"]							= "Nothing to display for %s.",
 
 	-- Settings Panel
-	["cfgFrameSubtext"] 					= "You can list characters that have reputation with a specific faction by typing |cff00ffff/paragon <faction>|r in chat.",
+	["cfgFrameSubtext"] 					= "Paragon keeps track of reputation for all your characters.\n\nType |cff00ffff/par <faction>|r in chat to bring up an overview window for a specific reputation faction.\n\n\nTo delete stored data for a character, type |cff00ffff/par delete <name>|r in chat.",
 	["cfgChatOutputLimitLabel"] 			= "Maximum Chat Lines",
 	["cfgTooltipHeader"] 					= "Item Tooltips",
 	["cfgTooltipSubtext"] 					= "Paragon can add additional information to tooltips for reputation related items.",
@@ -93,6 +93,8 @@ LL["enUS"] = {
 
 	-- Shadowlands
 	["f court of harvesters"]				= "Court of Harvesters",
+	["f court of night"]					= "Court of Night",
+	["f marasmius"]							= "Marasmius",
 	["f stitchmasters"]						= "Stitchmasters",
 	["f the ascended"]						= "The Ascended",
 	["f the avowed"]						= "The Avowed",
@@ -299,8 +301,8 @@ LL["enUS"] = {
 -- Only include lowercase, single words that need to be specially acronymed
 
 -- I have gone through all English, German and Spanish reams (US, Oceanic and EU) as of 2018-02-17
--- If I missed something you want specially acronymed, please submit a ticket on CurseForge to get it added:
--- https://wow.curseforge.com/projects/paragon
+-- If I missed something you want specially acronymed, please submit a ticket on GitHub to get it added:
+-- https://github.com/leobolin/Paragon/issues
 
 -- To Do:
 --  - Russian realms need to be added (future Russian translator please help!)
