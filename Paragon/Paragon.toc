@@ -1,7 +1,7 @@
-## Interface: 90002
+## Interface: 90005
 ## Title: Paragon
 ## Notes: Keeps track of reputation for all your characters
-## Version: Bismuth 11
+## Version: Bismuth 12
 ## Author: Leo Bolin
 
 ## SavedVariables: ParagonDB

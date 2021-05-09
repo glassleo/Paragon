@@ -167,8 +167,43 @@ local function updateFactions()
 	ParagonDB["character"][T.charStr] = { ["name"] = T.player, ["realm"] = T.realm, ["class"] = T.class, ["level"] = T.level, ["factionGroup"] = T.factionGroup }
 
 	for faction, data in pairs(T.faction) do
-		local id, icon, paragon, factionGroup = data["id"], data["icon"], data["paragon"], data["factionGroup"]
-		local name, _, standingId, barMin, barMax, barValue, _, _, _, _, _, _, _, _, _, _ = GetFactionInfoByID(id)
+		local id, icon, paragon, factionGroup, friend, kind = data["id"], data["icon"], data["paragon"], data["factionGroup"], data["friend"], data["kind"]
+		local name, standingId, barMin, barMax, barValue = "", 4, 0, 0, 0
+
+		if kind == "friendship" then
+			_, barValue, _, name, _, _, _, barMin, barMax = GetFriendshipReputation(id)
+			if not barMax then
+				barMax = 42000
+			end
+
+			if id == 1357 then -- Hack for Nomi which is a super weird reputation
+				if barValue >= 42000 then
+					standingId = 8
+				elseif barValue >= 33600 then
+					standingId = 7
+				elseif barValue >= 25200 then
+					standingId = 7
+				elseif barValue >= 16800 then
+					standingId = 6
+				elseif barValue >= 8400 then
+					standingId = 5
+				else
+					standingId = 4
+				end
+			else
+				if barValue >= 42000 then
+					standingId = 8
+				elseif barValue >= 21000 then
+					standingId = 7
+				elseif barValue >= 9000 then
+					standingId = 6
+				elseif barValue >= 3000 then
+					standingId = 5
+				end
+			end
+		else
+			name, _, standingId, barMin, barMax, barValue = GetFactionInfoByID(id)
+		end
 		local currentValue, threshold, _, hasRewardPending = C_Reputation.GetFactionParagonInfo(id)
 
 
@@ -240,6 +275,8 @@ local function standing(standingId, faction)
 			else
 				return L[T.friendStanding["default"][standingId]]
 			end
+		elseif faction == "nomi" then
+			return L[T.friendStanding[faction][standingId]]
 		else
 			return T.standing[standingId]
 		end

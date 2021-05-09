@@ -45,6 +45,10 @@ LL["enUS"] = {
 	["faction_standing_bodyguard"] 			= "Bodyguard",
 	["faction_standing_trusted_bodyguard"]	= "Trusted Bodyguard",
 	["faction_standing_personal_wingman"]	= "Personal Wingman",
+	-- Nomi
+	["faction_standing_apprentice"] 		= "Apprentice",
+	["faction_standing_journeyman"] 		= "Journeyman",
+	["faction_standing_expert"] 			= "Expert",
 
 
 	-- Global
