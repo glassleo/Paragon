@@ -23,16 +23,16 @@ T.standingColor = {
 
 T.friendStandingColor = {
 	["default"] = {
-		[1] = "|cffee6622", -- Stranger
-		[2] = "|cffffff00", -- Acquaintance/Pal
+		[1] = "|cffffff00", -- Stranger
+		[2] = "|cff00ff00", -- Acquaintance/Pal
 		[3] = "|cff00ff00", -- Buddy
 		[4] = "|cff00ff88", -- Friend
 		[5] = "|cff00ffcc", -- Good Friend
 		[6] = "|cff4cc2ff", -- Best Friend
 	},
 	["chromie"] = {
-		[1] = "|cffee6622", -- Whelpling
-		[2] = "|cffffff00", -- Temporal Trainee
+		[1] = "|cffffff00", -- Whelpling
+		[2] = "|cff00ff00", -- Temporal Trainee
 		[3] = "|cff00ff00", -- Timehopper
 		[4] = "|cff00ff88", -- Chrono-Friend
 		[5] = "|cff00ff88", -- Bronze Ally
@@ -40,9 +40,16 @@ T.friendStandingColor = {
 		[7] = "|cff4cc2ff", -- Timelord
 	},
 	["vivianne"] = {
-		[1] = "|cffffff00", -- Bodyguard
+		[1] = "|cff00ff00", -- Bodyguard
 		[2] = "|cff00ff88", -- Trusted Bodyguard
 		[3] = "|cff4cc2ff", -- Personal Wingman
+	},
+	["court of night"] = {
+		[1] = "|cffffff00", -- Neutral
+		[2] = "|cff00ff00", -- Friendly
+		[3] = "|cff00ff88", -- Honored
+		[4] = "|cff00ffcc", -- Revered
+		[5] = "|cff4cc2ff", -- Exalted
 	},
 }
 -- Reuse Bodyguard colors
@@ -124,6 +131,13 @@ T.friendStanding = {
 		[6] = "faction_standing_journeyman",
 		[7] = "faction_standing_journeyman",
 		[8] = "faction_standing_expert",
+	},
+	["court of night"] = {
+		[1] = "faction_standing_neutral",
+		[2] = "faction_standing_friendly",
+		[3] = "faction_standing_honored",
+		[4] = "faction_standing_revered",
+		[5] = "faction_standing_exalted",
 	},
 }
 -- Reuse Nat Pagle's labels for Margoss and Fisherfriends since they are the same
@@ -464,7 +478,7 @@ T.faction = {
 
 	-- Shadowlands
 	["court of harvesters"]					= { ["id"] = 2413, 	["icon"] = 3514227, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
-	["court of night"]						= { ["id"] = 2464, 	["icon"] = 3752258, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
+	["court of night"]						= { ["id"] = 2464, 	["icon"] = 3752258, 	["paragon"] = false, 	["friend"] = 5, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["marasmius"]							= { ["id"] = 2463, 	["icon"] = 3854017, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- hidden from the Reputation Panel
 	["stitchmasters"]						= { ["id"] = 2462, 	["icon"] = 3622121, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["the ascended"]						= { ["id"] = 2407, 	["icon"] = 3257748, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },

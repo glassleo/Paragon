@@ -12,6 +12,14 @@ local LL, _, T = {}, ...
 -- English
 LL["enUS"] = {
 	-- Faction standing labels
+	["faction_standing_hated"] 				= FACTION_STANDING_LABEL1, -- Hated
+	["faction_standing_hostile"] 			= FACTION_STANDING_LABEL2, -- Hostile
+	["faction_standing_unfriendly"] 		= FACTION_STANDING_LABEL3, -- Unfriendly
+	["faction_standing_neutral"] 			= FACTION_STANDING_LABEL4, -- Neutral
+	["faction_standing_friendly"] 			= FACTION_STANDING_LABEL5, -- Friendly
+	["faction_standing_honored"] 			= FACTION_STANDING_LABEL6, -- Honored
+	["faction_standing_revered"] 			= FACTION_STANDING_LABEL7, -- Revered
+	["faction_standing_exalted"] 			= FACTION_STANDING_LABEL8, -- Exalted
 	["faction_standing_paragon"] 			= "Paragon",
 	-- Defaults (also used by Halfhill factions, etc)
 	["faction_standing_stranger"] 			= "Stranger",
