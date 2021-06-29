@@ -57,6 +57,13 @@ LL["enUS"] = {
 	["faction_standing_apprentice"] 		= "Apprentice",
 	["faction_standing_journeyman"] 		= "Journeyman",
 	["faction_standing_expert"] 			= "Expert",
+	-- The Archivist's Codex
+	["faction_standing_tier_1"] 			= "Tier 1",
+	["faction_standing_tier_2"] 			= "Tier 2",
+	["faction_standing_tier_3"] 			= "Tier 3",
+	["faction_standing_tier_4"] 			= "Tier 4",
+	["faction_standing_tier_5"] 			= "Tier 5",
+	["faction_standing_tier_6"] 			= "Tier 6",
 
 
 	-- Global
@@ -106,8 +113,10 @@ LL["enUS"] = {
 	-- Shadowlands
 	["f court of harvesters"]				= "Court of Harvesters",
 	["f court of night"]					= "Court of Night",
+	["f death's advance"]					= "Death's Advance",
 	["f marasmius"]							= "Marasmius",
 	["f stitchmasters"]						= "Stitchmasters",
+	["f the archivist's codex"]				= "The Archivist's Codex",
 	["f the ascended"]						= "The Ascended",
 	["f the avowed"]						= "The Avowed",
 	["f the ember court"]					= "The Ember Court",

@@ -139,6 +139,15 @@ T.friendStanding = {
 		[4] = "faction_standing_revered",
 		[5] = "faction_standing_exalted",
 	},
+	["the archivist's codex"] = {
+		[1] = "faction_standing_tier_1",
+		[2] = "faction_standing_tier_2",
+		[3] = "faction_standing_tier_3",
+		[4] = "faction_standing_tier_4",
+		[5] = "faction_standing_tier_5",
+		[6] = "faction_standing_tier_6",
+		[9] = "faction_standing_paragon",
+	},
 }
 -- Reuse Nat Pagle's labels for Margoss and Fisherfriends since they are the same
 T.friendStanding["conjurer margoss"] = T.friendStanding["nat pagle"]
@@ -160,6 +169,7 @@ T.friendStanding["tormmok"] = T.friendStanding["vivianne"]
 T.reputationItemBoA = {
 	-- Shadowlands
 	[173062] = "court of harvesters", -- Contract: Court of Harvesters
+	[186522] = "death's advance", -- Contract: Death's Advance
 	[173051] = "the ascended", -- Contract: The Ascended
 	[175924] = "the undying army", -- Contract: The Undying Army
 	[173053] = "the wild hunt", -- Contract: The Wild Hunt
@@ -326,6 +336,36 @@ T.reputationItemBoA = {
 
 -- Reputation item IDs - Soulbound
 T.reputationItemBoP = {
+	-- Shadowlands
+	[186685] = "the archivist's codex", -- Relic Fragment (0.5)
+	[187322] = "the archivist's codex", -- Crumbling Stone Tablet (4)
+	[187457] = "the archivist's codex", -- Engraved Glass Pane (4)
+	[187324] = "the archivist's codex", -- Gnawed Ancient Idol (4)
+	[187323] = "the archivist's codex", -- Runic Diagram (4)
+	[187460] = "the archivist's codex", -- Strangely Intricate Key (4)
+	[187458] = "the archivist's codex", -- Unearthed Teleporter Sigil (4)
+	[187459] = "the archivist's codex", -- Vial of Mysterious Liquid (4)
+	[187465] = "the archivist's codex", -- Complicated Organism Harmonizer (24)
+	[187327] = "the archivist's codex", -- Encrypted Korthian Journal (24)
+	[187463] = "the archivist's codex", -- Enigmatic Map Fragments (24)
+	[187325] = "the archivist's codex", -- Faded Razorwing Anatomy Illustration (24)
+	[187326] = "the archivist's codex", -- Half-Completed Runeforge Pattern (24)
+	[187462] = "the archivist's codex", -- Scroll of Shadowlands Fables (24)
+	[187478] = "the archivist's codex", -- White Razorwing Talon (24)
+	[187336] = "the archivist's codex", -- Forbidden Weapon Schematics (50)
+	[187466] = "the archivist's codex", -- Korthian Cypher Book (50)
+	[187332] = "the archivist's codex", -- Recovered Page of Voices (50)
+	[187328] = "the archivist's codex", -- Ripped Cosmology Chart (50)
+	[187334] = "the archivist's codex", -- Shattered Void Tablet (50)
+	[187330] = "the archivist's codex", -- Naaru Shard Fragment (75)
+	[187329] = "the archivist's codex", -- Old God Specimen Jar (75)
+	[187467] = "the archivist's codex", -- Perplexing Rune-Cube (75)
+	[187331] = "the archivist's codex", -- Tattered Fae Designs (75)
+	[187311] = "the archivist's codex", -- Azgoth's Tattered Maps (150)
+	[187333] = "the archivist's codex", -- Core of an Unknown Titan (150)
+	[187350] = "the archivist's codex", -- Displaced Relic (150)
+	[187335] = "the archivist's codex", -- Maldraxxus Larva Shell (150)
+
 	-- Battle for Azeroth
 	[170184] = "the unshackled|waveblade ankoan", -- Ancient Reefwalker Bark (350 The Unshackled/Waveblade Ankoan)
 	[163617] = "7th legion", -- Rusted Alliance Insignia (250)
@@ -479,14 +519,16 @@ T.faction = {
 	-- Shadowlands
 	["court of harvesters"]					= { ["id"] = 2413, 	["icon"] = 3514227, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["court of night"]						= { ["id"] = 2464, 	["icon"] = 3752258, 	["paragon"] = false, 	["friend"] = 5, ["kind"] = "reputation",	 ["factionGroup"] = false, },
-	["marasmius"]							= { ["id"] = 2463, 	["icon"] = 3854017, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- hidden from the Reputation Panel
+	["death's advance"]						= { ["id"] = 2470, 	["icon"] = 4064729, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
+	["marasmius"]							= { ["id"] = 2463, 	["icon"] = 464342, 		["paragon"] = false, 	["friend"] = 0, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- hidden from the Reputation Panel
 	["stitchmasters"]						= { ["id"] = 2462, 	["icon"] = 3622121, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
+	["the archivist's codex"]				= { ["id"] = 2472, 	["icon"] = 1506458, 	["paragon"] = true, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["the ascended"]						= { ["id"] = 2407, 	["icon"] = 3257748, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["the avowed"]							= { ["id"] = 2439, 	["icon"] = 3601526, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["the ember court"]						= { ["id"] = 2445, 	["icon"] = 3641397, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["the undying army"]					= { ["id"] = 2410, 	["icon"] = 3492310, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["the wild hunt"]						= { ["id"] = 2465, 	["icon"] = 3575389, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
-	["ve'nari"]								= { ["id"] = 2432, 	["icon"] = 3527519, 	["paragon"] = false, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, },
+	["ve'nari"]								= { ["id"] = 2432, 	["icon"] = 3527519, 	["paragon"] = true, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 
 	-- Battle for Azeroth
 	["7th legion"]							= { ["id"] = 2159, 	["icon"] = 2032591, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = "Alliance", },
