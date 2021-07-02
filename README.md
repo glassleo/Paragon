@@ -6,19 +6,16 @@ Paragon can display your current standing with a reputation on reputation relate
 
 ![Tooltip](https://i.imgur.com/VSbfQRy.png)
 
-## Reputation Listing
+## Reputation List
 
 Paragon can also list your character's reputation standings with any reputation via the slash command `/par <faction>`
 
 For example, type `/par armies of legionfall` in chat to list each of your character's reputation status with Armies of Legionfall.
 
-![Paragon Window](https://i.imgur.com/usLSKHx.png)
+![Paragon Reputation Display Window](https://i.imgur.com/e5z0PlV.png)
 
 ## Options
 
 You can customize what is (and isn't) displayed in your tooltips via the in-game AddOns options panel.
 
-![Interface Options](https://cdn-wow.mmoui.com/preview/pvw69496.png)
-
-## Known Issues
-- You currently can't scroll the reputation listing window with your scroll wheel when displaying more than 21 characters. In the mean time you can drag the scroll bar.
+![Interface Options](https://i.imgur.com/PJEYbOS.png)
