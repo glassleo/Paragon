@@ -16,7 +16,8 @@ T.defaults = {
 	["tooltip_alts_enabled_alt"] = false,
 	["tooltip_alts_limit"] = 3,
 	["tooltip_alts_limit_shift"] = 10,
-	["short_realm_names"] = true,
+	["display_realm_names"] = true,
+	["short_realm_names"] = false,
 }
 
 
@@ -54,8 +55,17 @@ function getKeysSortedByValue(tbl, sortFunction)
 	return keys
 end
 
+-- Cut off text that is too long
+function ellipsis(str, limit)
+	if #str > (limit + 1) then
+		str = string.sub(str, 0, limit) .. "..."
+	end
 
--- Create the frame
+	return str
+end
+
+
+-- Create the frame and register events
 local frame = CreateFrame("FRAME", "ParagonFrame")
 frame:RegisterEvent("PLAYER_LOGIN")
 frame:RegisterEvent("VARIABLES_LOADED")
@@ -83,7 +93,7 @@ resultsFrameTitle:SetWidth(420)
 resultsFrameTitle:SetJustifyH("CENTER")
 resultsFrameTitle:SetText("Paragon")
 
---scrollframe
+-- Scroll Frame
 resultsScrollFrame = CreateFrame("ScrollFrame", nil, resultsFrame, BackdropTemplateMixin and "BackdropTemplate")
 resultsScrollFrame:SetPoint("TOPLEFT", 6, -64)
 resultsScrollFrame:SetPoint("BOTTOMRIGHT", -28, 6)
@@ -95,9 +105,15 @@ resultsScrollFrame:SetBackdrop({
 )
 resultsScrollFrame:SetBackdropColor(0, 0, 0, 0.8)
 resultsScrollFrame:SetBackdropBorderColor(0, 0, 0, 0.8)
+resultsScrollFrame:EnableMouseWheel(1)
+resultsScrollFrame:SetScript("OnMouseWheel",
+	function (self, value)
+		resultsScrollbar:SetValue(resultsScrollbar:GetValue() - (value*24*5))
+	end
+)
 resultsFrame.scrollFrame = resultsScrollFrame
 
---scrollbar
+-- Scroll Bar
 resultsScrollbar = CreateFrame("Slider", nil, resultsScrollFrame, "UIPanelScrollBarTemplate")
 resultsScrollbar:SetPoint("TOPLEFT", resultsFrame, "TOPRIGHT", -24, -80)
 resultsScrollbar:SetPoint("BOTTOMRIGHT", resultsFrame, "BOTTOMRIGHT", -8, 24)
@@ -116,7 +132,7 @@ scrollbg:SetAllPoints(resultsScrollbar)
 scrollbg:SetTexture(0, 0, 0, 0.4)
 frame.scrollbar = resultsScrollbar
 
---content frame
+-- Content Frame
 local resultsContent = CreateFrame("Frame", nil, resultsScrollFrame)
 resultsScrollFrame.content = resultsContent
 resultsScrollFrame:SetScrollChild(resultsContent)
@@ -124,8 +140,9 @@ resultsScrollFrame:SetScrollChild(resultsContent)
 
 -- Labels
 local resultsFrameFactionLabel = resultsFrame:CreateFontString("OVERLAY", nil, "GameFontNormalLarge")
-resultsFrameFactionLabel:SetPoint("TOPLEFT", 10, -32)
+resultsFrameFactionLabel:SetPoint("TOPLEFT", 12, -32)
 resultsFrameFactionLabel:SetHeight(24)
+resultsFrameFactionLabel:SetJustifyH("LEFT")
 resultsFrameFactionLabel:SetJustifyV("MIDDLE")
 
 
@@ -135,8 +152,8 @@ resultsFrameFactionLabel:SetJustifyV("MIDDLE")
 
 -- Realm formatting
 local function format_realm(realmName)
-	if realmName == T.realm then
-		return "" -- Same realm as player, hide it
+	if realmName == T.realm or not ParagonDB["config"]["display_realm_names"] then
+		return "" -- Same realm as player or realm names are turned off
 	else
 		if ParagonDB["config"]["short_realm_names"] then
 			local parts = {}
@@ -348,7 +365,7 @@ local function outputFaction(factionName, limit, outputFormat, currentLine)
 					--content frame
 					resultsContent:Hide()
 
-					resultsFrameFactionLabel:SetText("|T" .. T.faction[faction]["icon"] .. ":24:24|t  " .. L["f "..faction])
+					resultsFrameFactionLabel:SetText("|T" .. T.faction[faction]["icon"] .. ":26:26|t  " .. L["f "..faction])
 
 					resultsContent = CreateFrame("Frame", nil, resultsScrollFrame)
 					resultsScrollFrame.content = resultsContent
@@ -362,11 +379,11 @@ local function outputFaction(factionName, limit, outputFormat, currentLine)
 
 			if i <= limit or outputFormat == "ui" then
 				local displayAmount = "  " .. FormatLargeNumber(factionTable[char]["current"]) .. " / " .. FormatLargeNumber(factionTable[char]["max"])
-				if standingId == 8 or (T.faction[faction]["friend"] ~= 0 and standingId >= T.faction[faction]["friend"]) then -- Exalted/Best Friend
+				if standingId == 8 or (T.faction[faction]["friend"] ~= 0 and standingId >= T.faction[faction]["friend"] and standingId ~= 9) then -- Exalted/Best Friend
 					displayAmount = "" -- Exalted reputations do not have amounts
 				end
 
-				local line = "|c" .. RAID_CLASS_COLORS[d["class"]].colorStr .. d["name"] .. format_realm(d["realm"]) .. "|r  " .. standingColor(standingId, faction) .. standing(standingId, faction) .. displayAmount .. "|r"
+				local line = "|c" .. RAID_CLASS_COLORS[d["class"]].colorStr .. ellipsis(d["name"] .. format_realm(d["realm"]), 30) .. "|r  " .. standingColor(standingId, faction) .. standing(standingId, faction) .. displayAmount .. "|r"
 
 				if outputFormat == "ui" then
 					local offset = (i - 1) * -24
@@ -389,13 +406,13 @@ local function outputFaction(factionName, limit, outputFormat, currentLine)
 					-- Character Name
 					local label = rowBg:CreateFontString("OVERLAY", nil, "GameFontNormalSmall")
 					label:SetPoint("TOPLEFT", 10, 0)
-					label:SetText("|c" .. RAID_CLASS_COLORS[d["class"]].colorStr .. d["name"] .. format_realm(d["realm"]) .. "|r")
+					label:SetText("|c" .. RAID_CLASS_COLORS[d["class"]].colorStr .. ellipsis(d["name"] .. format_realm(d["realm"]), 23) .. "|r")
 					label:SetHeight(24)
 					label:SetJustifyV("MIDDLE")
 
 					-- Standing
 					local label = rowBg:CreateFontString("OVERLAY", nil, "GameFontNormalSmall")
-					label:SetPoint("TOPLEFT", 160, 0)
+					label:SetPoint("TOPLEFT", 175, 0)
 					label:SetText(standingColor(standingId, faction) .. standing(standingId, faction) .. "|r")
 					label:SetHeight(24)
 					label:SetJustifyV("MIDDLE")
@@ -403,11 +420,11 @@ local function outputFaction(factionName, limit, outputFormat, currentLine)
 					-- Amount
 					if standingId ~= 8 then
 						local label = rowBg:CreateFontString("OVERLAY", nil, "GameFontNormalSmall")
-						label:SetPoint("TOPLEFT", 240, 0)
+						label:SetPoint("TOPLEFT", 270, 0)
 						label:SetText(standingColor(standingId, faction) .. displayAmount .. "|r")
 						label:SetHeight(24)
-						label:SetWidth(100)
-						--label:SetJustifyH("CENTER")
+						--label:SetWidth(100)
+						label:SetJustifyH("LEFT")
 						label:SetJustifyV("MIDDLE")
 					end
 				elseif outputFormat == "tooltip" and i == currentLine then
@@ -596,20 +613,13 @@ function SlashCmdList.PARAGON(msg, editbox)
 	elseif cmd == "delete" then
 		deleteCharacter(args, true)
 	else
-		-- this is ugly and needs a better implementation
-		if msg == "argus" or msg == "argussian" or msg == "reach" then msg = "argussian reach" end
-		if msg == "armies" or msg == "legionfall"then msg = "armies of legionfall" end
-		if msg == "army" or msg == "light" or msg == "army of light" then msg = "army of the light" end
-		if msg == "court" or msg == "farondis" then msg = "court of farondis" end
-		if msg == "highmountain" then msg = "highmountain tribe" end
-		if msg == "nightfallen" or msg == "nightborne" then msg = "the nightfallen" end
-		if msg == "wardens" or msg == "warden" then msg = "the wardens" end
-		if msg == "champions" or msg == "azeroth" then msg = "champions of azeroth" end
-		if msg == "proudmoore" then msg = "proudmoore admiralty" end
-		if msg == "tortollan" then msg = "tortollan seekers" end
-		if msg == "zandalari" then msg = "zandalari empire" end
-		if msg == "talanji" or msg == "talanji's" then msg = "talanji's expedition" end
-		if msg == "honorbound" then msg = "the honorbound" end
+		local guildname = GetGuildInfo("player")
+
+		if L["shorthands"] and L["shorthands"][string.lower(msg)] then
+			msg = L["shorthands"][string.lower(msg)]
+		elseif guildname and msg and string.lower(msg) == string.lower(guildname) then
+			msg = "guild"
+		end
 
 		if outputFaction(msg, 1, "test") then
 			outputFaction(msg, tonumber(ParagonDB["config"]["chat_output_limit"]), "ui")

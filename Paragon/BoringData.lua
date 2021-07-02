@@ -29,6 +29,7 @@ T.friendStandingColor = {
 		[4] = "|cff00ff88", -- Friend
 		[5] = "|cff00ffcc", -- Good Friend
 		[6] = "|cff4cc2ff", -- Best Friend
+		[9] = "|cff4cc2ff", -- Paragon
 	},
 	["chromie"] = {
 		[1] = "|cffffff00", -- Whelpling
@@ -82,6 +83,7 @@ T.friendStanding = {
 		[4] = "faction_standing_friend",
 		[5] = "faction_standing_good_friend",
 		[6] = "faction_standing_best_friend",
+		[9] = "faction_standing_paragon",
 	},
 	["nat pagle"] = { -- also Conjurer Margoss and Fisherfriends
 		[1] = "faction_standing_stranger",
@@ -139,7 +141,7 @@ T.friendStanding = {
 		[4] = "faction_standing_revered",
 		[5] = "faction_standing_exalted",
 	},
-	["the archivist's codex"] = {
+	["the archivists' codex"] = {
 		[1] = "faction_standing_tier_1",
 		[2] = "faction_standing_tier_2",
 		[3] = "faction_standing_tier_3",
@@ -337,34 +339,34 @@ T.reputationItemBoA = {
 -- Reputation item IDs - Soulbound
 T.reputationItemBoP = {
 	-- Shadowlands
-	[186685] = "the archivist's codex", -- Relic Fragment (0.5)
-	[187322] = "the archivist's codex", -- Crumbling Stone Tablet (4)
-	[187457] = "the archivist's codex", -- Engraved Glass Pane (4)
-	[187324] = "the archivist's codex", -- Gnawed Ancient Idol (4)
-	[187323] = "the archivist's codex", -- Runic Diagram (4)
-	[187460] = "the archivist's codex", -- Strangely Intricate Key (4)
-	[187458] = "the archivist's codex", -- Unearthed Teleporter Sigil (4)
-	[187459] = "the archivist's codex", -- Vial of Mysterious Liquid (4)
-	[187465] = "the archivist's codex", -- Complicated Organism Harmonizer (24)
-	[187327] = "the archivist's codex", -- Encrypted Korthian Journal (24)
-	[187463] = "the archivist's codex", -- Enigmatic Map Fragments (24)
-	[187325] = "the archivist's codex", -- Faded Razorwing Anatomy Illustration (24)
-	[187326] = "the archivist's codex", -- Half-Completed Runeforge Pattern (24)
-	[187462] = "the archivist's codex", -- Scroll of Shadowlands Fables (24)
-	[187478] = "the archivist's codex", -- White Razorwing Talon (24)
-	[187336] = "the archivist's codex", -- Forbidden Weapon Schematics (50)
-	[187466] = "the archivist's codex", -- Korthian Cypher Book (50)
-	[187332] = "the archivist's codex", -- Recovered Page of Voices (50)
-	[187328] = "the archivist's codex", -- Ripped Cosmology Chart (50)
-	[187334] = "the archivist's codex", -- Shattered Void Tablet (50)
-	[187330] = "the archivist's codex", -- Naaru Shard Fragment (75)
-	[187329] = "the archivist's codex", -- Old God Specimen Jar (75)
-	[187467] = "the archivist's codex", -- Perplexing Rune-Cube (75)
-	[187331] = "the archivist's codex", -- Tattered Fae Designs (75)
-	[187311] = "the archivist's codex", -- Azgoth's Tattered Maps (150)
-	[187333] = "the archivist's codex", -- Core of an Unknown Titan (150)
-	[187350] = "the archivist's codex", -- Displaced Relic (150)
-	[187335] = "the archivist's codex", -- Maldraxxus Larva Shell (150)
+	[186685] = "the archivists' codex", -- Relic Fragment (0.5)
+	[187322] = "the archivists' codex", -- Crumbling Stone Tablet (4)
+	[187457] = "the archivists' codex", -- Engraved Glass Pane (4)
+	[187324] = "the archivists' codex", -- Gnawed Ancient Idol (4)
+	[187323] = "the archivists' codex", -- Runic Diagram (4)
+	[187460] = "the archivists' codex", -- Strangely Intricate Key (4)
+	[187458] = "the archivists' codex", -- Unearthed Teleporter Sigil (4)
+	[187459] = "the archivists' codex", -- Vial of Mysterious Liquid (4)
+	[187465] = "the archivists' codex", -- Complicated Organism Harmonizer (24)
+	[187327] = "the archivists' codex", -- Encrypted Korthian Journal (24)
+	[187463] = "the archivists' codex", -- Enigmatic Map Fragments (24)
+	[187325] = "the archivists' codex", -- Faded Razorwing Anatomy Illustration (24)
+	[187326] = "the archivists' codex", -- Half-Completed Runeforge Pattern (24)
+	[187462] = "the archivists' codex", -- Scroll of Shadowlands Fables (24)
+	[187478] = "the archivists' codex", -- White Razorwing Talon (24)
+	[187336] = "the archivists' codex", -- Forbidden Weapon Schematics (50)
+	[187466] = "the archivists' codex", -- Korthian Cypher Book (50)
+	[187332] = "the archivists' codex", -- Recovered Page of Voices (50)
+	[187328] = "the archivists' codex", -- Ripped Cosmology Chart (50)
+	[187334] = "the archivists' codex", -- Shattered Void Tablet (50)
+	[187330] = "the archivists' codex", -- Naaru Shard Fragment (75)
+	[187329] = "the archivists' codex", -- Old God Specimen Jar (75)
+	[187467] = "the archivists' codex", -- Perplexing Rune-Cube (75)
+	[187331] = "the archivists' codex", -- Tattered Fae Designs (75)
+	[187311] = "the archivists' codex", -- Azgoth's Tattered Maps (150)
+	[187333] = "the archivists' codex", -- Core of an Unknown Titan (150)
+	[187350] = "the archivists' codex", -- Displaced Relic (150)
+	[187335] = "the archivists' codex", -- Maldraxxus Larva Shell (150)
 
 	-- Battle for Azeroth
 	[170184] = "the unshackled|waveblade ankoan", -- Ancient Reefwalker Bark (350 The Unshackled/Waveblade Ankoan)
@@ -522,7 +524,7 @@ T.faction = {
 	["death's advance"]						= { ["id"] = 2470, 	["icon"] = 4064729, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["marasmius"]							= { ["id"] = 2463, 	["icon"] = 464342, 		["paragon"] = false, 	["friend"] = 0, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- hidden from the Reputation Panel
 	["stitchmasters"]						= { ["id"] = 2462, 	["icon"] = 3622121, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
-	["the archivist's codex"]				= { ["id"] = 2472, 	["icon"] = 1506458, 	["paragon"] = true, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, },
+	["the archivists' codex"]				= { ["id"] = 2472, 	["icon"] = 1506458, 	["paragon"] = true, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["the ascended"]						= { ["id"] = 2407, 	["icon"] = 3257748, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["the avowed"]							= { ["id"] = 2439, 	["icon"] = 3601526, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["the ember court"]						= { ["id"] = 2445, 	["icon"] = 3641397, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
@@ -685,7 +687,7 @@ T.faction = {
 	["bloodsail buccaneers"]				= { ["id"] = 87, 	["icon"] = 133168,	 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["brood of nozdormu"]					= { ["id"] = 910, 	["icon"] = 134156,	 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["cenarion circle"]						= { ["id"] = 609, 	["icon"] = 132280,	 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
-	["darkmoon faire"]						= { ["id"] = 909, 	["icon"] = 1100024,	 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
+	["darkmoon faire"]						= { ["id"] = 909, 	["icon"] = 1100023,	 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["hydraxian waterlords"]				= { ["id"] = 749, 	["icon"] = 135862,	 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["ravenholdt"]							= { ["id"] = 349, 	["icon"] = 132299,	 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["thorium brotherhood"]					= { ["id"] = 59, 	["icon"] = 1786406,	 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
