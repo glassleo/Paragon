@@ -10,7 +10,7 @@ Paragon can display your current standing with a reputation on reputation relate
 
 Paragon can also list your character's reputation standings with any reputation via the slash command `/par <faction>`
 
-For example, type `/par armies of legionfall` in chat to list each of your character's reputation status with Armies of Legionfall.
+For example, you can type `/par rustbolt` in chat to list each of your character's reputation status with Rustbolt Resistance.
 
 ![Paragon Reputation Display Window](https://i.imgur.com/e5z0PlV.png)
 
