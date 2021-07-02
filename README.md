@@ -19,3 +19,7 @@ For example, you can type `/par rustbolt` in chat to list each of your character
 You can customize what is (and isn't) displayed in your tooltips via the in-game AddOns options panel.
 
 ![Interface Options](https://i.imgur.com/PJEYbOS.png)
+
+## Issues and Suggestions
+
+If you want to report a bug, or have any suggestions regarding the addon, please open an issue ticket here on GitHub. I read everything!
