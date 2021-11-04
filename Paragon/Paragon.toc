@@ -1,4 +1,4 @@
-## Interface: 90100
+## Interface: 90105
 ## Title: Paragon
 ## Notes: Keeps track of reputation for all your characters
 ## Version: Chalcedony 1
