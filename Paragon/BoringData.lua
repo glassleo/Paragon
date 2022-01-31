@@ -24,25 +24,25 @@ T.standingColor = {
 T.friendStandingColor = {
 	["default"] = {
 		[1] = "|cffffff00", -- Stranger
-		[2] = "|cff00ff00", -- Acquaintance/Pal
-		[3] = "|cff00ff00", -- Buddy
-		[4] = "|cff00ff88", -- Friend
-		[5] = "|cff00ffcc", -- Good Friend
-		[6] = "|cff4cc2ff", -- Best Friend
-		[9] = "|cff4cc2ff", -- Paragon
+        [2] = "|cff00ff00", -- Acquaintance/Pal
+        [3] = "|cff00ff88", -- Buddy
+        [4] = "|cff00ff88", -- Friend
+        [5] = "|cff00ffcc", -- Good Friend
+        [6] = "|cff4cc2ff", -- Best Friend
+        [9] = "|cff4cc2ff", -- Paragon
 	},
 	["chromie"] = {
 		[1] = "|cffffff00", -- Whelpling
 		[2] = "|cff00ff00", -- Temporal Trainee
-		[3] = "|cff00ff00", -- Timehopper
+		[3] = "|cff00ff88", -- Timehopper
 		[4] = "|cff00ff88", -- Chrono-Friend
-		[5] = "|cff00ff88", -- Bronze Ally
+		[5] = "|cff00ffcc", -- Bronze Ally
 		[6] = "|cff00ffcc", -- Epoch-Mender
 		[7] = "|cff4cc2ff", -- Timelord
 	},
 	["vivianne"] = {
 		[1] = "|cff00ff00", -- Bodyguard
-		[2] = "|cff00ff88", -- Trusted Bodyguard
+		[2] = "|cff00ffcc", -- Trusted Bodyguard
 		[3] = "|cff4cc2ff", -- Personal Wingman
 	},
 	["court of night"] = {
@@ -459,13 +459,14 @@ T.reputationItemBoP = {
 	[43155]  = "knights of the ebon blade", -- Tabard of the Ebon Blade
 	[43950]  = "kirin tor", -- Kirin Tor Commendation Badge
 	[43157]  = "kirin tor", -- Tabard of the Kirin Tor
-	[49702]  = "the Sons of hodir", -- Sons of Hodir Commendation Badge (520)
+	[49702]  = "the sons of hodir", -- Sons of Hodir Commendation Badge (520)
 	[44710]  = "wyrmrest cccord", -- Wyrmrest Commendation Badge (520)
 	[43156]  = "wyrmrest accord", -- Tabard of the Wyrmrest Accord
 
 	-- The Burning Crusade
 	[24290]  = "sporeggar", -- Mature Spore Sack (750 per 10, up to Friendly)
 	[32506]  = "netherwing", -- Netherwing Egg (250)
+	[32427]  = "netherwing", -- Netherwing Crystal (250 per 30)
 	[25433]  = "kurenai|the consortium|the mag'har", -- Obsidian Warbeads (250 Consortium per 10, or 500 Kurenai/Mag'har per 10)
 	[29209]  = "the consortium", -- Zaxxis Insignia (250 per 10)
 	[25416]  = "the consortium", -- Oshu'gun Crystal Fragment (250 per 10, up to Friendly)
@@ -624,7 +625,7 @@ T.faction = {
 	["sho"]									= { ["id"] = 1278, 	["icon"] = 133975, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, }, -- lovely apple
 	["tina mudclaw"]						= { ["id"] = 1280, 	["icon"] = 237204, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, }, -- ruby shard
 	-- Hidden
-	["nomi"]								= { ["id"] = 1357, 	["icon"] = 571695, 		["paragon"] = false, 	["friend"] = 0, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- hidden from the Reputation Panel
+	["nomi"]								= { ["id"] = 1357, 	["icon"] = 654236, 		["paragon"] = false, 	["friend"] = 0, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- hidden from the Reputation Panel
 
 	-- Cataclysm
 	["avengers of hyjal"]					= { ["id"] = 1204, 	["icon"] = 512609, 		["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },

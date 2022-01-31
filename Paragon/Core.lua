@@ -226,12 +226,12 @@ local function updateFactions()
 
 		if factionGroup == false or factionGroup == T.factionGroup then -- Only include same side and neutral factions
 			if currentValue then
-				local displayValue = currentValue % threshold
-				if hasRewardPending then displayValue = displayValue + threshold end
+				currentValue = currentValue % threshold
+				if hasRewardPending then currentValue = currentValue + threshold end
 
 				ParagonDB["character"][T.charStr][faction] = {
 					["standingId"] = 9, -- Paragon
-					["current"] = displayValue,
+					["current"] = currentValue,
 					["max"] = threshold,
 					["hasRewardPending"] = hasRewardPending,
 				}
