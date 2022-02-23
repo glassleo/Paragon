@@ -1,8 +1,8 @@
-## Interface: 90105
+## Interface: 90200
 ## Title: Paragon
 ## Notes: Keeps track of reputation for all your characters
-## Version: Chalcedony 1
-## Author: Leo Bolin
+## Version: Chalcedony 2
+## Author: Leo
 
 ## SavedVariables: ParagonDB
 
