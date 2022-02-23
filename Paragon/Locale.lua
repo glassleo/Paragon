@@ -122,6 +122,7 @@ LL["enUS"] = {
 	["f the archivists' codex"]				= "The Archivists' Codex",
 	["f the ascended"]						= "The Ascended",
 	["f the avowed"]						= "The Avowed",
+	["f the enlightened"]					= "The Enlightened",
 	["f the ember court"]					= "The Ember Court",
 	["f the undying army"]					= "The Undying Army",
 	["f the wild hunt"]						= "The Wild Hunt",
