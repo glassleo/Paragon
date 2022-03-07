@@ -610,7 +610,7 @@ function SlashCmdList.PARAGON(msg, editbox)
 
 	if cmd == "config" or cmd == "cfg" or cmd == "settings" or cmd == "options" then
 		InterfaceOptionsFrame_OpenToCategory("Paragon")
-	elseif cmd == "delete" then
+	elseif cmd == "delete" or cmd == "del" then
 		deleteCharacter(args, true)
 	else
 		local guildname = GetGuildInfo("player")
