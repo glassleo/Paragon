@@ -369,6 +369,8 @@ T.reputationItemBoP = {
 	[187333] = "the archivists' codex", -- Core of an Unknown Titan (150)
 	[187350] = "the archivists' codex", -- Displaced Relic (150)
 	[187335] = "the archivists' codex", -- Maldraxxus Larva Shell (150)
+	[190339] = "the enlightened", -- Enlightened Offering (75)
+	[190941] = "the enlightened", -- Teachings of the Elders (75)
 
 	-- Battle for Azeroth
 	[170184] = "the unshackled|waveblade ankoan", -- Ancient Reefwalker Bark (350 The Unshackled/Waveblade Ankoan)
