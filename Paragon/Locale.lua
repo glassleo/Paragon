@@ -328,6 +328,10 @@ LL["enUS"].shorthands = {
 	-- This column should be translated		| This column should be in English
 
 	-- Shadowlands
+	["enlightened"]							= "the enlightened",
+	["zereth mortis"]						= "the enlightened",
+	["haven"]								= "the enlightened",
+	["pocopo"]								= "the enlightened",
 	["harvesters"]							= "court of harvesters",
 	["revendreth"]							= "court of harvesters",
 	["venthyr"]								= "court of harvesters",
@@ -354,6 +358,7 @@ LL["enUS"].shorthands = {
 	["ascended"]							= "the ascended",
 	["bastion"]								= "the ascended",
 	["kyrian"]								= "the ascended",
+	["vowed"]								= "the avowed",
 	["avowed"]								= "the avowed",
 	["halls of atonement"]					= "the avowed",
 	["sinstone"]							= "the avowed",
