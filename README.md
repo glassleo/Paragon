@@ -22,4 +22,4 @@ You can customize what is (and isn't) displayed in your tooltips via the in-game
 
 ## Issues and Suggestions
 
-If you want to report a bug, or have any suggestions regarding the addon, please open an issue ticket here on GitHub. I read everything!
+Please use the [issue tracker](https://github.com/glassleo/Paragon/issues) for bugs, suggestions and feature requests.
