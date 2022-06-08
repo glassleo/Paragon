@@ -177,6 +177,7 @@ T.reputationItemBoA = {
 	[191022] = "the enlightened", -- Eternal Curio
 	[175924] = "the undying army", -- Contract: The Undying Army
 	[173053] = "the wild hunt", -- Contract: The Wild Hunt
+	[191299] = "the enlightened", -- Tribute to the Enlightened
 
 	-- Battle for Azeroth
 	[165016] = "7th legion", -- Contract: 7th Legion
