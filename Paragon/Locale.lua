@@ -21,6 +21,8 @@ LL["enUS"] = {
 	["faction_standing_revered"] 			= FACTION_STANDING_LABEL7, -- Revered
 	["faction_standing_exalted"] 			= FACTION_STANDING_LABEL8, -- Exalted
 	["faction_standing_paragon"] 			= "Paragon",
+	["faction_standing_renown %d"] 			= "Renown %d",
+	["faction_standing_undiscovered"] 		= "Undiscovered",
 	-- Defaults (also used by Halfhill factions, etc)
 	["faction_standing_stranger"] 			= "Stranger",
 	["faction_standing_acquaintance"] 		= "Acquaintance",
@@ -64,6 +66,22 @@ LL["enUS"] = {
 	["faction_standing_tier_4"] 			= "Tier 4",
 	["faction_standing_tier_5"] 			= "Tier 5",
 	["faction_standing_tier_6"] 			= "Tier 6",
+	-- Artisan's Consortium
+	["faction_standing_preferred"] 			= "Preferred",
+	["faction_standing_respected"] 			= "Respected",
+	["faction_standing_valued"] 			= "Valued",
+	["faction_standing_esteemed"] 			= "Esteemed",
+	-- Sabellian/Wrathion
+	["faction_standing_cohort"] 			= "Cohort",
+	["faction_standing_ally"] 				= "Ally",
+	["faction_standing_fang"] 				= "Fang",
+	["faction_standing_true_friend"] 		= "True Friend",
+	-- Cobalt Assembly
+	["faction_standing_empty"] 				= "Empty",
+	["faction_standing_low"] 				= "Low",
+	["faction_standing_medium"] 			= "Medium",
+	["faction_standing_high"] 				= "High",
+	["faction_standing_maximum"] 			= "Maximum",
 
 
 	-- Global
@@ -86,7 +104,7 @@ LL["enUS"] = {
 	["no results"]							= "Nothing to display for %s.",
 
 	-- Settings Panel
-	["cfgFrameSubtext"] 					= "Paragon keeps track of reputation for all your characters.\n\nType |cff00ffff/par <faction>|r in chat to bring up an overview window for a specific reputation faction.\n\n\nTo delete stored data for a character, type |cff00ffff/par delete <name>|r in chat.",
+	["cfgFrameSubtext"] 					= "Paragon keeps track of reputation for all your characters.\n\nType |cff00ffff/par <faction>|r in chat to bring up an overview window for a specific reputation faction.\n\n\nTo delete stored data for a character, type |cff00ffff/par delete <name or name-realm>|r in chat.",
 	["cfgChatOutputLimitLabel"] 			= "Maximum Chat Lines",
 	["cfgTooltipHeader"] 					= "Item Tooltips",
 	["cfgTooltipSubtext"] 					= "Paragon can add additional information to tooltips for reputation related items.",
@@ -112,6 +130,17 @@ LL["enUS"] = {
 
 	-- Guild
 	["f guild"] 							= "Guild",
+
+	-- Dragonflight
+	["f dragonscale expedition"] 			= "Dragonscale Expedition",
+	["f iskaara tuskarr"] 					= "Iskaara Tuskarr",
+	["f maruuk centaur"] 					= "Maruuk Centaur",
+	["f valdrakken accord"] 				= "Valdrakken Accord",
+	["f artisan's consortium - dragon isles branch"] = "Artisan's Consortium - Dragon Isles Branch",
+	["f cobalt assembly"] 					= "Cobalt Assembly",
+	["f sabellian"]							= "Sabellian",
+	["f wrathion"]							= "Wrathion",
+	["f winterpelt furbolg"]				= "Winterpelt Furbolg",
 
 	-- Shadowlands
 	["f court of harvesters"]				= "Court of Harvesters",
@@ -326,6 +355,63 @@ LL["enUS"] = {
 
 LL["enUS"].shorthands = {
 	-- This column should be translated		| This column should be in English
+
+	-- Dragonflight
+	["dragon exp"]							= "dragonscale expedition",
+	["dragon expedition"]					= "dragonscale expedition",
+	["dragons expedition"]					= "dragonscale expedition",
+	["dragonscale exp"]						= "dragonscale expedition",
+	["dragonscale"]							= "dragonscale expedition",
+	["expedition"]							= "dragonscale expedition",
+	["iskaara"]								= "iskaara tuskarr",
+	["iskar"]								= "iskaara tuskarr",
+	["iskara tuskarr"]						= "iskaara tuskarr",
+	["iskara"]								= "iskaara tuskarr",
+	["iskarr"]								= "iskaara tuskarr",
+	["iskarra"]								= "iskaara tuskarr",
+	["tuskar"]								= "iskaara tuskarr",
+	["tuskarr"]								= "iskaara tuskarr",
+	["centaur"]								= "maruuk centaur",
+	["centaurs"]							= "maruuk centaur",
+	["maruk centaur"]						= "maruuk centaur",
+	["maruk centaurs"]						= "maruuk centaur",
+	["maruk"]								= "maruuk centaur",
+	["maruuk centaurs"]						= "maruuk centaur",
+	["maruuk"]								= "maruuk centaur",
+	["dragon accord"]						= "valdrakken accord",
+	["vald"]								= "valdrakken accord",
+	["valdraken"]							= "valdrakken accord",
+	["valdrakken"]							= "valdrakken accord",
+	["artisan consortium"]					= "artisan's consortium - dragon isles branch",
+	["artisan"]								= "artisan's consortium - dragon isles branch",
+	["artisan's consortium - dragon isles"] = "artisan's consortium - dragon isles branch",
+	["artisan's consortium"]				= "artisan's consortium - dragon isles branch",
+	["artisan's"]							= "artisan's consortium - dragon isles branch",
+	["artisans consortium"]					= "artisan's consortium - dragon isles branch",
+	["artisans"]							= "artisan's consortium - dragon isles branch",
+	["dragon isles branch"]					= "artisan's consortium - dragon isles branch",
+	["assembly"]							= "cobalt assembly",
+	["cobald assembly"]						= "cobalt assembly",
+	["cobald"]								= "cobalt assembly",
+	["cobalt"]								= "cobalt assembly",
+	["sabelian"]							= "sabellian",
+	["sabellan"]							= "sabellian",
+	["sabellion"]							= "sabellian",
+	["saberion"]							= "sabellian",
+	["sibelan"]								= "sabellian",
+	["sibelian"]							= "sabellian",
+	["sibellan"]							= "sabellian",
+	["sibellian"]							= "sabellian",
+	["sibellion"]							= "sabellian",
+	["siberion"]							= "sabellian",
+	["wrath"]								= "wrathion",
+	["wrathi"]								= "wrathion",
+	["wrathon"]								= "wrathion",
+	["rathion"]								= "wrathion",
+	["winter furbolg"]						= "winterpelt furbolg",
+	["winter furbolgs"]						= "winterpelt furbolg",
+	["winterpelt furbolgs"]					= "winterpelt furbolg",
+	["winterpelt"]							= "winterpelt furbolg",
 
 	-- Shadowlands
 	["enlightened"]							= "the enlightened",
