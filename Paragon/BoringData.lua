@@ -23,34 +23,51 @@ T.standingColor = {
 
 T.friendStandingColor = {
 	["default"] = {
-		[1] = "|cffffff00", -- Stranger
-        [2] = "|cff00ff00", -- Acquaintance/Pal
-        [3] = "|cff00ff88", -- Buddy
-        [4] = "|cff00ff88", -- Friend
-        [5] = "|cff00ffcc", -- Good Friend
-        [6] = "|cff4cc2ff", -- Best Friend
-        [9] = "|cff4cc2ff", -- Paragon
+		[1] = T.standingColor[4], -- Stranger
+        [2] = T.standingColor[5], -- Acquaintance/Pal
+        [3] = T.standingColor[6], -- Buddy
+        [4] = T.standingColor[6], -- Friend
+        [5] = T.standingColor[7], -- Good Friend
+        [6] = T.standingColor[8], -- Best Friend
+        [9] = T.standingColor[9], -- Paragon
 	},
 	["chromie"] = {
-		[1] = "|cffffff00", -- Whelpling
-		[2] = "|cff00ff00", -- Temporal Trainee
-		[3] = "|cff00ff88", -- Timehopper
-		[4] = "|cff00ff88", -- Chrono-Friend
-		[5] = "|cff00ffcc", -- Bronze Ally
-		[6] = "|cff00ffcc", -- Epoch-Mender
-		[7] = "|cff4cc2ff", -- Timelord
+		[1] = T.standingColor[4], -- Whelpling
+		[2] = T.standingColor[4], -- Temporal Trainee
+		[3] = T.standingColor[5], -- Timehopper
+		[4] = T.standingColor[5], -- Chrono-Friend
+		[5] = T.standingColor[6], -- Bronze Ally
+		[6] = T.standingColor[7], -- Epoch-Mender
+		[7] = T.standingColor[8], -- Timelord
 	},
 	["vivianne"] = {
-		[1] = "|cff00ff00", -- Bodyguard
-		[2] = "|cff00ffcc", -- Trusted Bodyguard
-		[3] = "|cff4cc2ff", -- Personal Wingman
+		[1] = T.standingColor[5], -- Bodyguard
+		[2] = T.standingColor[6], -- Trusted Bodyguard
+		[3] = T.standingColor[8], -- Personal Wingman
 	},
 	["court of night"] = {
-		[1] = "|cffffff00", -- Neutral
-		[2] = "|cff00ff00", -- Friendly
-		[3] = "|cff00ff88", -- Honored
-		[4] = "|cff00ffcc", -- Revered
-		[5] = "|cff4cc2ff", -- Exalted
+		[1] = T.standingColor[4], -- Neutral
+		[2] = T.standingColor[5], -- Friendly
+		[3] = T.standingColor[6], -- Honored
+		[4] = T.standingColor[7], -- Revered
+		[5] = T.standingColor[8], -- Exalted
+	},
+	["nomi"] = {
+		[3] = T.standingColor[4], -- Apprentice
+		[4] = T.standingColor[4], -- Apprentice
+		[5] = T.standingColor[5], -- Journeyman
+		[6] = T.standingColor[6], -- Journeyman
+		[7] = T.standingColor[7], -- Journeyman
+		[8] = T.standingColor[8], -- Expert
+	},
+	["sabellian"] = {
+		[3] = T.standingColor[4], -- Acquaintance
+		[4] = T.standingColor[5], -- Cohort
+		[5] = T.standingColor[6], -- Ally
+		[6] = T.standingColor[6], -- Fang
+		[7] = T.standingColor[7], -- Friend
+		[8] = T.standingColor[8], -- True Friend
+		[9] = T.standingColor[9], -- Paragon
 	},
 }
 -- Reuse Bodyguard colors
@@ -60,6 +77,7 @@ T.friendStandingColor["delvar ironfist"] = T.friendStandingColor["vivianne"]
 T.friendStandingColor["leorajh"] = T.friendStandingColor["vivianne"]
 T.friendStandingColor["talonpriest ishaal"] = T.friendStandingColor["vivianne"]
 T.friendStandingColor["tormmok"] = T.friendStandingColor["vivianne"]
+T.friendStandingColor["wrathion"] = T.friendStandingColor["sabellian"]
 
 -- Localized standing
 T.standing = {
@@ -124,9 +142,7 @@ T.friendStanding = {
 		[2] = "faction_standing_trusted_bodyguard",
 		[3] = "faction_standing_personal_wingman",
 	},
-	["nomi"] = { -- Nomi is weird
-		[1] = "faction_standing_apprentice",
-		[2] = "faction_standing_apprentice",
+	["nomi"] = {
 		[3] = "faction_standing_apprentice",
 		[4] = "faction_standing_apprentice",
 		[5] = "faction_standing_journeyman",
@@ -150,21 +166,44 @@ T.friendStanding = {
 		[6] = "faction_standing_tier_6",
 		[9] = "faction_standing_paragon",
 	},
+	["artisan's consortium - dragon isles branch"] = {
+		[4] = "faction_standing_neutral",
+		[5] = "faction_standing_preferred",
+		[6] = "faction_standing_respected",
+		[7] = "faction_standing_valued",
+		[8] = "faction_standing_esteemed",
+	},
+	["cobalt assembly"] = {
+		[4] = "faction_standing_empty",
+		[5] = "faction_standing_low",
+		[6] = "faction_standing_medium",
+		[7] = "faction_standing_high",
+		[8] = "faction_standing_maximum",
+	},
+	["sabellian"] = {
+		[3] = "faction_standing_acquaintance",
+		[4] = "faction_standing_cohort",
+		[5] = "faction_standing_ally",
+		[6] = "faction_standing_fang",
+		[7] = "faction_standing_friend",
+		[8] = "faction_standing_true_friend",
+		[9] = "faction_standing_paragon",
+	},
 }
--- Reuse Nat Pagle's labels for Margoss and Fisherfriends since they are the same
+
 T.friendStanding["conjurer margoss"] = T.friendStanding["nat pagle"]
 T.friendStanding["akule riverhorn"] = T.friendStanding["nat pagle"]
 T.friendStanding["ilyssia of the waters"] = T.friendStanding["nat pagle"]
 T.friendStanding["impus"] = T.friendStanding["nat pagle"]
 T.friendStanding["keeper raynae"] = T.friendStanding["nat pagle"]
 T.friendStanding["sha'leth"] = T.friendStanding["nat pagle"]
--- Reuse Bodyguard labels
 T.friendStanding["aeda brightdawn"] = T.friendStanding["vivianne"]
 T.friendStanding["defender illona"] = T.friendStanding["vivianne"]
 T.friendStanding["delvar ironfist"] = T.friendStanding["vivianne"]
 T.friendStanding["leorajh"] = T.friendStanding["vivianne"]
 T.friendStanding["talonpriest ishaal"] = T.friendStanding["vivianne"]
 T.friendStanding["tormmok"] = T.friendStanding["vivianne"]
+T.friendStanding["wrathion"] = T.friendStanding["sabellian"]
 
 
 -- Reputation item IDs - BoA and BoE
@@ -341,6 +380,12 @@ T.reputationItemBoA = {
 
 -- Reputation item IDs - Soulbound
 T.reputationItemBoP = {
+	-- Dragonflight
+	[192055] = "dragonscale expedition", -- Dragon Isles Artifact
+	[200071] = "iskaara tuskarr", -- Sacred Tuskarr Totem
+	[200093] = "maruuk centaur", -- Centaur Hunting Trophy
+	[199906] = "valdrakken accord", -- Titan Relic
+
 	-- Shadowlands
 	[186685] = "the archivists' codex", -- Relic Fragment (0.5)
 	[187322] = "the archivists' codex", -- Crumbling Stone Tablet (4)
@@ -523,6 +568,17 @@ T.reputationItemBoP = {
 T.faction = {
 	-- Guild
 	["guild"] 								= { ["id"] = 1168, 	["icon"] = 135026, 		["paragon"] = false,	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
+
+	-- Dragonflight
+	["dragonscale expedition"] 				= { ["id"] = 2507, 	["icon"] = 4687628, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "renown", 		 ["factionGroup"] = false, },
+	["iskaara tuskarr"] 					= { ["id"] = 2511, 	["icon"] = 4687629, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "renown", 		 ["factionGroup"] = false, },
+	["maruuk centaur"] 						= { ["id"] = 2503, 	["icon"] = 4687627, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "renown", 		 ["factionGroup"] = false, },
+	["valdrakken accord"] 					= { ["id"] = 2510, 	["icon"] = 4687630, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "renown", 		 ["factionGroup"] = false, },
+	["artisan's consortium - dragon isles branch"] = { ["id"] = 2544, ["icon"] = 4557373, ["paragon"] = false, 	["friend"] = 0, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["cobalt assembly"] 					= { ["id"] = 2550,  ["icon"] = 1394893, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["sabellian"] 							= { ["id"] = 2518,  ["icon"] = 4630449,     ["paragon"] = false,    ["friend"] = 0, ["kind"] = "friendship",     ["factionGroup"] = false, },
+	["wrathion"] 							= { ["id"] = 2517,  ["icon"] = 4630449,     ["paragon"] = false,    ["friend"] = 0, ["kind"] = "friendship",     ["factionGroup"] = false, },
+	["winterpelt furbolg"] 					= { ["id"] = 2526, 	["icon"] = 4672495, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 
 	-- Shadowlands
 	["court of harvesters"]					= { ["id"] = 2413, 	["icon"] = 3514227, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
