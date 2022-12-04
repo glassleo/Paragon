@@ -208,6 +208,23 @@ T.friendStanding["wrathion"] = T.friendStanding["sabellian"]
 
 -- Reputation item IDs - BoA and BoE
 T.reputationItemBoA = {
+	-- Dragonflight
+	[198503] = "artisan's consortium - dragon isles branch", -- Contract: Artisan's Consortium (Quality: 1)
+	[198504] = "artisan's consortium - dragon isles branch", -- Contract: Artisan's Consortium (Quality: 2)
+	[198505] = "artisan's consortium - dragon isles branch", -- Contract: Artisan's Consortium (Quality: 3)
+	[198506] = "dragonscale expedition", -- Contract: Dragonscale Expedition (Quality: 1)
+	[198507] = "dragonscale expedition", -- Contract: Dragonscale Expedition (Quality: 2)
+	[198508] = "dragonscale expedition", -- Contract: Dragonscale Expedition (Quality: 3)
+	[198494] = "iskaara tuskarr", -- Contract: Iskaara Tuskarr (Quality: 1)
+	[198495] = "iskaara tuskarr", -- Contract: Iskaara Tuskarr (Quality: 2)
+	[198496] = "iskaara tuskarr", -- Contract: Iskaara Tuskarr (Quality: 3)
+	[198500] = "maruuk centaur", -- Contract: Maruuk Centaur (Quality: 1)
+	[198501] = "maruuk centaur", -- Contract: Maruuk Centaur (Quality: 2)
+	[198502] = "maruuk centaur", -- Contract: Maruuk Centaur (Quality: 3)
+	[198497] = "valdrakken accord", -- Contract: Valdrakken Accord (Quality: 1)
+	[198498] = "valdrakken accord", -- Contract: Valdrakken Accord (Quality: 2)
+	[198499] = "valdrakken accord", -- Contract: Valdrakken Accord (Quality: 3)
+
 	-- Shadowlands
 	[173062] = "court of harvesters", -- Contract: Court of Harvesters
 	[186522] = "death's advance", -- Contract: Death's Advance
@@ -385,6 +402,7 @@ T.reputationItemBoP = {
 	[200071] = "iskaara tuskarr", -- Sacred Tuskarr Totem
 	[200093] = "maruuk centaur", -- Centaur Hunting Trophy
 	[199906] = "valdrakken accord", -- Titan Relic
+	[198790] = "artisan's consortium - dragon isles branch", -- I.O.U.
 
 	-- Shadowlands
 	[186685] = "the archivists' codex", -- Relic Fragment (0.5)
