@@ -185,24 +185,49 @@ local function updateFactions()
 
 	for faction, data in pairs(T.faction) do
 		local id, icon, paragon, factionGroup, friend, kind = data["id"], data["icon"], data["paragon"], data["factionGroup"], data["friend"], data["kind"]
-		local name, standingId, barMin, barMax, barValue = "", 4, 0, 0, 0
+		local name, standingId, barMin, barMax, barValue, renownLevel = "", 4, 0, 0, 0, 0
 
 		if kind == "friendship" then
-			_, barValue, _, name, _, _, _, barMin, barMax = GetFriendshipReputation(id)
-			if not barMax then
-				barMax = 42000
-			end
+			local friendship = C_GossipInfo.GetFriendshipReputation(id)
+			barValue = friendship.standing or 0
+			barMin = friendship.reactionThreshold
+			barMax = friendship.nextThreshold or 42000
+			name = friendship.name or name
 
-			if id == 1357 then -- Hack for Nomi which is a super weird reputation
+			if id == 1357 or id == 2517 or id == 2518 then -- Nomi, Wrathion, Sabellian
 				if barValue >= 42000 then
 					standingId = 8
 				elseif barValue >= 33600 then
 					standingId = 7
 				elseif barValue >= 25200 then
-					standingId = 7
-				elseif barValue >= 16800 then
 					standingId = 6
+				elseif barValue >= 16800 then
+					standingId = 5
 				elseif barValue >= 8400 then
+					standingId = 4
+				else
+					standingId = 3
+				end
+			elseif id == 2550 then -- Cobalt Assembly
+				if barValue >= 10000 then
+					standingId = 8
+				elseif barValue >= 3600 then
+					standingId = 7
+				elseif barValue >= 1200 then
+					standingId = 6
+				elseif barValue >= 300 then
+					standingId = 5
+				else
+					standingId = 4
+				end
+			elseif id == 2544 then -- Artisan's Consortium - Dragon Isles Branch
+				if barValue >= 12500 then
+					standingId = 8
+				elseif barValue >= 5500 then
+					standingId = 7
+				elseif barValue >= 2500 then
+					standingId = 6
+				elseif barValue >= 500 then
 					standingId = 5
 				else
 					standingId = 4
@@ -218,9 +243,16 @@ local function updateFactions()
 					standingId = 5
 				end
 			end
+		elseif kind == "renown" then
+			local data = C_MajorFactions.GetMajorFactionData(id)
+			standingId = data.renownLevel or 1
+			barValue = data.renownReputationEarned or 0
+			barMax = data.renownLevelThreshold or 2500
+			name = data.name or name
 		else
 			name, _, standingId, barMin, barMax, barValue = GetFactionInfoByID(id)
 		end
+
 		local currentValue, threshold, _, hasRewardPending = C_Reputation.GetFactionParagonInfo(id)
 
 
@@ -234,6 +266,13 @@ local function updateFactions()
 					["current"] = currentValue,
 					["max"] = threshold,
 					["hasRewardPending"] = hasRewardPending,
+				}
+			elseif kind == "renown" then
+				ParagonDB["character"][T.charStr][faction] = {
+					["standingId"] = standingId, -- Renown level
+					["current"] = barValue,
+					["max"] = barMax,
+					["hasRewardPending"] = false,
 				}
 			elseif barValue then
 				ParagonDB["character"][T.charStr][faction] = {
@@ -286,13 +325,19 @@ end
 -- Functions to format standings
 local function standing(standingId, faction)
 	if setContains(T.faction, faction) then
-		if T.faction[faction]["friend"] ~= 0 then
+		if T.faction[faction]["kind"] == "renown" then
+			if standingId > 0 then
+				return L["faction_standing_renown %d"]:format(standingId)
+			else
+				return L["faction_standing_undiscovered"]
+			end
+		elseif T.faction[faction]["friend"] ~= 0 then
 			if setContains(T.friendStanding, faction) then
 				return L[T.friendStanding[faction][standingId]]
 			else
 				return L[T.friendStanding["default"][standingId]]
 			end
-		elseif faction == "nomi" then
+		elseif setContains(T.friendStanding, faction) then
 			return L[T.friendStanding[faction][standingId]]
 		else
 			return T.standing[standingId]
@@ -304,12 +349,20 @@ end
 
 local function standingColor(standingId, faction)
 	if setContains(T.faction, faction) then
-		if T.faction[faction]["friend"] ~= 0 then
+		if T.faction[faction]["kind"] == "renown" then
+			if standingId > 0 then
+				return T.standingColor[9]
+			else
+				return T.standingColor[4]
+			end
+		elseif T.faction[faction]["friend"] ~= 0 then
 			if setContains(T.friendStandingColor, faction) then
 				return T.friendStandingColor[faction][standingId]
 			else
 				return T.friendStandingColor["default"][standingId]
 			end
+		elseif setContains(T.friendStandingColor, faction) then
+			return T.friendStandingColor[faction][standingId]
 		else
 			return T.standingColor[standingId]
 		end
@@ -378,12 +431,20 @@ local function outputFaction(factionName, limit, outputFormat, currentLine)
 			end
 
 			if i <= limit or outputFormat == "ui" then
-				local displayAmount = "  " .. FormatLargeNumber(factionTable[char]["current"]) .. " / " .. FormatLargeNumber(factionTable[char]["max"])
-				if standingId == 8 or (T.faction[faction]["friend"] ~= 0 and standingId >= T.faction[faction]["friend"] and standingId ~= 9) then -- Exalted/Best Friend
+				local displayAmount = FormatLargeNumber(factionTable[char]["current"]) .. " / " .. FormatLargeNumber(factionTable[char]["max"])
+				if T.faction[faction]["kind"] == "renown" then
+					local renown = C_MajorFactions.GetRenownLevels(T.faction[faction]["id"]) or {}
+
+					if standingId == 0 or standingId == (#renown) then
+						displayAmount = "" -- Max renown level or undiscovered
+					end
+				elseif standingId == 8 or (T.faction[faction]["friend"] ~= 0 and standingId >= T.faction[faction]["friend"] and standingId ~= 9) then -- Exalted/Best Friend
 					displayAmount = "" -- Exalted reputations do not have amounts
 				end
 
-				local line = "|c" .. RAID_CLASS_COLORS[d["class"]].colorStr .. ellipsis(d["name"] .. format_realm(d["realm"]), 30) .. "|r  " .. standingColor(standingId, faction) .. standing(standingId, faction) .. displayAmount .. "|r"
+				local line1 = "|c" .. RAID_CLASS_COLORS[d["class"]].colorStr .. ellipsis(d["name"] .. format_realm(d["realm"]), 30) .. "|r  " .. standingColor(standingId, faction) .. standing(standingId, faction) .. "|r"
+				local line2 = standingColor(standingId, faction) .. displayAmount .. "|r"
+				local line = line1 .. (displayAmount ~= "" and "  " .. line2 or "")
 
 				if outputFormat == "ui" then
 					local offset = (i - 1) * -24
@@ -418,7 +479,7 @@ local function outputFaction(factionName, limit, outputFormat, currentLine)
 					label:SetJustifyV("MIDDLE")
 
 					-- Amount
-					if standingId ~= 8 then
+					if displayAmount ~= "" then
 						local label = rowBg:CreateFontString("OVERLAY", nil, "GameFontNormalSmall")
 						label:SetPoint("TOPLEFT", 270, 0)
 						label:SetText(standingColor(standingId, faction) .. displayAmount .. "|r")
@@ -428,7 +489,7 @@ local function outputFaction(factionName, limit, outputFormat, currentLine)
 						label:SetJustifyV("MIDDLE")
 					end
 				elseif outputFormat == "tooltip" and i == currentLine then
-					return "|cff808080" .. i .. ".|r " .. line
+					return "|cff808080" .. i .. ".|r " .. line1, line2
 				else
 					out = out .. "\n|cff808080" .. i .. ".|r " .. line
 				end
@@ -485,7 +546,7 @@ end
 
 
 -- Function to add information to item tooltips
-local function GameTooltip_OnTooltipSetItem(tooltip)
+local function OnTooltipSetItem(tooltip)
 	local tooltip = tooltip
 	local match = string.match
 	local _, link = tooltip:GetItem()
@@ -535,12 +596,22 @@ local function GameTooltip_OnTooltipSetItem(tooltip)
 				tooltip:AddLine(" ")
 				tooltip:AddLine("|cffffffff" .. L["f "..faction] .. "|r")
 
-				local displayAmount = "  " .. FormatLargeNumber(d[faction]["current"]) .. " / " .. FormatLargeNumber(d[faction]["max"])
-				if d[faction]["standingId"] == 8 or (T.faction[faction]["friend"] ~= 0 and d[faction]["standingId"] >= T.faction[faction]["friend"]) then -- Exalted/Best Friend
-					displayAmount = ""
+				local displayAmount = FormatLargeNumber(d[faction]["current"]) .. " / " .. FormatLargeNumber(d[faction]["max"])
+				if T.faction[faction]["kind"] == "renown" then
+					local renown = C_MajorFactions.GetRenownLevels(T.faction[faction]["id"]) or {}
+
+					if d[faction]["standingId"] == 0 or d[faction]["standingId"] == (#renown) then
+						displayAmount = "" -- Max renown level or undiscovered
+					end
+				elseif d[faction]["standingId"] == 8 or (T.faction[faction]["friend"] ~= 0 and d[faction]["standingId"] >= T.faction[faction]["friend"]) then
+					displayAmount = "" -- Exalted/Best Friend
 				end
 
-				tooltip:AddLine(standingColor(d[faction]["standingId"], faction) .. standing(d[faction]["standingId"], faction) .. displayAmount .. "|r")
+				if displayAmount ~= "" then
+					tooltip:AddDoubleLine(standingColor(d[faction]["standingId"], faction) .. standing(d[faction]["standingId"], faction) .. "|r", standingColor(d[faction]["standingId"], faction) .. displayAmount .. "|r")
+				else
+					tooltip:AddLine(standingColor(d[faction]["standingId"], faction) .. standing(d[faction]["standingId"], faction) .. "|r")
+				end
 			end
 		end
 
@@ -552,12 +623,12 @@ local function GameTooltip_OnTooltipSetItem(tooltip)
 				else
 					tooltip:AddLine(L["highest reputation"])
 				end
-				tooltip:AddLine(outputFaction(faction, 1, "tooltip", 1))
+				tooltip:AddDoubleLine(outputFaction(faction, 1, "tooltip", 1))
 
 				if limit >= 2 then
 					for i = 2, limit do
 						if outputFaction(faction, i, "tooltip", i) then
-							tooltip:AddLine(outputFaction(faction, i, "tooltip", i))
+							tooltip:AddDoubleLine(outputFaction(faction, i, "tooltip", i))
 						end
 					end
 				end
@@ -565,7 +636,7 @@ local function GameTooltip_OnTooltipSetItem(tooltip)
 				if ParagonDB["config"]["tooltip_alts_enabled_shift"] and limit_shift > limit and IsShiftKeyDown() then
 					for i = (limit + 1), limit_shift do
 						if outputFaction(faction, i, "tooltip", i) then
-							tooltip:AddLine(outputFaction(faction, i, "tooltip", i))
+							tooltip:AddDoubleLine(outputFaction(faction, i, "tooltip", i))
 						end
 					end
 				elseif ParagonDB["config"]["tooltip_alts_enabled_shift"] and limit_shift > limit and outputFaction(faction, (limit + 1), "tooltip", (limit + 1)) then
@@ -580,12 +651,12 @@ local function GameTooltip_OnTooltipSetItem(tooltip)
 				else
 					tooltip:AddLine(L["highest reputation"])
 				end
-				tooltip:AddLine(outputFaction(faction, 1, "tooltip", 1))
+				tooltip:AddDoubleLine(outputFaction(faction, 1, "tooltip", 1))
 
 				if limit_shift >= 2 then
 					for i = 2, limit_shift do
 						if outputFaction(faction, i, "tooltip", i) then
-							tooltip:AddLine(outputFaction(faction, i, "tooltip", i))
+							tooltip:AddDoubleLine(outputFaction(faction, i, "tooltip", i))
 						end
 					end
 				end
@@ -596,6 +667,8 @@ local function GameTooltip_OnTooltipSetItem(tooltip)
 		end
 	end
 end
+
+TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, OnTooltipSetItem)
 
 
 -- Slash Commands
@@ -647,5 +720,3 @@ local function eventHandler(self, event)
 end
 
 frame:SetScript("OnEvent", eventHandler)
-
-GameTooltip:HookScript("OnTooltipSetItem", GameTooltip_OnTooltipSetItem)
