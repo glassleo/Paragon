@@ -546,33 +546,16 @@ end
 
 
 -- Function to add information to item tooltips
-local function OnTooltipSetItem(tooltip)
+local function OnTooltipSetItem(tooltip, data)
+	if not data then return end -- If there is no data we do nothing
 	local tooltip = tooltip
 	local match = string.match
-	local _, link = tooltip:GetItem()
-	if not link then return; end -- Break if the link is invalid
-	
-	-- String matching to get item ID
-	local itemString = match(link, "item[%-?%d:]+")
-	local _, itemId = strsplit(":", itemString or "")
 
-	-- TradeSkillFrame workaround
-	if itemId == "0" and TradeSkillFrame ~= nil and TradeSkillFrame:IsVisible() then
-		if (GetMouseFocus():GetName()) == "TradeSkillSkillIcon" then
-			itemId = GetTradeSkillItemLink(TradeSkillFrame.selectedSkill):match("item:(%d+):") or nil
-		else
-			for i = 1, 8 do
-				if (GetMouseFocus():GetName()) == "TradeSkillReagent"..i then
-					itemId = GetTradeSkillReagentItemLink(TradeSkillFrame.selectedSkill, i):match("item:(%d+):") or nil
-					break
-				end
-			end
-		end
-	end
+	local link = data.guid and C_Item.GetItemLinkByGUID(data.guid)
+	local itemId = data.id or false
+	if not link or not itemId then return end
 
-	itemId = tonumber(itemId) -- Make sure itemId is an integer
-
-	if itemId and (setContains(T.reputationItemBoA, itemId) or setContains(T.reputationItemBoP, itemId)) then
+	if setContains(T.reputationItemBoA, itemId) or setContains(T.reputationItemBoP, itemId) then
 		updateFactions() -- Make sure player data is up to date
 
 		local bound, faction = nil, nil
