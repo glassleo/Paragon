@@ -45,7 +45,7 @@ T.friendStandingColor = {
 		[2] = T.standingColor[6], -- Trusted Bodyguard
 		[3] = T.standingColor[8], -- Personal Wingman
 	},
-	["court of night"] = {
+	["court of night"] = { -- also Marasmius, Stitchmasters
 		[1] = T.standingColor[4], -- Neutral
 		[2] = T.standingColor[5], -- Friendly
 		[3] = T.standingColor[6], -- Honored
@@ -53,21 +53,35 @@ T.friendStandingColor = {
 		[5] = T.standingColor[8], -- Exalted
 	},
 	["nomi"] = {
-		[3] = T.standingColor[4], -- Apprentice
-		[4] = T.standingColor[4], -- Apprentice
-		[5] = T.standingColor[5], -- Journeyman
-		[6] = T.standingColor[6], -- Journeyman
-		[7] = T.standingColor[7], -- Journeyman
-		[8] = T.standingColor[8], -- Expert
+		[1] = T.standingColor[4], -- Apprentice
+		[2] = T.standingColor[4], -- Apprentice
+		[3] = T.standingColor[5], -- Journeyman
+		[4] = T.standingColor[6], -- Journeyman
+		[5] = T.standingColor[7], -- Journeyman
+		[6] = T.standingColor[8], -- Expert
 	},
-	["sabellian"] = {
-		[3] = T.standingColor[4], -- Acquaintance
-		[4] = T.standingColor[5], -- Cohort
-		[5] = T.standingColor[6], -- Ally
-		[6] = T.standingColor[6], -- Fang
-		[7] = T.standingColor[7], -- Friend
-		[8] = T.standingColor[8], -- True Friend
+	["sabellian"] = { -- also Wrathion
+		[1] = T.standingColor[4], -- Acquaintance
+		[2] = T.standingColor[5], -- Cohort
+		[3] = T.standingColor[6], -- Ally
+		[4] = T.standingColor[6], -- Fang
+		[5] = T.standingColor[7], -- Friend
+		[6] = T.standingColor[8], -- True Friend
 		[9] = T.standingColor[9], -- Paragon
+	},
+	["artisan's consortium - dragon isles branch"] = {
+		[1] = T.standingColor[4], -- Neutral
+        [2] = T.standingColor[5], -- Preferred
+        [3] = T.standingColor[6], -- Respected
+        [4] = T.standingColor[7], -- Valued
+        [5] = T.standingColor[8], -- Esteemed
+	},
+	["cobalt assembly"] = {
+		[1] = T.standingColor[4], -- Empty
+        [2] = T.standingColor[5], -- Low
+        [3] = T.standingColor[6], -- Medium
+        [4] = T.standingColor[7], -- High
+        [5] = T.standingColor[8], -- Maximum
 	},
 }
 -- Reuse Bodyguard colors
@@ -77,6 +91,8 @@ T.friendStandingColor["delvar ironfist"] = T.friendStandingColor["vivianne"]
 T.friendStandingColor["leorajh"] = T.friendStandingColor["vivianne"]
 T.friendStandingColor["talonpriest ishaal"] = T.friendStandingColor["vivianne"]
 T.friendStandingColor["tormmok"] = T.friendStandingColor["vivianne"]
+T.friendStandingColor["marasmius"] = T.friendStandingColor["court of night"]
+T.friendStandingColor["stitchmasters"] = T.friendStandingColor["court of night"]
 T.friendStandingColor["wrathion"] = T.friendStandingColor["sabellian"]
 
 -- Localized standing
@@ -150,7 +166,7 @@ T.friendStanding = {
 		[7] = "faction_standing_journeyman",
 		[8] = "faction_standing_expert",
 	},
-	["court of night"] = {
+	["court of night"] = { -- also Marasmius, Stitchmasters
 		[1] = "faction_standing_neutral",
 		[2] = "faction_standing_friendly",
 		[3] = "faction_standing_honored",
@@ -167,27 +183,27 @@ T.friendStanding = {
 		[9] = "faction_standing_paragon",
 	},
 	["artisan's consortium - dragon isles branch"] = {
-		[4] = "faction_standing_neutral",
-		[5] = "faction_standing_preferred",
-		[6] = "faction_standing_respected",
-		[7] = "faction_standing_valued",
-		[8] = "faction_standing_esteemed",
+		[1] = "faction_standing_neutral",
+		[2] = "faction_standing_preferred",
+		[3] = "faction_standing_respected",
+		[4] = "faction_standing_valued",
+		[5] = "faction_standing_esteemed",
 	},
 	["cobalt assembly"] = {
-		[4] = "faction_standing_empty",
-		[5] = "faction_standing_low",
-		[6] = "faction_standing_medium",
-		[7] = "faction_standing_high",
-		[8] = "faction_standing_maximum",
+		[1] = "faction_standing_empty",
+		[2] = "faction_standing_low",
+		[3] = "faction_standing_medium",
+		[4] = "faction_standing_high",
+		[5] = "faction_standing_maximum",
 	},
-	["sabellian"] = {
-		[3] = "faction_standing_acquaintance",
-		[4] = "faction_standing_cohort",
-		[5] = "faction_standing_ally",
-		[6] = "faction_standing_fang",
-		[7] = "faction_standing_friend",
-		[8] = "faction_standing_true_friend",
-		[9] = "faction_standing_paragon",
+	["sabellian"] = { -- also Wrathion
+		[1] = "faction_standing_acquaintance",
+		[2] = "faction_standing_cohort",
+		[3] = "faction_standing_ally",
+		[4] = "faction_standing_fang",
+		[5] = "faction_standing_friend",
+		[6] = "faction_standing_true_friend",
+		[7] = "faction_standing_paragon",
 	},
 }
 
@@ -203,6 +219,8 @@ T.friendStanding["delvar ironfist"] = T.friendStanding["vivianne"]
 T.friendStanding["leorajh"] = T.friendStanding["vivianne"]
 T.friendStanding["talonpriest ishaal"] = T.friendStanding["vivianne"]
 T.friendStanding["tormmok"] = T.friendStanding["vivianne"]
+T.friendStanding["marasmius"] = T.friendStanding["court of night"]
+T.friendStanding["stitchmasters"] = T.friendStanding["court of night"]
 T.friendStanding["wrathion"] = T.friendStanding["sabellian"]
 
 
@@ -398,6 +416,9 @@ T.reputationItemBoA = {
 -- Reputation item IDs - Soulbound
 T.reputationItemBoP = {
 	-- Dragonflight
+	[191264] = "sabellian|wrathion", -- Restored Obsidian Key
+	[200224] = "sabellian", -- Mark of Sargha
+	[201991] = "wrathion", -- Sargha's Signet
 	[192055] = "dragonscale expedition", -- Dragon Isles Artifact
 	[200071] = "iskaara tuskarr", -- Sacred Tuskarr Totem
 	[200093] = "maruuk centaur", -- Centaur Hunting Trophy
@@ -600,18 +621,18 @@ T.faction = {
 
 	-- Shadowlands
 	["court of harvesters"]					= { ["id"] = 2413, 	["icon"] = 3514227, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
-	["court of night"]						= { ["id"] = 2464, 	["icon"] = 3752258, 	["paragon"] = false, 	["friend"] = 5, ["kind"] = "reputation",	 ["factionGroup"] = false, },
+	["court of night"]						= { ["id"] = 2464, 	["icon"] = 3752258, 	["paragon"] = false, 	["friend"] = 5, ["kind"] = "friendship",	 ["factionGroup"] = false, },
 	["death's advance"]						= { ["id"] = 2470, 	["icon"] = 4064729, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
-	["marasmius"]							= { ["id"] = 2463, 	["icon"] = 464342, 		["paragon"] = false, 	["friend"] = 0, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- hidden from the Reputation Panel
-	["stitchmasters"]						= { ["id"] = 2462, 	["icon"] = 3622121, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "friendship",	 ["factionGroup"] = false, },
-	["the archivists' codex"]				= { ["id"] = 2472, 	["icon"] = 1506458, 	["paragon"] = true, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, },
+	["marasmius"]							= { ["id"] = 2463, 	["icon"] = 464342, 		["paragon"] = false, 	["friend"] = 5, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- hidden from the Reputation Panel
+	["stitchmasters"]						= { ["id"] = 2462, 	["icon"] = 3622121, 	["paragon"] = false, 	["friend"] = 5, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["the archivists' codex"]				= { ["id"] = 2472, 	["icon"] = 1506458, 	["paragon"] = true, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
 	["the ascended"]						= { ["id"] = 2407, 	["icon"] = 3257748, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["the avowed"]							= { ["id"] = 2439, 	["icon"] = 3601526, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["the enlightened"]						= { ["id"] = 2478, 	["icon"] = 4226232, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["the ember court"]						= { ["id"] = 2445, 	["icon"] = 3641397, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["the undying army"]					= { ["id"] = 2410, 	["icon"] = 3492310, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["the wild hunt"]						= { ["id"] = 2465, 	["icon"] = 3575389, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
-	["ve'nari"]								= { ["id"] = 2432, 	["icon"] = 3527519, 	["paragon"] = true, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, },
+	["ve'nari"]								= { ["id"] = 2432, 	["icon"] = 3527519, 	["paragon"] = true, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
 
 	-- Battle for Azeroth
 	["7th legion"]							= { ["id"] = 2159, 	["icon"] = 2032591, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = "Alliance", },
@@ -635,8 +656,8 @@ T.faction = {
 	["argussian reach"] 					= { ["id"] = 2170, 	["icon"] = 1708496, 	["paragon"] = true,		["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["armies of legionfall"] 				= { ["id"] = 2045, 	["icon"] = 1585421, 	["paragon"] = true,		["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["army of the light"] 					= { ["id"] = 2165, 	["icon"] = 1708497, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
-	["chromie"]								= { ["id"] = 2135, 	["icon"] = 237538, 		["paragon"] = false, 	["friend"] = 7, ["kind"] = "reputation",	 ["factionGroup"] = false, },
-	["conjurer margoss"]					= { ["id"] = 1975, 	["icon"] = 132852, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, },
+	["chromie"]								= { ["id"] = 2135, 	["icon"] = 237538, 		["paragon"] = false, 	["friend"] = 7, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["conjurer margoss"]					= { ["id"] = 1975, 	["icon"] = 132852, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
 	["court of farondis"] 					= { ["id"] = 1900, 	["icon"] = 1394952, 	["paragon"] = true,  	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["dreamweavers"] 						= { ["id"] = 1883, 	["icon"] = 1394953, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["highmountain tribe"] 					= { ["id"] = 1828, 	["icon"] = 1394954, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
@@ -645,12 +666,12 @@ T.faction = {
 	["valarjar"] 							= { ["id"] = 1948, 	["icon"] = 1394957, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["talon's vengeance"]					= { ["id"] = 2018, 	["icon"] = 537444, 		["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	-- Fisherfriends
-	["akule riverhorn"]						= { ["id"] = 2099, 	["icon"] = 236575, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, },
-	["corbyn"]								= { ["id"] = 2100, 	["icon"] = 236575, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, }, -- maybe 132915
-	["ilyssia of the waters"]				= { ["id"] = 2097, 	["icon"] = 236575, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, },
-	["impus"]								= { ["id"] = 2102, 	["icon"] = 236575, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, }, -- maybe 136218
-	["keeper raynae"]						= { ["id"] = 2098, 	["icon"] = 236575, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, },
-	["sha'leth"]							= { ["id"] = 2101, 	["icon"] = 236575, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, },
+	["akule riverhorn"]						= { ["id"] = 2099, 	["icon"] = 236575, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["corbyn"]								= { ["id"] = 2100, 	["icon"] = 236575, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- maybe 132915
+	["ilyssia of the waters"]				= { ["id"] = 2097, 	["icon"] = 236575, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["impus"]								= { ["id"] = 2102, 	["icon"] = 236575, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- maybe 136218
+	["keeper raynae"]						= { ["id"] = 2098, 	["icon"] = 236575, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["sha'leth"]							= { ["id"] = 2101, 	["icon"] = 236575, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
 
 	-- Warlords of Draenor
 	["arakkoa outcasts"]					= { ["id"] = 1515, 	["icon"] = 1042646, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
@@ -666,13 +687,13 @@ T.faction = {
 	["vol'jin's spear"]						= { ["id"] = 1681, 	["icon"] = 1042727, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = "Horde", },
 	["wrynn's vanguard"]					= { ["id"] = 1682, 	["icon"] = 1042294, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = "Alliance", },
 	-- Barracks Bodyguards
-	["aeda brightdawn"]						= { ["id"] = 1740, 	["icon"] = 1037260, 	["paragon"] = false, 	["friend"] = 3, ["kind"] = "reputation",	 ["factionGroup"] = "Horde", },
-	["defender illona"]						= { ["id"] = 1738, 	["icon"] = 1037260, 	["paragon"] = false, 	["friend"] = 3, ["kind"] = "reputation",	 ["factionGroup"] = "Alliance", },
-	["delvar ironfist"]						= { ["id"] = 1733, 	["icon"] = 1037260, 	["paragon"] = false, 	["friend"] = 3, ["kind"] = "reputation",	 ["factionGroup"] = "Alliance", },
-	["leorajh"]								= { ["id"] = 1741, 	["icon"] = 1037260, 	["paragon"] = false, 	["friend"] = 3, ["kind"] = "reputation",	 ["factionGroup"] = false, },
-	["talonpriest ishaal"]					= { ["id"] = 1737, 	["icon"] = 1037260, 	["paragon"] = false, 	["friend"] = 3, ["kind"] = "reputation",	 ["factionGroup"] = false, },
-	["tormmok"]								= { ["id"] = 1736, 	["icon"] = 1037260, 	["paragon"] = false, 	["friend"] = 3, ["kind"] = "reputation",	 ["factionGroup"] = false, },
-	["vivianne"]							= { ["id"] = 1739, 	["icon"] = 1037260, 	["paragon"] = false, 	["friend"] = 3, ["kind"] = "reputation",	 ["factionGroup"] = "Horde", },
+	["aeda brightdawn"]						= { ["id"] = 1740, 	["icon"] = 1037260, 	["paragon"] = false, 	["friend"] = 3, ["kind"] = "friendship",	 ["factionGroup"] = "Horde", },
+	["defender illona"]						= { ["id"] = 1738, 	["icon"] = 1037260, 	["paragon"] = false, 	["friend"] = 3, ["kind"] = "friendship",	 ["factionGroup"] = "Alliance", },
+	["delvar ironfist"]						= { ["id"] = 1733, 	["icon"] = 1037260, 	["paragon"] = false, 	["friend"] = 3, ["kind"] = "friendship",	 ["factionGroup"] = "Alliance", },
+	["leorajh"]								= { ["id"] = 1741, 	["icon"] = 1037260, 	["paragon"] = false, 	["friend"] = 3, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["talonpriest ishaal"]					= { ["id"] = 1737, 	["icon"] = 1037260, 	["paragon"] = false, 	["friend"] = 3, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["tormmok"]								= { ["id"] = 1736, 	["icon"] = 1037260, 	["paragon"] = false, 	["friend"] = 3, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["vivianne"]							= { ["id"] = 1739, 	["icon"] = 1037260, 	["paragon"] = false, 	["friend"] = 3, ["kind"] = "friendship",	 ["factionGroup"] = "Horde", },
 
 	-- Mists of Pandaria
 	["dominance offensive"]					= { ["id"] = 1375, 	["icon"] = 463451, 		["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = "Horde", },
@@ -691,19 +712,19 @@ T.faction = {
 	["the klaxxi"]							= { ["id"] = 1337, 	["icon"] = 646377, 		["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["the lorewalkers"]						= { ["id"] = 1345, 	["icon"] = 645218, 		["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["the anglers"]							= { ["id"] = 1302, 	["icon"] = 643874, 		["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
-	["nat pagle"]							= { ["id"] = 1358, 	["icon"] = 133152, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, },
+	["nat pagle"]							= { ["id"] = 1358, 	["icon"] = 133152, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
 	["the tillers"]							= { ["id"] = 1272, 	["icon"] = 645198, 		["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	-- The Tillers
-	["chee chee"]							= { ["id"] = 1277, 	["icon"] = 132926, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, }, -- blue feather
-	["ella"]								= { ["id"] = 1275, 	["icon"] = 454045, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, }, -- jade cat
-	["farmer fung"]							= { ["id"] = 1283, 	["icon"] = 134210, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, }, -- marsh lily
-	["fish fellreed"]						= { ["id"] = 1282, 	["icon"] = 454045, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, }, -- jade cat
-	["gina mudclaw"]						= { ["id"] = 1281, 	["icon"] = 134210, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, }, -- marsh lily
-	["haohan mudclaw"]						= { ["id"] = 1279, 	["icon"] = 237204, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, }, -- ruby shard
-	["jogu the drunk"]						= { ["id"] = 1273, 	["icon"] = 133975, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, }, -- lovely apple
-	["old hillpaw"]							= { ["id"] = 1276, 	["icon"] = 132926, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, }, -- blue feather
-	["sho"]									= { ["id"] = 1278, 	["icon"] = 133975, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, }, -- lovely apple
-	["tina mudclaw"]						= { ["id"] = 1280, 	["icon"] = 237204, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "reputation",	 ["factionGroup"] = false, }, -- ruby shard
+	["chee chee"]							= { ["id"] = 1277, 	["icon"] = 132926, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- blue feather
+	["ella"]								= { ["id"] = 1275, 	["icon"] = 454045, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- jade cat
+	["farmer fung"]							= { ["id"] = 1283, 	["icon"] = 134210, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- marsh lily
+	["fish fellreed"]						= { ["id"] = 1282, 	["icon"] = 454045, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- jade cat
+	["gina mudclaw"]						= { ["id"] = 1281, 	["icon"] = 134210, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- marsh lily
+	["haohan mudclaw"]						= { ["id"] = 1279, 	["icon"] = 237204, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- ruby shard
+	["jogu the drunk"]						= { ["id"] = 1273, 	["icon"] = 133975, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- lovely apple
+	["old hillpaw"]							= { ["id"] = 1276, 	["icon"] = 132926, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- blue feather
+	["sho"]									= { ["id"] = 1278, 	["icon"] = 133975, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- lovely apple
+	["tina mudclaw"]						= { ["id"] = 1280, 	["icon"] = 237204, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- ruby shard
 	-- Hidden
 	["nomi"]								= { ["id"] = 1357, 	["icon"] = 654236, 		["paragon"] = false, 	["friend"] = 0, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- hidden from the Reputation Panel
 

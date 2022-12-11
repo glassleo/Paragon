@@ -36,7 +36,7 @@ local cfgTooltipPersonalEnabled = CreateFrame("CheckButton", nil, cfgFrame, "Int
 cfgTooltipPersonalEnabled:SetPoint("TOPLEFT", 20, -180)
 cfgTooltipPersonalEnabled.Text:SetText(" " .. L["cfgTooltipPersonalEnabled"])
 cfgTooltipPersonalEnabled:SetScript("OnClick", function(self)
-	ParagonDB["config"]["tooltip_personal_enabled"] = self:GetChecked()
+	ParagonDB2["config"]["tooltip_personal_enabled"] = self:GetChecked()
 end)
 
 
@@ -51,7 +51,7 @@ local cfgTooltipAltsEnabled = CreateFrame("CheckButton", nil, cfgFrame, "Interfa
 cfgTooltipAltsEnabled:SetPoint("TOPLEFT", 20, -240)
 cfgTooltipAltsEnabled.Text:SetText(" " .. L["cfgTooltipAltsEnabled"])
 cfgTooltipAltsEnabled:SetScript("OnClick", function(self)
-	ParagonDB["config"]["tooltip_alts_enabled"] = self:GetChecked()
+	ParagonDB2["config"]["tooltip_alts_enabled"] = self:GetChecked()
 end)
 
 
@@ -60,7 +60,7 @@ local cfgTooltipAltsEnabledShift = CreateFrame("CheckButton", nil, cfgFrame, "In
 cfgTooltipAltsEnabledShift:SetPoint("TOPLEFT", 20, -270)
 cfgTooltipAltsEnabledShift.Text:SetText(" " .. L["cfgTooltipAltsEnabledShift"])
 cfgTooltipAltsEnabledShift:SetScript("OnClick", function(self)
-	ParagonDB["config"]["tooltip_alts_enabled_shift"] = self:GetChecked()
+	ParagonDB2["config"]["tooltip_alts_enabled_shift"] = self:GetChecked()
 end)
 
 
@@ -69,7 +69,7 @@ local cfgTooltipAltsEnabledAlt = CreateFrame("CheckButton", nil, cfgFrame, "Inte
 cfgTooltipAltsEnabledAlt:SetPoint("TOPLEFT", 20, -300)
 cfgTooltipAltsEnabledAlt.Text:SetText(" " .. L["cfgTooltipAltsEnabledAlt"])
 cfgTooltipAltsEnabledAlt:SetScript("OnClick", function(self)
-	ParagonDB["config"]["tooltip_alts_enabled_alt"] = self:GetChecked()
+	ParagonDB2["config"]["tooltip_alts_enabled_alt"] = self:GetChecked()
 end)
 
 
@@ -90,7 +90,7 @@ cfgTooltipAltsLimit:SetBackdrop({ bgFile = 'Interface/ChatFrame/ChatFrameBackgro
 cfgTooltipAltsLimit:SetBackdropColor(0, 0, 0, 0.5)
 cfgTooltipAltsLimit:SetBackdropBorderColor(0.3, 0.3, 0.3, 0.8)
 cfgTooltipAltsLimit:SetScript('OnEscapePressed', function(self)
-	self:SetNumber(tonumber(ParagonDB["config"]["chat_output_limit"]) or 1)
+	self:SetNumber(tonumber(ParagonDB2["config"]["chat_output_limit"]) or 1)
 	self:ClearFocus()
 end)
 cfgTooltipAltsLimit:SetScript('OnEnterPressed', function(self)
@@ -99,14 +99,14 @@ cfgTooltipAltsLimit:SetScript('OnEnterPressed', function(self)
 
 	if not val then
 		-- Restore previous value
-		self:SetNumber(tonumber(ParagonDB["config"]["tooltip_alts_limit"]) or 1)
-		val = tonumber(ParagonDB["config"]["tooltip_alts_limit"]) or 1
+		self:SetNumber(tonumber(ParagonDB2["config"]["tooltip_alts_limit"]) or 1)
+		val = tonumber(ParagonDB2["config"]["tooltip_alts_limit"]) or 1
 	elseif val < 1 then
 		self:SetNumber(1)
 		val = 1
 	end
 
-	ParagonDB["config"]["tooltip_alts_limit"] = val
+	ParagonDB2["config"]["tooltip_alts_limit"] = val
 	self:ClearFocus()
 end)
 cfgTooltipAltsLimit:SetMaxLetters(2)
@@ -130,7 +130,7 @@ cfgTooltipAltsLimitShift:SetBackdrop({ bgFile = 'Interface/ChatFrame/ChatFrameBa
 cfgTooltipAltsLimitShift:SetBackdropColor(0, 0, 0, 0.5)
 cfgTooltipAltsLimitShift:SetBackdropBorderColor(0.3, 0.3, 0.3, 0.8)
 cfgTooltipAltsLimitShift:SetScript('OnEscapePressed', function(self)
-	self:SetNumber(tonumber(ParagonDB["config"]["chat_output_limit"]) or 1)
+	self:SetNumber(tonumber(ParagonDB2["config"]["chat_output_limit"]) or 1)
 	self:ClearFocus()
 end)
 cfgTooltipAltsLimitShift:SetScript('OnEnterPressed', function(self)
@@ -139,14 +139,14 @@ cfgTooltipAltsLimitShift:SetScript('OnEnterPressed', function(self)
 
 	if not val then
 		-- Restore previous value
-		self:SetNumber(tonumber(ParagonDB["config"]["tooltip_alts_limit_shift"]) or 1)
-		val = tonumber(ParagonDB["config"]["tooltip_alts_limit_shift"]) or 1
+		self:SetNumber(tonumber(ParagonDB2["config"]["tooltip_alts_limit_shift"]) or 1)
+		val = tonumber(ParagonDB2["config"]["tooltip_alts_limit_shift"]) or 1
 	elseif val < 1 then
 		self:SetNumber(1)
 		val = 1
 	end
 
-	ParagonDB["config"]["tooltip_alts_limit_shift"] = val
+	ParagonDB2["config"]["tooltip_alts_limit_shift"] = val
 	self:ClearFocus()
 end)
 cfgTooltipAltsLimitShift:SetMaxLetters(2)
@@ -164,7 +164,7 @@ local cfgTooltipHideExalted = CreateFrame("CheckButton", nil, cfgFrame, "Interfa
 cfgTooltipHideExalted:SetPoint("TOPLEFT", 20, -415)
 cfgTooltipHideExalted.Text:SetText(" " .. L["cfgTooltipHideExalted"])
 cfgTooltipHideExalted:SetScript("OnClick", function(self)
-	ParagonDB["config"]["tooltip_hide_exalted"] = self:GetChecked()
+	ParagonDB2["config"]["tooltip_hide_exalted"] = self:GetChecked()
 end)
 
 
@@ -173,7 +173,7 @@ local cfgTooltipHideNeutral = CreateFrame("CheckButton", nil, cfgFrame, "Interfa
 cfgTooltipHideNeutral:SetPoint("TOPLEFT", 20, -445)
 cfgTooltipHideNeutral.Text:SetText(" " .. L["cfgTooltipHideNeutral"])
 cfgTooltipHideNeutral:SetScript("OnClick", function(self)
-	ParagonDB["config"]["tooltip_hide_neutral"] = self:GetChecked()
+	ParagonDB2["config"]["tooltip_hide_neutral"] = self:GetChecked()
 end)
 
 
@@ -182,7 +182,7 @@ local cfgTooltipHideUnfriendly = CreateFrame("CheckButton", nil, cfgFrame, "Inte
 cfgTooltipHideUnfriendly:SetPoint("TOPLEFT", 20, -475)
 cfgTooltipHideUnfriendly.Text:SetText(" " .. L["cfgTooltipHideUnfriendly"])
 cfgTooltipHideUnfriendly:SetScript("OnClick", function(self)
-	ParagonDB["config"]["tooltip_hide_unfriendly"] = self:GetChecked()
+	ParagonDB2["config"]["tooltip_hide_unfriendly"] = self:GetChecked()
 end)
 
 
@@ -191,7 +191,7 @@ local cfgDisplayRealmNames = CreateFrame("CheckButton", nil, cfgFrame, "Interfac
 cfgDisplayRealmNames:SetPoint("TOPLEFT", 20, -520)
 cfgDisplayRealmNames.Text:SetText(" " .. L["cfgDisplayRealmNames"])
 cfgDisplayRealmNames:SetScript("OnClick", function(self)
-	ParagonDB["config"]["display_realm_names"] = self:GetChecked()
+	ParagonDB2["config"]["display_realm_names"] = self:GetChecked()
 end)
 
 -- Checkbox: Abbreviate Realm Names Into Acronyms
@@ -199,7 +199,7 @@ local cfgShortRealmNames = CreateFrame("CheckButton", nil, cfgFrame, "InterfaceO
 cfgShortRealmNames:SetPoint("TOPLEFT", 230, -520)
 cfgShortRealmNames.Text:SetText(" " .. L["cfgShortRealmNames"])
 cfgShortRealmNames:SetScript("OnClick", function(self)
-	ParagonDB["config"]["short_realm_names"] = self:GetChecked()
+	ParagonDB2["config"]["short_realm_names"] = self:GetChecked()
 end)
 
 
@@ -208,17 +208,17 @@ end)
 
 
 local function Paragon_cfgInitView()
-	cfgTooltipPersonalEnabled:SetChecked(ParagonDB["config"]["tooltip_personal_enabled"] ~= false)
-	cfgTooltipAltsEnabled:SetChecked(ParagonDB["config"]["tooltip_alts_enabled"] ~= false)
-	cfgTooltipAltsEnabledShift:SetChecked(ParagonDB["config"]["tooltip_alts_enabled_shift"] ~= false)
-	cfgTooltipAltsEnabledAlt:SetChecked(ParagonDB["config"]["tooltip_alts_enabled_alt"] ~= false)
-	cfgTooltipAltsLimit:SetNumber(tonumber(ParagonDB["config"]["tooltip_alts_limit"]) or 1)
-	cfgTooltipAltsLimitShift:SetNumber(tonumber(ParagonDB["config"]["tooltip_alts_limit_shift"]) or 1)
-	cfgTooltipHideExalted:SetChecked(ParagonDB["config"]["tooltip_hide_exalted"] ~= false)
-	cfgTooltipHideNeutral:SetChecked(ParagonDB["config"]["tooltip_hide_neutral"] ~= false)
-	cfgTooltipHideUnfriendly:SetChecked(ParagonDB["config"]["tooltip_hide_unfriendly"] ~= false)
-	cfgDisplayRealmNames:SetChecked(ParagonDB["config"]["display_realm_names"] ~= false)
-	cfgShortRealmNames:SetChecked(ParagonDB["config"]["short_realm_names"] ~= false)
+	cfgTooltipPersonalEnabled:SetChecked(ParagonDB2["config"]["tooltip_personal_enabled"] ~= false)
+	cfgTooltipAltsEnabled:SetChecked(ParagonDB2["config"]["tooltip_alts_enabled"] ~= false)
+	cfgTooltipAltsEnabledShift:SetChecked(ParagonDB2["config"]["tooltip_alts_enabled_shift"] ~= false)
+	cfgTooltipAltsEnabledAlt:SetChecked(ParagonDB2["config"]["tooltip_alts_enabled_alt"] ~= false)
+	cfgTooltipAltsLimit:SetNumber(tonumber(ParagonDB2["config"]["tooltip_alts_limit"]) or 1)
+	cfgTooltipAltsLimitShift:SetNumber(tonumber(ParagonDB2["config"]["tooltip_alts_limit_shift"]) or 1)
+	cfgTooltipHideExalted:SetChecked(ParagonDB2["config"]["tooltip_hide_exalted"] ~= false)
+	cfgTooltipHideNeutral:SetChecked(ParagonDB2["config"]["tooltip_hide_neutral"] ~= false)
+	cfgTooltipHideUnfriendly:SetChecked(ParagonDB2["config"]["tooltip_hide_unfriendly"] ~= false)
+	cfgDisplayRealmNames:SetChecked(ParagonDB2["config"]["display_realm_names"] ~= false)
+	cfgShortRealmNames:SetChecked(ParagonDB2["config"]["short_realm_names"] ~= false)
 end
 
 local function Paragon_cfgSaveView()
@@ -226,7 +226,7 @@ local function Paragon_cfgSaveView()
 end
 
 local function Paragon_cfgSetDefaults()
-	ParagonDB["config"] = T.defaults
+	ParagonDB2["config"] = T.defaults
 	Paragon_cfgInitView()
 end
 

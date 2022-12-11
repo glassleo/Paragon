@@ -152,10 +152,10 @@ resultsFrameFactionLabel:SetJustifyV("MIDDLE")
 
 -- Realm formatting
 local function format_realm(realmName)
-	if realmName == T.realm or not ParagonDB["config"]["display_realm_names"] then
+	if realmName == T.realm or not ParagonDB2["config"]["display_realm_names"] then
 		return "" -- Same realm as player or realm names are turned off
 	else
-		if ParagonDB["config"]["short_realm_names"] then
+		if ParagonDB2["config"]["short_realm_names"] then
 			local parts = {}
 			for part in string.gmatch(realmName, "[^ ]+") do
 				tinsert(parts, part)
@@ -178,10 +178,10 @@ end
 
 -- Function to update current player's repuation standings
 local function updateFactions()
-	if not ParagonDB then return end
+	if not ParagonDB2 then return end
 
 	-- Replace current character's saved data with current data
-	ParagonDB["character"][T.charStr] = { ["name"] = T.player, ["realm"] = T.realm, ["class"] = T.class, ["level"] = T.level, ["factionGroup"] = T.factionGroup }
+	ParagonDB2["character"][T.charStr] = { ["name"] = T.player, ["realm"] = T.realm, ["class"] = T.class, ["level"] = T.level, ["factionGroup"] = T.factionGroup }
 
 	for faction, data in pairs(T.faction) do
 		local id, icon, paragon, factionGroup, friend, kind = data["id"], data["icon"], data["paragon"], data["factionGroup"], data["friend"], data["kind"]
@@ -194,53 +194,107 @@ local function updateFactions()
 			barMax = friendship.nextThreshold or 42000
 			name = friendship.name or name
 
-			if id == 1357 or id == 2517 or id == 2518 then -- Nomi, Wrathion, Sabellian
-				if barValue >= 42000 then
-					standingId = 8
-				elseif barValue >= 33600 then
-					standingId = 7
-				elseif barValue >= 25200 then
-					standingId = 6
-				elseif barValue >= 16800 then
-					standingId = 5
-				elseif barValue >= 8400 then
-					standingId = 4
-				else
+			if id == 1740 or id == 1738 or id == 1733 or id == 1741 or id == 1737 or id == 1736 or id == 1739 then -- Garrison Bodyguards
+				if barValue >= 20000 then
 					standingId = 3
-				end
-			elseif id == 2550 then -- Cobalt Assembly
-				if barValue >= 10000 then
-					standingId = 8
-				elseif barValue >= 3600 then
-					standingId = 7
-				elseif barValue >= 1200 then
-					standingId = 6
-				elseif barValue >= 300 then
-					standingId = 5
+				elseif barValue >= 10000 then
+					standingId = 2
 				else
+					standingId = 1
+				end
+			elseif id == 2135 then -- Chromie
+				if barValue >= 15000 then
+					standingId = 7
+				elseif barValue >= 10000 then
+					standingId = 6
+				elseif barValue >= 7000 then
+					standingId = 5
+				elseif barValue >= 4500 then
 					standingId = 4
+				elseif barValue >= 2500 then
+					standingId = 3
+				elseif barValue >= 1000 then
+					standingId = 2
+				else
+					standingId = 1
+				end
+			elseif id == 2464 or id == 2463 or id == 2462 then -- Court of Night, Marasmius, Stitchmasters
+				if barValue >= 42000 then
+					standingId = 5
+				elseif barValue >= 21000 then
+					standingId = 4
+				elseif barValue >= 9000 then
+					standingId = 3
+				elseif barValue >= 3000 then
+					standingId = 2
+				else
+					standingId = 1
+				end
+			elseif id == 2432 then -- Ve'nari
+				if barValue >= 42000 then
+					standingId = 6
+				elseif barValue >= 21000 then
+					standingId = 5
+				elseif barValue >= 14000 then
+					standingId = 4
+				elseif barValue >= 7000 then
+					standingId = 3
+				elseif barValue >= 1000 then
+					standingId = 2
+				else
+					standingId = 1
+				end
+			elseif id == 2472 then -- The Archivists' Codex
+				if barValue >= 41000 then
+					standingId = 6
+				elseif barValue >= 25000 then
+					standingId = 5
+				elseif barValue >= 14000 then
+					standingId = 4
+				elseif barValue >= 7500 then
+					standingId = 3
+				elseif barValue >= 3000 then
+					standingId = 2
+				else
+					standingId = 1
 				end
 			elseif id == 2544 then -- Artisan's Consortium - Dragon Isles Branch
 				if barValue >= 12500 then
-					standingId = 8
+					standingId = 5
 				elseif barValue >= 5500 then
-					standingId = 7
-				elseif barValue >= 2500 then
-					standingId = 6
-				elseif barValue >= 500 then
-					standingId = 5
-				else
 					standingId = 4
+				elseif barValue >= 2500 then
+					standingId = 3
+				elseif barValue >= 500 then
+					standingId = 2
+				else
+					standingId = 1
 				end
-			else
-				if barValue >= 42000 then
-					standingId = 8
-				elseif barValue >= 21000 then
-					standingId = 7
-				elseif barValue >= 9000 then
-					standingId = 6
-				elseif barValue >= 3000 then
+			elseif id == 2550 then -- Cobalt Assembly
+				if barValue >= 10000 then
 					standingId = 5
+				elseif barValue >= 3600 then
+					standingId = 4
+				elseif barValue >= 1200 then
+					standingId = 3
+				elseif barValue >= 300 then
+					standingId = 2
+				else
+					standingId = 1
+				end
+			else -- Default
+				if barValue >= 42000 then
+					standingId = 6
+				elseif barValue >= 33600 then
+					standingId = 5
+				elseif barValue >= 25200 then
+					standingId = 4
+				elseif barValue >= 16800 then
+					standingId = 3
+				elseif barValue >= 8400 then
+					standingId = 2
+				else
+					standingId = 1
 				end
 			end
 		elseif kind == "renown" then
@@ -261,21 +315,21 @@ local function updateFactions()
 				currentValue = currentValue % threshold
 				if hasRewardPending then currentValue = currentValue + threshold end
 
-				ParagonDB["character"][T.charStr][faction] = {
+				ParagonDB2["character"][T.charStr][faction] = {
 					["standingId"] = 9, -- Paragon
 					["current"] = currentValue,
 					["max"] = threshold,
 					["hasRewardPending"] = hasRewardPending,
 				}
 			elseif kind == "renown" then
-				ParagonDB["character"][T.charStr][faction] = {
+				ParagonDB2["character"][T.charStr][faction] = {
 					["standingId"] = standingId, -- Renown level
 					["current"] = barValue,
 					["max"] = barMax,
 					["hasRewardPending"] = false,
 				}
 			elseif barValue then
-				ParagonDB["character"][T.charStr][faction] = {
+				ParagonDB2["character"][T.charStr][faction] = {
 					["standingId"] = standingId,
 					["current"] = barValue - barMin,
 					["max"] = barMax - barMin,
@@ -298,8 +352,8 @@ local function deleteCharacter(characterName, verbose)
 		characterName = string.lower(characterName)
 	end
 
-	if setContains(ParagonDB["character"], characterName) then
-		ParagonDB["character"][characterName] = nil
+	if setContains(ParagonDB2["character"], characterName) then
+		ParagonDB2["character"][characterName] = nil
 		if verbose then
 			DEFAULT_CHAT_FRAME:AddMessage(string.format(L["delete character successful"], characterName))
 		end
@@ -308,8 +362,8 @@ local function deleteCharacter(characterName, verbose)
 		characterName = characterName .. string.lower("-"..T.realm)
 	end
 
-	if setContains(ParagonDB["character"], characterName) and characterName ~= string.lower("-"..T.realm) then
-		ParagonDB["character"][characterName] = nil
+	if setContains(ParagonDB2["character"], characterName) and characterName ~= string.lower("-"..T.realm) then
+		ParagonDB2["character"][characterName] = nil
 		if verbose then
 			DEFAULT_CHAT_FRAME:AddMessage(string.format(L["delete character successful"], characterName))
 		end
@@ -390,16 +444,16 @@ local function outputFaction(factionName, limit, outputFormat, currentLine)
 	local ui, scrollcontainer, scroll = nil, nil, nil
 
 	-- Sorting table
-	for char, tbl in pairs(ParagonDB["character"]) do
+	for char, tbl in pairs(ParagonDB2["character"]) do
 		if setContains(tbl, faction) then
 			factionTable[char] = tbl[faction]
-			sortTable[char] = tostring(tbl[faction]["standingId"] .. "." .. string.format("%09.7d", tbl[faction]["current"]))
+			sortTable[char] = tostring(string.format("%04.4d", tbl[faction]["standingId"]) .. "." .. string.format("%09.7d", tbl[faction]["current"]))
 		end
 	end
 
 	-- Sort the table
 	local sortedKeys
-	if outputFormat == "tooltip" and ParagonDB["config"]["tooltip_alts_enabled_alt"] and IsAltKeyDown() then -- Reverse order when holding <Alt>
+	if outputFormat == "tooltip" and ParagonDB2["config"]["tooltip_alts_enabled_alt"] and IsAltKeyDown() then -- Reverse order when holding <Alt>
 		sortedKeys = getKeysSortedByValue(sortTable, function(a, b) return a < b end)
 	else
 		sortedKeys = getKeysSortedByValue(sortTable, function(a, b) return a > b end)
@@ -407,10 +461,10 @@ local function outputFaction(factionName, limit, outputFormat, currentLine)
 
 	local i, out = 0, nil
 	for _, char in ipairs(sortedKeys) do
-		local d = ParagonDB["character"][char]
+		local d = ParagonDB2["character"][char]
 		local standingId = factionTable[char]["standingId"]
 
-		if (not (ParagonDB["config"]["tooltip_hide_exalted"] and standingId == 8) and not (ParagonDB["config"]["tooltip_hide_neutral"] and standingId == 4) and not (ParagonDB["config"]["tooltip_hide_unfriendly"] and standingId <= 3)) or outputFormat == "ui" then
+		if (not (ParagonDB2["config"]["tooltip_hide_exalted"] and standingId == 8) and not (ParagonDB2["config"]["tooltip_hide_neutral"] and standingId == 4) and not (ParagonDB2["config"]["tooltip_hide_unfriendly"] and standingId <= 3)) or outputFormat == "ui" then
 			i = i + 1
 
 			if i == 1 then
@@ -565,15 +619,15 @@ local function OnTooltipSetItem(tooltip, data)
 			bound, faction = "BoP", T.reputationItemBoP[itemId]
 		end
 
-		local d = ParagonDB["character"][T.charStr]
-		local limit = tonumber(ParagonDB["config"]["tooltip_alts_limit"])
-		local limit_shift = tonumber(ParagonDB["config"]["tooltip_alts_limit_shift"])
+		local d = ParagonDB2["character"][T.charStr]
+		local limit = tonumber(ParagonDB2["config"]["tooltip_alts_limit"])
+		local limit_shift = tonumber(ParagonDB2["config"]["tooltip_alts_limit_shift"])
 
 		local factions = { strsplit("|", faction) }
 		local totalFactions = 0
 
 		for _, faction in pairs(factions) do
-			if setContains(d, faction) and ParagonDB["config"]["tooltip_personal_enabled"] then
+			if setContains(d, faction) and ParagonDB2["config"]["tooltip_personal_enabled"] then
 				totalFactions = totalFactions + 1
 
 				tooltip:AddLine(" ")
@@ -598,10 +652,10 @@ local function OnTooltipSetItem(tooltip, data)
 			end
 		end
 
-		if ParagonDB["config"]["tooltip_alts_enabled"] and limit >= 1 and totalFactions == 1 then
+		if ParagonDB2["config"]["tooltip_alts_enabled"] and limit >= 1 and totalFactions == 1 then
 			if bound == "BoA" and outputFaction(faction, 1, "tooltip", 1) then
 				tooltip:AddLine(" ")
-				if ParagonDB["config"]["tooltip_alts_enabled_alt"] and IsAltKeyDown() then
+				if ParagonDB2["config"]["tooltip_alts_enabled_alt"] and IsAltKeyDown() then
 					tooltip:AddLine(L["lowest reputation"])
 				else
 					tooltip:AddLine(L["highest reputation"])
@@ -616,20 +670,20 @@ local function OnTooltipSetItem(tooltip, data)
 					end
 				end
 
-				if ParagonDB["config"]["tooltip_alts_enabled_shift"] and limit_shift > limit and IsShiftKeyDown() then
+				if ParagonDB2["config"]["tooltip_alts_enabled_shift"] and limit_shift > limit and IsShiftKeyDown() then
 					for i = (limit + 1), limit_shift do
 						if outputFaction(faction, i, "tooltip", i) then
 							tooltip:AddDoubleLine(outputFaction(faction, i, "tooltip", i))
 						end
 					end
-				elseif ParagonDB["config"]["tooltip_alts_enabled_shift"] and limit_shift > limit and outputFaction(faction, (limit + 1), "tooltip", (limit + 1)) then
+				elseif ParagonDB2["config"]["tooltip_alts_enabled_shift"] and limit_shift > limit and outputFaction(faction, (limit + 1), "tooltip", (limit + 1)) then
 					tooltip:AddLine("|cff00ff00"..L["hold shift for more"].."|r")
 				end
 			end
-		elseif ParagonDB["config"]["tooltip_alts_enabled_shift"] and limit_shift >= 1 and totalFactions == 1 then
+		elseif ParagonDB2["config"]["tooltip_alts_enabled_shift"] and limit_shift >= 1 and totalFactions == 1 then
 			if IsShiftKeyDown() then
 				tooltip:AddLine(" ")
-				if ParagonDB["config"]["tooltip_alts_enabled_alt"] and IsAltKeyDown() then
+				if ParagonDB2["config"]["tooltip_alts_enabled_alt"] and IsAltKeyDown() then
 					tooltip:AddLine(L["lowest reputation"])
 				else
 					tooltip:AddLine(L["highest reputation"])
@@ -678,7 +732,7 @@ function SlashCmdList.PARAGON(msg, editbox)
 		end
 
 		if outputFaction(msg, 1, "test") then
-			outputFaction(msg, tonumber(ParagonDB["config"]["chat_output_limit"]), "ui")
+			outputFaction(msg, tonumber(ParagonDB2["config"]["chat_output_limit"]), "ui")
 		else
 			DEFAULT_CHAT_FRAME:AddMessage(L["/paragon help"])
 		end
@@ -690,11 +744,57 @@ end
 local function eventHandler(self, event)
 	if event == "VARIABLES_LOADED" then
 		-- Make sure defaults are set
-		if not ParagonDB then ParagonDB = { ["config"] = T.defaults, ["character"] = {} } end
+		if not ParagonDB2 then
+			if ParagonDB and ParagonDB["config"] then
+				-- Migrate old DB to DB2
+				ParagonDB2 = ParagonDB
+				ParagonDB = false
+
+				for name, _ in pairs(ParagonDB2["character"]) do
+					ParagonDB2["character"][name]["artisan's consortium - dragon isles branch"] = nil
+					ParagonDB2["character"][name]["cobalt assembly"] = nil
+					ParagonDB2["character"][name]["sabellian"] = nil
+					ParagonDB2["character"][name]["wrathion"] = nil
+					ParagonDB2["character"][name]["marasmius"] = nil
+					ParagonDB2["character"][name]["stitchmasters"] = nil
+					ParagonDB2["character"][name]["the archivists' codex"] = nil
+					ParagonDB2["character"][name]["court of night"] = nil
+					ParagonDB2["character"][name]["ve'nari"] = nil
+					ParagonDB2["character"][name]["chromie"] = nil
+					ParagonDB2["character"][name]["conjurer margoss"] = nil
+					ParagonDB2["character"][name]["akule riverhorn"] = nil
+					ParagonDB2["character"][name]["corbyn"] = nil
+					ParagonDB2["character"][name]["ilyssia of the waters"] = nil
+					ParagonDB2["character"][name]["impus"] = nil
+					ParagonDB2["character"][name]["keeper raynae"] = nil
+					ParagonDB2["character"][name]["sha'leth"] = nil
+					ParagonDB2["character"][name]["aeda brightdawn"] = nil
+					ParagonDB2["character"][name]["defender illona"] = nil
+					ParagonDB2["character"][name]["delvar ironfist"] = nil
+					ParagonDB2["character"][name]["leorajh"] = nil
+					ParagonDB2["character"][name]["talonpriest ishaal"] = nil
+					ParagonDB2["character"][name]["tormmok"] = nil
+					ParagonDB2["character"][name]["vivianne"] = nil
+					ParagonDB2["character"][name]["chee chee"] = nil
+					ParagonDB2["character"][name]["ella"] = nil
+					ParagonDB2["character"][name]["farmer fung"] = nil
+					ParagonDB2["character"][name]["fish fellreed"] = nil
+					ParagonDB2["character"][name]["gina mudclaw"] = nil
+					ParagonDB2["character"][name]["haohan mudclaw"] = nil
+					ParagonDB2["character"][name]["jogu the drunk"] = nil
+					ParagonDB2["character"][name]["old hillpaw"] = nil
+					ParagonDB2["character"][name]["sho"] = nil
+					ParagonDB2["character"][name]["tina mudclaw"] = nil
+					ParagonDB2["character"][name]["nomi"] = nil
+				end
+			else
+				ParagonDB2 = { ["config"] = T.defaults, ["character"] = {} }
+			end
+		end
 
 		for key, value in pairs(T.defaults) do
-			if not setContains(ParagonDB["config"], key) then
-				ParagonDB["config"][key] = value
+			if not setContains(ParagonDB2["config"], key) then
+				ParagonDB2["config"][key] = value
 			end
 		end
 	end
