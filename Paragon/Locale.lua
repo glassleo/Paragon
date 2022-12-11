@@ -23,6 +23,7 @@ LL["enUS"] = {
 	["faction_standing_paragon"] 			= "Paragon",
 	["faction_standing_renown %d"] 			= "Renown %d",
 	["faction_standing_undiscovered"] 		= "Undiscovered",
+	["faction_standing_unknown"] 			= "Unknown",
 	-- Defaults (also used by Halfhill factions, etc)
 	["faction_standing_stranger"] 			= "Stranger",
 	["faction_standing_acquaintance"] 		= "Acquaintance",
