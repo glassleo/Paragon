@@ -1,10 +1,10 @@
 ## Interface: 100002
 ## Title: Paragon
 ## Notes: Keeps track of reputation for all your characters
-## Version: Chalcedony 4
+## Version: Chalcedony 5
 ## Author: Leo
 
-## SavedVariables: ParagonDB
+## SavedVariables: ParagonDB, ParagonDB2
 
 BoringData.lua
 Locale.lua
