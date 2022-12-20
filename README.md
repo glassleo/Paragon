@@ -1,6 +1,13 @@
 # Paragon
 *Paragon* is an addon that adds reputation information to reputation related items in the game. It also lets you keep track of reputations for all your characters, primarily via tooltips.
 
+Releases can be found here:
+
+- [CurseForge](https://www.curseforge.com/wow/addons/paragon)
+- [Wago Addons](https://addons.wago.io/addons/paragon)
+- [WoWInterface](https://www.wowinterface.com/downloads/info24564-Paragon.html)
+- [GitHub](https://github.com/glassleo/Paragon/releases)
+
 ## Item Tooltips
 Paragon can display your current standing with a reputation on reputation related items. It can also show your other character's standings directly in the tooltip! It has never been easier to figure out which alt to send that Dreamweavers Insignia to.
 
