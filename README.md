@@ -1,7 +1,7 @@
 # Paragon
 *Paragon* is an addon that adds reputation information to reputation related items in the game. It also lets you keep track of reputations for all your characters, primarily via tooltips.
 
-Releases can be found here:
+Releases can be downloaded from:
 
 - [CurseForge](https://www.curseforge.com/wow/addons/paragon)
 - [Wago Addons](https://addons.wago.io/addons/paragon)
