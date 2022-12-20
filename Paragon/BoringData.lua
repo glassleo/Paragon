@@ -159,12 +159,12 @@ T.friendStanding = {
 		[3] = "faction_standing_personal_wingman",
 	},
 	["nomi"] = {
-		[3] = "faction_standing_apprentice",
-		[4] = "faction_standing_apprentice",
+		[1] = "faction_standing_apprentice",
+		[2] = "faction_standing_apprentice",
+		[3] = "faction_standing_journeyman",
+		[4] = "faction_standing_journeyman",
 		[5] = "faction_standing_journeyman",
-		[6] = "faction_standing_journeyman",
-		[7] = "faction_standing_journeyman",
-		[8] = "faction_standing_expert",
+		[6] = "faction_standing_expert",
 	},
 	["court of night"] = { -- also Marasmius, Stitchmasters
 		[1] = "faction_standing_neutral",
@@ -416,6 +416,7 @@ T.reputationItemBoA = {
 -- Reputation item IDs - Soulbound
 T.reputationItemBoP = {
 	-- Dragonflight
+	[201781] = "valdrakken accord", -- Memory of Tyr
 	[191264] = "sabellian|wrathion", -- Restored Obsidian Key
 	[200224] = "sabellian", -- Mark of Sargha
 	[201991] = "wrathion", -- Sargha's Signet
@@ -613,10 +614,10 @@ T.faction = {
 	["iskaara tuskarr"] 					= { ["id"] = 2511, 	["icon"] = 4687629, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "renown", 		 ["factionGroup"] = false, },
 	["maruuk centaur"] 						= { ["id"] = 2503, 	["icon"] = 4687627, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "renown", 		 ["factionGroup"] = false, },
 	["valdrakken accord"] 					= { ["id"] = 2510, 	["icon"] = 4687630, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "renown", 		 ["factionGroup"] = false, },
-	["artisan's consortium - dragon isles branch"] = { ["id"] = 2544, ["icon"] = 4557373, ["paragon"] = false, 	["friend"] = 0, ["kind"] = "friendship",	 ["factionGroup"] = false, },
-	["cobalt assembly"] 					= { ["id"] = 2550,  ["icon"] = 1394893, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "friendship",	 ["factionGroup"] = false, },
-	["sabellian"] 							= { ["id"] = 2518,  ["icon"] = 4630449,     ["paragon"] = false,    ["friend"] = 0, ["kind"] = "friendship",     ["factionGroup"] = false, },
-	["wrathion"] 							= { ["id"] = 2517,  ["icon"] = 4630449,     ["paragon"] = false,    ["friend"] = 0, ["kind"] = "friendship",     ["factionGroup"] = false, },
+	["artisan's consortium - dragon isles branch"] = { ["id"] = 2544, ["icon"] = 4557373, ["paragon"] = false, 	["friend"] = 5, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["cobalt assembly"] 					= { ["id"] = 2550,  ["icon"] = 1394893, 	["paragon"] = false, 	["friend"] = 5, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["sabellian"] 							= { ["id"] = 2518,  ["icon"] = 4630449,     ["paragon"] = false,    ["friend"] = 6, ["kind"] = "friendship",     ["factionGroup"] = false, },
+	["wrathion"] 							= { ["id"] = 2517,  ["icon"] = 4630449,     ["paragon"] = false,    ["friend"] = 6, ["kind"] = "friendship",     ["factionGroup"] = false, },
 	["winterpelt furbolg"] 					= { ["id"] = 2526, 	["icon"] = 4672495, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 
 	-- Shadowlands
@@ -726,7 +727,7 @@ T.faction = {
 	["sho"]									= { ["id"] = 1278, 	["icon"] = 133975, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- lovely apple
 	["tina mudclaw"]						= { ["id"] = 1280, 	["icon"] = 237204, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- ruby shard
 	-- Hidden
-	["nomi"]								= { ["id"] = 1357, 	["icon"] = 654236, 		["paragon"] = false, 	["friend"] = 0, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- hidden from the Reputation Panel
+	["nomi"]								= { ["id"] = 1357, 	["icon"] = 654236, 		["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, }, -- hidden from the Reputation Panel
 
 	-- Cataclysm
 	["avengers of hyjal"]					= { ["id"] = 1204, 	["icon"] = 512609, 		["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
