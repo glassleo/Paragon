@@ -416,6 +416,7 @@ T.reputationItemBoA = {
 -- Reputation item IDs - Soulbound
 T.reputationItemBoP = {
 	-- Dragonflight
+	[201783] = "iskaara tuskarr", -- Tutaqan's Commendation
 	[201781] = "valdrakken accord", -- Memory of Tyr
 	[191264] = "sabellian|wrathion", -- Restored Obsidian Key
 	[200224] = "sabellian", -- Mark of Sargha
