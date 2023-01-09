@@ -612,10 +612,10 @@ T.faction = {
 	["guild"] 								= { ["id"] = 1168, 	["icon"] = 135026, 		["paragon"] = false,	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 
 	-- Dragonflight
-	["dragonscale expedition"] 				= { ["id"] = 2507, 	["icon"] = 4687628, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "renown", 		 ["factionGroup"] = false, },
-	["iskaara tuskarr"] 					= { ["id"] = 2511, 	["icon"] = 4687629, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "renown", 		 ["factionGroup"] = false, },
-	["maruuk centaur"] 						= { ["id"] = 2503, 	["icon"] = 4687627, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "renown", 		 ["factionGroup"] = false, },
-	["valdrakken accord"] 					= { ["id"] = 2510, 	["icon"] = 4687630, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "renown", 		 ["factionGroup"] = false, },
+	["dragonscale expedition"] 				= { ["id"] = 2507, 	["icon"] = 4687628, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "renown", 		 ["factionGroup"] = false, },
+	["iskaara tuskarr"] 					= { ["id"] = 2511, 	["icon"] = 4687629, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "renown", 		 ["factionGroup"] = false, },
+	["maruuk centaur"] 						= { ["id"] = 2503, 	["icon"] = 4687627, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "renown", 		 ["factionGroup"] = false, },
+	["valdrakken accord"] 					= { ["id"] = 2510, 	["icon"] = 4687630, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "renown", 		 ["factionGroup"] = false, },
 	["artisan's consortium - dragon isles branch"] = { ["id"] = 2544, ["icon"] = 4557373, ["paragon"] = false, 	["friend"] = 5, ["kind"] = "friendship",	 ["factionGroup"] = false, },
 	["cobalt assembly"] 					= { ["id"] = 2550,  ["icon"] = 1394893, 	["paragon"] = false, 	["friend"] = 5, ["kind"] = "friendship",	 ["factionGroup"] = false, },
 	["sabellian"] 							= { ["id"] = 2518,  ["icon"] = 4630449,     ["paragon"] = false,    ["friend"] = 6, ["kind"] = "friendship",     ["factionGroup"] = false, },
