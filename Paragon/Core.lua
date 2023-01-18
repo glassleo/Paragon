@@ -316,7 +316,7 @@ local function updateFactions()
 				if hasRewardPending then currentValue = currentValue + threshold end
 
 				ParagonDB2["character"][T.charStr][faction] = {
-					["standingId"] = 9, -- Paragon
+					["standingId"] = (kind == "renown") and standingId or 9, -- Paragon
 					["current"] = currentValue,
 					["max"] = threshold,
 					["hasRewardPending"] = hasRewardPending,
@@ -380,7 +380,9 @@ end
 local function standing(standingId, faction)
 	if setContains(T.faction, faction) then
 		if T.faction[faction]["kind"] == "renown" then
-			if standingId > 0 then
+			if standingId == T.faction[faction]["friend"] then
+				return T.standing[9] -- Paragon
+			elseif standingId > 0 then
 				return L["faction_standing_renown %d"]:format(standingId)
 			else
 				return L["faction_standing_undiscovered"]
@@ -404,10 +406,16 @@ end
 local function standingColor(standingId, faction)
 	if setContains(T.faction, faction) then
 		if T.faction[faction]["kind"] == "renown" then
-			if standingId > 0 then
-				return T.standingColor[9]
+			if standingId == T.faction[faction]["friend"] then
+				return T.standingColor[9] -- Max renown
+			elseif standingId >= 20 then
+				return T.standingColor[7]
+			elseif standingId >= 10 then
+				return T.standingColor[6]
+			elseif standingId > 0 then
+				return T.standingColor[5]
 			else
-				return T.standingColor[4]
+				return T.standingColor[4] -- Undiscovered
 			end
 		elseif T.faction[faction]["friend"] ~= 0 then
 			if setContains(T.friendStandingColor, faction) then
@@ -487,10 +495,8 @@ local function outputFaction(factionName, limit, outputFormat, currentLine)
 			if i <= limit or outputFormat == "ui" then
 				local displayAmount = FormatLargeNumber(factionTable[char]["current"]) .. " / " .. FormatLargeNumber(factionTable[char]["max"])
 				if T.faction[faction]["kind"] == "renown" then
-					local renown = C_MajorFactions.GetRenownLevels(T.faction[faction]["id"]) or {}
-
-					if standingId == 0 or standingId == (#renown) then
-						displayAmount = "" -- Max renown level or undiscovered
+					if standingId == 0 or (standingId == T.faction[faction]["friend"] and not T.faction[faction]["paragon"]) then
+						displayAmount = "" -- Max renown level (no paragon) or undiscovered
 					end
 				elseif standingId == 8 or (T.faction[faction]["friend"] ~= 0 and standingId >= T.faction[faction]["friend"] and standingId ~= 9) then -- Exalted/Best Friend
 					displayAmount = "" -- Exalted reputations do not have amounts
@@ -635,10 +641,8 @@ local function OnTooltipSetItem(tooltip, data)
 
 				local displayAmount = FormatLargeNumber(d[faction]["current"]) .. " / " .. FormatLargeNumber(d[faction]["max"])
 				if T.faction[faction]["kind"] == "renown" then
-					local renown = C_MajorFactions.GetRenownLevels(T.faction[faction]["id"]) or {}
-
-					if d[faction]["standingId"] == 0 or d[faction]["standingId"] == (#renown) then
-						displayAmount = "" -- Max renown level or undiscovered
+					if standingId == 0 or (standingId == T.faction[faction]["friend"] and not T.faction[faction]["paragon"]) then
+						displayAmount = "" -- Max renown level (no paragon) or undiscovered
 					end
 				elseif d[faction]["standingId"] == 8 or (T.faction[faction]["friend"] ~= 0 and d[faction]["standingId"] >= T.faction[faction]["friend"]) then
 					displayAmount = "" -- Exalted/Best Friend
