@@ -443,6 +443,7 @@ T.reputationItemBoP = {
 	[200224] = "sabellian", -- Mark of Sargha (50)
 	[201991] = "wrathion", -- Sargha's Signet (50)
 	[201782] = "dragonscale expedition", -- Tyr's Blessing (2500)
+	[201411] = "dragonscale expedition", -- Ancient Vault Artifact (30)
 	[192055] = "dragonscale expedition", -- Dragon Isles Artifact (15)
 	[200071] = "iskaara tuskarr", -- Sacred Tuskarr Totem (15)
 	[200093] = "maruuk centaur", -- Centaur Hunting Trophy (25)
