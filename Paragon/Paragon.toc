@@ -1,7 +1,7 @@
-## Interface: 100005
+## Interface: 100007
 ## Title: Paragon
 ## Notes: Keeps track of reputation for all your characters
-## Version: Chalcedony 9
+## Version: Chalcedony 10
 ## Author: Leo
 
 ## SavedVariables: ParagonDB, ParagonDB2
