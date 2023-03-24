@@ -325,6 +325,7 @@ LL["enUS"] = {
 	["f ironforge"]							= "Ironforge",
 	["f stormwind"]							= "Stormwind",
 	["f tushui pandaren"]					= "Tushui Pandaren",
+	["f obsidian warders"]					= "Obsidian Warders",
 	-- Alliance Forces
 	["f silverwing sentinels"]				= "Silverwing Sentinels",
 	["f stormpike guard"]					= "Stormpike Guard",
@@ -337,6 +338,7 @@ LL["enUS"] = {
 	["f silvermoon city"]					= "Silvermoon City",
 	["f thunder bluff"]						= "Thunder Bluff",
 	["f undercity"]							= "Undercity",
+	["f dark talons"]						= "Dark Talons",
 	-- Horde Forces
 	["f frostwolf clan"]					= "Frostwolf Clan",
 	["f the defilers"]						= "The Defilers",
