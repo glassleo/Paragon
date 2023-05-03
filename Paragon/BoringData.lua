@@ -83,6 +83,13 @@ T.friendStandingColor = {
         [4] = T.standingColor[7], -- High
         [5] = T.standingColor[8], -- Maximum
 	},
+	["glimmerogg racer"] = {
+		[1] = T.standingColor[4], -- Aspirational
+        [2] = T.standingColor[5], -- Ameteur [sic]
+        [3] = T.standingColor[6], -- Competent
+        [4] = T.standingColor[7], -- Skilled
+        [5] = T.standingColor[8], -- Professional
+	},
 }
 -- Reuse Bodyguard colors
 T.friendStandingColor["aeda brightdawn"] = T.friendStandingColor["vivianne"]
@@ -204,6 +211,13 @@ T.friendStanding = {
 		[5] = "faction_standing_friend",
 		[6] = "faction_standing_true_friend",
 		[7] = "faction_standing_paragon",
+	},
+	["glimmerogg racer"] = {
+		[1] = "faction_standing_aspirational",
+		[2] = "faction_standing_ameteur", -- [sic]
+		[3] = "faction_standing_competent",
+		[4] = "faction_standing_skilled",
+		[5] = "faction_standing_professional",
 	},
 }
 
@@ -436,6 +450,7 @@ T.reputationItemBoA = {
 -- Reputation item IDs - Soulbound
 T.reputationItemBoP = {
 	-- Dragonflight
+	[205249] = "loamm niffen", -- Pungent Niffen Incense (1000)
 	[202018] = "winterpelt furbolg", -- Intact Scribe Stick
 	[202017] = "winterpelt furbolg", -- Liberated Furbolg Artifacts
 	[201783] = "iskaara tuskarr", -- Tutaqan's Commendation (2500)
@@ -636,15 +651,17 @@ T.faction = {
 	["guild"] 								= { ["id"] = 1168, 	["icon"] = 135026, 		["paragon"] = false,	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 
 	-- Dragonflight
-	["dragonscale expedition"] 				= { ["id"] = 2507, 	["icon"] = 4687628, 	["paragon"] = true, 	["friend"] = 25, ["kind"] = "renown", 		 ["factionGroup"] = false, },
-	["iskaara tuskarr"] 					= { ["id"] = 2511, 	["icon"] = 4687629, 	["paragon"] = true, 	["friend"] = 30, ["kind"] = "renown", 		 ["factionGroup"] = false, },
-	["maruuk centaur"] 						= { ["id"] = 2503, 	["icon"] = 4687627, 	["paragon"] = true, 	["friend"] = 25, ["kind"] = "renown", 		 ["factionGroup"] = false, },
-	["valdrakken accord"] 					= { ["id"] = 2510, 	["icon"] = 4687630, 	["paragon"] = true, 	["friend"] = 30, ["kind"] = "renown", 		 ["factionGroup"] = false, },
 	["artisan's consortium - dragon isles branch"] = { ["id"] = 2544, ["icon"] = 4557373, ["paragon"] = false, 	["friend"] = 5, ["kind"] = "friendship",	 ["factionGroup"] = false, },
 	["cobalt assembly"] 					= { ["id"] = 2550,  ["icon"] = 1394893, 	["paragon"] = false, 	["friend"] = 5, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["dragonscale expedition"] 				= { ["id"] = 2507, 	["icon"] = 4687628, 	["paragon"] = true, 	["friend"] = 25, ["kind"] = "renown", 		 ["factionGroup"] = false, },
+	["glimmerogg racer"] 					= { ["id"] = 2568,  ["icon"] = 5003559,     ["paragon"] = false,    ["friend"] = 5, ["kind"] = "friendship",     ["factionGroup"] = false, },
+	["iskaara tuskarr"] 					= { ["id"] = 2511, 	["icon"] = 4687629, 	["paragon"] = true, 	["friend"] = 30, ["kind"] = "renown", 		 ["factionGroup"] = false, },
+	["loamm niffen"] 						= { ["id"] = 2564, 	["icon"] = 5140835, 	["paragon"] = true, 	["friend"] = 20, ["kind"] = "renown", 		 ["factionGroup"] = false, },
+	["maruuk centaur"] 						= { ["id"] = 2503, 	["icon"] = 4687627, 	["paragon"] = true, 	["friend"] = 25, ["kind"] = "renown", 		 ["factionGroup"] = false, },
 	["sabellian"] 							= { ["id"] = 2518,  ["icon"] = 4630449,     ["paragon"] = false,    ["friend"] = 6, ["kind"] = "friendship",     ["factionGroup"] = false, },
-	["wrathion"] 							= { ["id"] = 2517,  ["icon"] = 4630449,     ["paragon"] = false,    ["friend"] = 6, ["kind"] = "friendship",     ["factionGroup"] = false, },
+	["valdrakken accord"] 					= { ["id"] = 2510, 	["icon"] = 4687630, 	["paragon"] = true, 	["friend"] = 30, ["kind"] = "renown", 		 ["factionGroup"] = false, },
 	["winterpelt furbolg"] 					= { ["id"] = 2526, 	["icon"] = 4672495, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
+	["wrathion"] 							= { ["id"] = 2517,  ["icon"] = 4630449,     ["paragon"] = false,    ["friend"] = 6, ["kind"] = "friendship",     ["factionGroup"] = false, },
 
 	-- Shadowlands
 	["court of harvesters"]					= { ["id"] = 2413, 	["icon"] = 3514227, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },

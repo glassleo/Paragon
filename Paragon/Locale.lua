@@ -83,6 +83,12 @@ LL["enUS"] = {
 	["faction_standing_medium"] 			= "Medium",
 	["faction_standing_high"] 				= "High",
 	["faction_standing_maximum"] 			= "Maximum",
+	-- Glimmerogg Racer
+	["faction_standing_aspirational"] 		= "Aspirational",
+	["faction_standing_ameteur"] 			= "Ameteur", -- [sic]
+	["faction_standing_competent"] 			= "Competent",
+	["faction_standing_skilled"] 			= "Skilled",
+	["faction_standing_professional"] 		= "Professional",
 
 
 	-- Global
@@ -133,15 +139,17 @@ LL["enUS"] = {
 	["f guild"] 							= "Guild",
 
 	-- Dragonflight
-	["f dragonscale expedition"] 			= "Dragonscale Expedition",
-	["f iskaara tuskarr"] 					= "Iskaara Tuskarr",
-	["f maruuk centaur"] 					= "Maruuk Centaur",
-	["f valdrakken accord"] 				= "Valdrakken Accord",
 	["f artisan's consortium - dragon isles branch"] = "Artisan's Consortium - Dragon Isles Branch",
 	["f cobalt assembly"] 					= "Cobalt Assembly",
+	["f dragonscale expedition"] 			= "Dragonscale Expedition",
+	["f glimmerogg racer"]					= "Glimmerogg Racer",
+	["f iskaara tuskarr"] 					= "Iskaara Tuskarr",
+	["f loamm niffen"]						= "Loamm Niffen",
+	["f maruuk centaur"] 					= "Maruuk Centaur",
 	["f sabellian"]							= "Sabellian",
-	["f wrathion"]							= "Wrathion",
+	["f valdrakken accord"] 				= "Valdrakken Accord",
 	["f winterpelt furbolg"]				= "Winterpelt Furbolg",
+	["f wrathion"]							= "Wrathion",
 
 	-- Shadowlands
 	["f court of harvesters"]				= "Court of Harvesters",
