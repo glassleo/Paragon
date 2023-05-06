@@ -450,6 +450,11 @@ T.reputationItemBoA = {
 -- Reputation item IDs - Soulbound
 T.reputationItemBoP = {
 	-- Dragonflight
+	[205251] = "loamm niffen", -- Champion's Rock Bar (1000)
+	[205253] = "loamm niffen", -- Farmhand's Abundant Harvest (1000)
+	[205989] = "loamm niffen", -- Symbol of Friendship (2500)
+	[205991] = "loamm niffen", -- Shiny Token of Gratitude (2500)
+	[205250] = "loamm niffen", -- Gift of the High Redolence (1000)
 	[205249] = "loamm niffen", -- Pungent Niffen Incense (1000)
 	[202018] = "winterpelt furbolg", -- Intact Scribe Stick
 	[202017] = "winterpelt furbolg", -- Liberated Furbolg Artifacts
