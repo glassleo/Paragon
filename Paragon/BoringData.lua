@@ -450,6 +450,8 @@ T.reputationItemBoA = {
 -- Reputation item IDs - Soulbound
 T.reputationItemBoP = {
 	-- Dragonflight
+	[205998] = "loamm niffen", -- Sign of Respect (2500)
+	[205992] = "loamm niffen", -- Regurgitated Half-Digested Fish (2500)
 	[205251] = "loamm niffen", -- Champion's Rock Bar (1000)
 	[205253] = "loamm niffen", -- Farmhand's Abundant Harvest (1000)
 	[205989] = "loamm niffen", -- Symbol of Friendship (2500)
