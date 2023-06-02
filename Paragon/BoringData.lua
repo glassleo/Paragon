@@ -600,6 +600,7 @@ T.reputationItemBoP = {
 	[49702]  = "the sons of hodir", -- Sons of Hodir Commendation Badge (520)
 	[44710]  = "wyrmrest cccord", -- Wyrmrest Commendation Badge (520)
 	[43156]  = "wyrmrest accord", -- Tabard of the Wyrmrest Accord
+	[35188]  = "cenarion expedition", -- Nesingwary Lackey Ear (15 for 150)
 
 	-- The Burning Crusade
 	[24290]  = "sporeggar", -- Mature Spore Sack (750 per 10, up to Friendly)
