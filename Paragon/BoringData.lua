@@ -241,6 +241,12 @@ T.friendStanding["wrathion"] = T.friendStanding["sabellian"]
 -- Reputation item IDs - BoA and BoE
 T.reputationItemBoA = {
 	-- Dragonflight
+	[205985] = "loamm niffen", -- Loamm Niffen Insignia (500)
+	[205342] = "loamm niffen", -- Loamm Niffen Insignia (250)
+	[205365] = "loamm niffen", -- Loamm Niffen Insignia (50)
+	[204993] = "loamm niffen", -- Contract: Loamm Niffen (Quality 1)
+	[204991] = "loamm niffen", -- Contract: Loamm Niffen (Quality 2)
+	[204992] = "loamm niffen", -- Contract: Loamm Niffen (Quality 3)
 	[198503] = "artisan's consortium - dragon isles branch", -- Contract: Artisan's Consortium (Quality 1)
 	[198504] = "artisan's consortium - dragon isles branch", -- Contract: Artisan's Consortium (Quality 2)
 	[198505] = "artisan's consortium - dragon isles branch", -- Contract: Artisan's Consortium (Quality 3)
