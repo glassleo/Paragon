@@ -472,6 +472,7 @@ T.reputationItemBoP = {
 	[191264] = "sabellian|wrathion|valdrakken accord", -- Restored Obsidian Key (250 Sabellian/Wratghion, 50 Valdrakken)
 	[200224] = "sabellian", -- Mark of Sargha (50)
 	[201991] = "wrathion", -- Sargha's Signet (50)
+	[205254] = "dragonscale expedition", -- Honorary Explorer's Compass (1000)
 	[201782] = "dragonscale expedition", -- Tyr's Blessing (2500)
 	[201411] = "dragonscale expedition", -- Ancient Vault Artifact (30)
 	[192055] = "dragonscale expedition", -- Dragon Isles Artifact (15)
