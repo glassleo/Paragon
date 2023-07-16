@@ -85,10 +85,16 @@ LL["enUS"] = {
 	["faction_standing_maximum"] 			= "Maximum",
 	-- Glimmerogg Racer
 	["faction_standing_aspirational"] 		= "Aspirational",
-	["faction_standing_ameteur"] 			= "Ameteur", -- [sic]
+	["faction_standing_amateur"] 			= "Amateur",
 	["faction_standing_competent"] 			= "Competent",
 	["faction_standing_skilled"] 			= "Skilled",
 	["faction_standing_professional"] 		= "Professional",
+	-- Soridormi
+	["faction_standing_anomaly"] 			= "Anomaly",
+	["faction_standing_future_friend"] 		= "Future Friend",
+	["faction_standing_rift-mender"] 		= "Rift-Mender",
+	["faction_standing_timewalker"] 		= "Timewalker",
+	["faction_standing_legend_of_the_multiverse"] = "Legend of the Multiverse",
 
 
 	-- Global
@@ -147,6 +153,7 @@ LL["enUS"] = {
 	["f loamm niffen"]						= "Loamm Niffen",
 	["f maruuk centaur"] 					= "Maruuk Centaur",
 	["f sabellian"]							= "Sabellian",
+	["f soridormi"]  						= "Soridormi",
 	["f valdrakken accord"] 				= "Valdrakken Accord",
 	["f winterpelt furbolg"]				= "Winterpelt Furbolg",
 	["f wrathion"]							= "Wrathion",
@@ -448,12 +455,22 @@ LL["enUS"].shorthands = {
 	["glimerog"] 							= "glimmerogg racer",
 	["racers"] 								= "glimmerogg racer",
 	["racer"] 								= "glimmerogg racer",
+	["sidormi"]								= "soridormi",
+	["sorimi"]								= "soridormi",
+	["soridimi"]							= "soridormi",
+	["sorimidi"]							= "soridormi",
+	["sorimorni"]							= "soridormi",
+	["sidormi"]								= "soridormi",
+	["simordi"]								= "soridormi",
+	["siridorm"]							= "soridormi",
+	["sidorm"]								= "soridormi",
 
 	-- Shadowlands
 	["enlightened"]							= "the enlightened",
 	["zereth mortis"]						= "the enlightened",
 	["haven"]								= "the enlightened",
 	["pocopo"]								= "the enlightened",
+	["pocopoc"]								= "the enlightened",
 	["harvesters"]							= "court of harvesters",
 	["revendreth"]							= "court of harvesters",
 	["venthyr"]								= "court of harvesters",
