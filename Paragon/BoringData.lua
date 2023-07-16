@@ -85,10 +85,17 @@ T.friendStandingColor = {
 	},
 	["glimmerogg racer"] = {
 		[1] = T.standingColor[4], -- Aspirational
-        [2] = T.standingColor[5], -- Ameteur [sic]
+        [2] = T.standingColor[5], -- Amateur
         [3] = T.standingColor[6], -- Competent
         [4] = T.standingColor[7], -- Skilled
         [5] = T.standingColor[8], -- Professional
+	},
+	["soridormi"] = {
+		[1] = T.standingColor[4], -- Anomaly
+        [2] = T.standingColor[5], -- Future Friend
+        [3] = T.standingColor[6], -- Rift-Mender
+        [4] = T.standingColor[7], -- Timewalker
+        [5] = T.standingColor[8], -- Legend of the Multiverse
 	},
 }
 -- Reuse Bodyguard colors
@@ -214,10 +221,17 @@ T.friendStanding = {
 	},
 	["glimmerogg racer"] = {
 		[1] = "faction_standing_aspirational",
-		[2] = "faction_standing_ameteur", -- [sic]
+		[2] = "faction_standing_amateur",
 		[3] = "faction_standing_competent",
 		[4] = "faction_standing_skilled",
 		[5] = "faction_standing_professional",
+	},
+	["soridormi"] = {
+		[1] = "faction_standing_anomaly",
+		[2] = "faction_standing_future_friend",
+		[3] = "faction_standing_rift-mender",
+		[4] = "faction_standing_timewalker",
+		[5] = "faction_standing_legend_of_the_multiverse",
 	},
 }
 
@@ -443,10 +457,13 @@ T.reputationItemBoA = {
 	[129946] = "the sha'tar", -- Commendation of The Sha'tar
 
 	-- Classic
-	[20404] = "cenarion circle", -- Encrypted Twilight Text (500 per 10)
-	[17010] = "thorium brotherhood", -- Fiery Core (500)
-	[17011] = "thorium brotherhood", -- Lava Core (500)
-	[18945] = "thorium brotherhood", -- Dark Iron Residue (625 per 100 or 15 per 4)
+	[20404]  = "cenarion circle", -- Encrypted Twilight Text (500 per 10)
+	[17010]  = "thorium brotherhood", -- Fiery Core (500)
+	[17011]  = "thorium brotherhood", -- Lava Core (500)
+	[18945]  = "thorium brotherhood", -- Dark Iron Residue (625 per 100 or 15 per 4)
+	[206374] = "argent dawn", -- Invader's Scourgestone
+	[206375] = "argent dawn", -- Corruptor's Scourgestone
+	[12844]  = "argent dawn", -- Argent Dawn Valor Token (100)
 
 	-- Guild
 	[69209] = "guild", -- Illustrious Guild Tabard (50% increase)
@@ -674,6 +691,7 @@ T.faction = {
 	["loamm niffen"] 						= { ["id"] = 2564, 	["icon"] = 5140835, 	["paragon"] = true, 	["friend"] = 20, ["kind"] = "renown", 		 ["factionGroup"] = false, },
 	["maruuk centaur"] 						= { ["id"] = 2503, 	["icon"] = 4687627, 	["paragon"] = true, 	["friend"] = 25, ["kind"] = "renown", 		 ["factionGroup"] = false, },
 	["sabellian"] 							= { ["id"] = 2518,  ["icon"] = 4630449,     ["paragon"] = false,    ["friend"] = 6, ["kind"] = "friendship",     ["factionGroup"] = false, },
+	["soridormi"]  							= { ["id"] = 2553,  ["icon"] = 922527, 		["paragon"] = false, 	["friend"] = 5, ["kind"] = "friendship",	 ["factionGroup"] = false, },
 	["valdrakken accord"] 					= { ["id"] = 2510, 	["icon"] = 4687630, 	["paragon"] = true, 	["friend"] = 30, ["kind"] = "renown", 		 ["factionGroup"] = false, },
 	["winterpelt furbolg"] 					= { ["id"] = 2526, 	["icon"] = 4672495, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["wrathion"] 							= { ["id"] = 2517,  ["icon"] = 4630449,     ["paragon"] = false,    ["friend"] = 6, ["kind"] = "friendship",     ["factionGroup"] = false, },
