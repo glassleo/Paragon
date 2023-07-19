@@ -255,6 +255,8 @@ T.friendStanding["wrathion"] = T.friendStanding["sabellian"]
 -- Reputation item IDs - BoA and BoE
 T.reputationItemBoA = {
 	-- Dragonflight
+	[208951] = "soridormi", -- Paracausal Cluster (1000)
+	[208952] = "soridormi", -- Soridormi's Letter of Commendation (1000)
 	[205985] = "loamm niffen", -- Loamm Niffen Insignia (500)
 	[205342] = "loamm niffen", -- Loamm Niffen Insignia (250)
 	[205365] = "loamm niffen", -- Loamm Niffen Insignia (50)
