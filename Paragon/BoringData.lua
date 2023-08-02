@@ -255,7 +255,6 @@ T.friendStanding["wrathion"] = T.friendStanding["sabellian"]
 -- Reputation item IDs - BoA and BoE
 T.reputationItemBoA = {
 	-- Dragonflight
-	[208951] = "soridormi", -- Paracausal Cluster (1000)
 	[208952] = "soridormi", -- Soridormi's Letter of Commendation (1000)
 	[205985] = "loamm niffen", -- Loamm Niffen Insignia (500)
 	[205342] = "loamm niffen", -- Loamm Niffen Insignia (250)
@@ -475,6 +474,7 @@ T.reputationItemBoA = {
 -- Reputation item IDs - Soulbound
 T.reputationItemBoP = {
 	-- Dragonflight
+	[206006] = "loamm niffen", -- Earth-Warder's Thanks (2500)
 	[205998] = "loamm niffen", -- Sign of Respect (2500)
 	[205992] = "loamm niffen", -- Regurgitated Half-Digested Fish (2500)
 	[205251] = "loamm niffen", -- Champion's Rock Bar (1000)
