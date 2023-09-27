@@ -389,7 +389,11 @@ local function standing(standingId, faction)
 			end
 		elseif T.faction[faction]["friend"] ~= 0 then
 			if setContains(T.friendStanding, faction) then
-				return L[T.friendStanding[faction][standingId]]
+				if T.friendStanding[faction][standingId] then
+					return L[T.friendStanding[faction][standingId]]
+				else
+					return L["faction_standing_unknown"]
+				end
 			else
 				return L[T.friendStanding["default"][standingId]]
 			end
@@ -419,7 +423,7 @@ local function standingColor(standingId, faction)
 			end
 		elseif T.faction[faction]["friend"] ~= 0 then
 			if setContains(T.friendStandingColor, faction) then
-				return T.friendStandingColor[faction][standingId]
+				return T.friendStandingColor[faction][standingId] or T.standingColor[1]
 			else
 				return T.friendStandingColor["default"][standingId]
 			end

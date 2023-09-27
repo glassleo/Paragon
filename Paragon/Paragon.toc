@@ -1,7 +1,7 @@
-## Interface: 100105
+## Interface: 100107
 ## Title: Paragon
 ## Notes: Keeps track of reputation for all your characters
-## Version: Chalcedony 15
+## Version: Chalcedony 16
 ## Author: Leo
 ## IconTexture: 236681
 
