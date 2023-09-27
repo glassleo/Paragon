@@ -95,7 +95,7 @@ T.friendStandingColor = {
         [2] = T.standingColor[5], -- Future Friend
         [3] = T.standingColor[6], -- Rift-Mender
         [4] = T.standingColor[7], -- Timewalker
-        [5] = T.standingColor[8], -- Legend of the Multiverse
+        [5] = T.standingColor[8], -- Legend
 	},
 }
 -- Reuse Bodyguard colors
@@ -231,7 +231,7 @@ T.friendStanding = {
 		[2] = "faction_standing_future_friend",
 		[3] = "faction_standing_rift-mender",
 		[4] = "faction_standing_timewalker",
-		[5] = "faction_standing_legend_of_the_multiverse",
+		[5] = "faction_standing_legend",
 	},
 }
 

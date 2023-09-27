@@ -94,7 +94,7 @@ LL["enUS"] = {
 	["faction_standing_future_friend"] 		= "Future Friend",
 	["faction_standing_rift-mender"] 		= "Rift-Mender",
 	["faction_standing_timewalker"] 		= "Timewalker",
-	["faction_standing_legend_of_the_multiverse"] = "Legend of the Multiverse",
+	["faction_standing_legend"] 			= "Legend",
 
 
 	-- Global

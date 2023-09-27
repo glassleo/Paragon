@@ -282,6 +282,18 @@ local function updateFactions()
 				else
 					standingId = 1
 				end
+			elseif id == 2553 then -- Soridormi
+				if barValue >= 42000 then
+					standingId = 5
+				elseif barValue >= 24000 then
+					standingId = 4
+				elseif barValue >= 14000 then
+					standingId = 3
+				elseif barValue >= 7000 then
+					standingId = 2
+				else
+					standingId = 1
+				end
 			else -- Default
 				if barValue >= 42000 then
 					standingId = 6
