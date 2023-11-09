@@ -148,6 +148,7 @@ LL["enUS"] = {
 	["f artisan's consortium - dragon isles branch"] = "Artisan's Consortium - Dragon Isles Branch",
 	["f cobalt assembly"] 					= "Cobalt Assembly",
 	["f dragonscale expedition"] 			= "Dragonscale Expedition",
+	["f dream wardens"]						= "Dream Wardens",
 	["f glimmerogg racer"]					= "Glimmerogg Racer",
 	["f iskaara tuskarr"] 					= "Iskaara Tuskarr",
 	["f loamm niffen"]						= "Loamm Niffen",

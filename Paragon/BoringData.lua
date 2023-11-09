@@ -255,7 +255,16 @@ T.friendStanding["wrathion"] = T.friendStanding["sabellian"]
 -- Reputation item IDs - BoA and BoE
 T.reputationItemBoA = {
 	-- Dragonflight
+	[210423] = "dream wardens", -- Dream Wardens Insignia (2500)
+	[211416] = "dream wardens", -- Dream Wardens Insignia (1000)
+	[210421] = "dream wardens", -- Dream Wardens Insignia (500)
+	[210420] = "dream wardens", -- Dream Wardens Insignia (250)
+	[210419] = "dream wardens", -- Dream Wardens Insignia (50)
+	[210246] = "dream wardens", -- Contract: Dream Wardens (Quality 3)
+	[210245] = "dream wardens", -- Contract: Dream Wardens (Quality 2)
+	[210244] = "dream wardens", -- Contract: Dream Wardens (Quality 1)
 	[208952] = "soridormi", -- Soridormi's Letter of Commendation (1000)
+	[210422] = "loamm niffen", -- Loamm Niffen Insignia (2500)
 	[205985] = "loamm niffen", -- Loamm Niffen Insignia (500)
 	[205342] = "loamm niffen", -- Loamm Niffen Insignia (250)
 	[205365] = "loamm niffen", -- Loamm Niffen Insignia (50)
@@ -474,6 +483,24 @@ T.reputationItemBoA = {
 -- Reputation item IDs - Soulbound
 T.reputationItemBoP = {
 	-- Dragonflight
+	[210757] = "dream wardens", -- Scales of Remorse (2500)
+	[210730] = "dream wardens", -- Mark of the Dream Wardens (2500)
+	[211417] = "dream wardens", -- Dream Wardens Insignia (1000)
+	[210950] = "dream wardens", -- Insight of Q'onzu (~767)
+	[211366] = "dream wardens", -- Drops of Moon Water (750)
+	[211369] = "dream wardens", -- Charred Staff of the Overseer (750)
+	[210952] = "dream wardens", -- Spare Heated Hearthstone (500)
+	[210958] = "dream wardens", -- Crown of the Dryad Daughter (500)
+	[210957] = "dream wardens", -- Rune of the Fire Druids (250)
+	[210951] = "dream wardens", -- Treacherous Research Notes (250)
+	[210997] = "dream wardens", -- Spare Party Hat (250)
+	[211371] = "dream wardens", -- Dryad-Keeper Credentials (250)
+	[211379] = "dream wardens", -- Tangled Yarn of Secrets (~118)
+	[211374] = "dream wardens", -- Tangled Yarn of Secrets (~96)
+	[211378] = "dream wardens", -- Tangled Yarn of Secrets (~19)
+	[211377] = "dream wardens", -- Tangled Yarn of Secrets (~19)
+	[211380] = "dream wardens", -- Tangled Yarn of Secrets (~9)
+	[211372] = "dream wardens", -- Q'onzu's Consolation Prize (1)
 	[206006] = "loamm niffen", -- Earth-Warder's Thanks (2500)
 	[205998] = "loamm niffen", -- Sign of Respect (2500)
 	[205992] = "loamm niffen", -- Regurgitated Half-Digested Fish (2500)
@@ -691,6 +718,7 @@ T.faction = {
 	["glimmerogg racer"] 					= { ["id"] = 2568,  ["icon"] = 5003559,     ["paragon"] = false,    ["friend"] = 5, ["kind"] = "friendship",     ["factionGroup"] = false, },
 	["iskaara tuskarr"] 					= { ["id"] = 2511, 	["icon"] = 4687629, 	["paragon"] = true, 	["friend"] = 30, ["kind"] = "renown", 		 ["factionGroup"] = false, },
 	["loamm niffen"] 						= { ["id"] = 2564, 	["icon"] = 5140835, 	["paragon"] = true, 	["friend"] = 20, ["kind"] = "renown", 		 ["factionGroup"] = false, },
+	["dream wardens"] 						= { ["id"] = 2574, 	["icon"] = 5244643, 	["paragon"] = true, 	["friend"] = 20, ["kind"] = "renown", 		 ["factionGroup"] = false, },
 	["maruuk centaur"] 						= { ["id"] = 2503, 	["icon"] = 4687627, 	["paragon"] = true, 	["friend"] = 25, ["kind"] = "renown", 		 ["factionGroup"] = false, },
 	["sabellian"] 							= { ["id"] = 2518,  ["icon"] = 4630449,     ["paragon"] = false,    ["friend"] = 6, ["kind"] = "friendship",     ["factionGroup"] = false, },
 	["soridormi"]  							= { ["id"] = 2553,  ["icon"] = 922527, 		["paragon"] = false, 	["friend"] = 5, ["kind"] = "friendship",	 ["factionGroup"] = false, },
