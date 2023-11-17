@@ -483,16 +483,22 @@ T.reputationItemBoA = {
 -- Reputation item IDs - Soulbound
 T.reputationItemBoP = {
 	-- Dragonflight
+	[210920] = "dream wardens", -- Gift of Amirdrassil (2500)
+	[210916] = "dream wardens", -- Ember of Fyrakk (2500)
+	[210847] = "dream wardens", -- Tears of the Eye (2500)
 	[210757] = "dream wardens", -- Scales of Remorse (2500)
 	[210730] = "dream wardens", -- Mark of the Dream Wardens (2500)
 	[211417] = "dream wardens", -- Dream Wardens Insignia (1000)
 	[210950] = "dream wardens", -- Insight of Q'onzu (~767)
+	[210959] = "dream wardens", -- Pact of the Netherwing (750)
 	[211370] = "dream wardens", -- Branch of Gracus (750)
 	[210954] = "dream wardens", -- Sprout of Rebirth (750)
 	[211366] = "dream wardens", -- Drops of Moon Water (750)
 	[211369] = "dream wardens", -- Charred Staff of the Overseer (750)
+	[210921] = "dream wardens", -- Bounty of the Fallen Defector (500)
 	[210952] = "dream wardens", -- Spare Heated Hearthstone (500)
 	[210958] = "dream wardens", -- Crown of the Dryad Daughter (500)
+	[211353] = "dream wardens", -- Roasted Ram Special (250)
 	[210957] = "dream wardens", -- Rune of the Fire Druids (250)
 	[210951] = "dream wardens", -- Treacherous Research Notes (250)
 	[210997] = "dream wardens", -- Spare Party Hat (250)
