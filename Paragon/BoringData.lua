@@ -97,6 +97,13 @@ T.friendStandingColor = {
         [4] = T.standingColor[7], -- Timewalker
         [5] = T.standingColor[8], -- Legend
 	},
+	["azerothian archives"] = {
+		[1] = T.standingColor[4], -- Junior
+        [2] = T.standingColor[5], -- Capable
+        [3] = T.standingColor[6], -- Learned
+        [4] = T.standingColor[7], -- Resident
+        [5] = T.standingColor[8], -- Tenured
+	},
 }
 -- Reuse Bodyguard colors
 T.friendStandingColor["aeda brightdawn"] = T.friendStandingColor["vivianne"]
@@ -233,6 +240,13 @@ T.friendStanding = {
 		[4] = "faction_standing_timewalker",
 		[5] = "faction_standing_legend",
 	},
+	["azerothian archives"] = {
+		[1] = "faction_standing_junior",
+		[2] = "faction_standing_capable",
+		[3] = "faction_standing_learned",
+		[4] = "faction_standing_resident",
+		[5] = "faction_standing_tenured",
+	},
 }
 
 T.friendStanding["conjurer margoss"] = T.friendStanding["nat pagle"]
@@ -255,6 +269,8 @@ T.friendStanding["wrathion"] = T.friendStanding["sabellian"]
 -- Reputation item IDs - BoA and BoE
 T.reputationItemBoA = {
 	-- Dragonflight
+	[213536] = "azerothian archives", -- Priceless Artifact (1000)
+	[210423] = "dream wardens", -- Dream Wardens Insignia (2500)
 	[210423] = "dream wardens", -- Dream Wardens Insignia (2500)
 	[211416] = "dream wardens", -- Dream Wardens Insignia (1000)
 	[210421] = "dream wardens", -- Dream Wardens Insignia (500)
@@ -720,19 +736,20 @@ T.faction = {
 	["guild"] 								= { ["id"] = 1168, 	["icon"] = 135026, 		["paragon"] = false,	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 
 	-- Dragonflight
-	["artisan's consortium - dragon isles branch"] = { ["id"] = 2544, ["icon"] = 4557373, ["paragon"] = false, 	["friend"] = 5, ["kind"] = "friendship",	 ["factionGroup"] = false, },
-	["cobalt assembly"] 					= { ["id"] = 2550,  ["icon"] = 1394893, 	["paragon"] = false, 	["friend"] = 5, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["artisan's consortium - dragon isles branch"] = { ["id"] = 2544, ["icon"] = 4557373, ["paragon"] = false, 	["friend"] = 5,  ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["azerothian archives"] 				= { ["id"] = 2615,  ["icon"] = 4638485,     ["paragon"] = false, 	["friend"] = 5,  ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["cobalt assembly"] 					= { ["id"] = 2550,  ["icon"] = 1394893, 	["paragon"] = false, 	["friend"] = 5,  ["kind"] = "friendship",	 ["factionGroup"] = false, },
 	["dragonscale expedition"] 				= { ["id"] = 2507, 	["icon"] = 4687628, 	["paragon"] = true, 	["friend"] = 25, ["kind"] = "renown", 		 ["factionGroup"] = false, },
-	["glimmerogg racer"] 					= { ["id"] = 2568,  ["icon"] = 5003559,     ["paragon"] = false,    ["friend"] = 5, ["kind"] = "friendship",     ["factionGroup"] = false, },
+	["glimmerogg racer"] 					= { ["id"] = 2568,  ["icon"] = 5003559,     ["paragon"] = false,    ["friend"] = 5,  ["kind"] = "friendship",    ["factionGroup"] = false, },
 	["iskaara tuskarr"] 					= { ["id"] = 2511, 	["icon"] = 4687629, 	["paragon"] = true, 	["friend"] = 30, ["kind"] = "renown", 		 ["factionGroup"] = false, },
 	["loamm niffen"] 						= { ["id"] = 2564, 	["icon"] = 5140835, 	["paragon"] = true, 	["friend"] = 20, ["kind"] = "renown", 		 ["factionGroup"] = false, },
 	["dream wardens"] 						= { ["id"] = 2574, 	["icon"] = 5244643, 	["paragon"] = true, 	["friend"] = 20, ["kind"] = "renown", 		 ["factionGroup"] = false, },
 	["maruuk centaur"] 						= { ["id"] = 2503, 	["icon"] = 4687627, 	["paragon"] = true, 	["friend"] = 25, ["kind"] = "renown", 		 ["factionGroup"] = false, },
-	["sabellian"] 							= { ["id"] = 2518,  ["icon"] = 4630449,     ["paragon"] = false,    ["friend"] = 6, ["kind"] = "friendship",     ["factionGroup"] = false, },
-	["soridormi"]  							= { ["id"] = 2553,  ["icon"] = 922527, 		["paragon"] = false, 	["friend"] = 5, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["sabellian"] 							= { ["id"] = 2518,  ["icon"] = 4630449,     ["paragon"] = false,    ["friend"] = 6,  ["kind"] = "friendship",    ["factionGroup"] = false, },
+	["soridormi"]  							= { ["id"] = 2553,  ["icon"] = 922527, 		["paragon"] = false, 	["friend"] = 5,  ["kind"] = "friendship",	 ["factionGroup"] = false, },
 	["valdrakken accord"] 					= { ["id"] = 2510, 	["icon"] = 4687630, 	["paragon"] = true, 	["friend"] = 30, ["kind"] = "renown", 		 ["factionGroup"] = false, },
-	["winterpelt furbolg"] 					= { ["id"] = 2526, 	["icon"] = 4672495, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
-	["wrathion"] 							= { ["id"] = 2517,  ["icon"] = 4630449,     ["paragon"] = false,    ["friend"] = 6, ["kind"] = "friendship",     ["factionGroup"] = false, },
+	["winterpelt furbolg"] 					= { ["id"] = 2526, 	["icon"] = 4672495, 	["paragon"] = false, 	["friend"] = 0,  ["kind"] = "reputation",	 ["factionGroup"] = false, },
+	["wrathion"] 							= { ["id"] = 2517,  ["icon"] = 4630449,     ["paragon"] = false,    ["friend"] = 6,  ["kind"] = "friendship",    ["factionGroup"] = false, },
 
 	-- Shadowlands
 	["court of harvesters"]					= { ["id"] = 2413, 	["icon"] = 3514227, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },

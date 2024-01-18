@@ -95,6 +95,12 @@ LL["enUS"] = {
 	["faction_standing_rift-mender"] 		= "Rift-Mender",
 	["faction_standing_timewalker"] 		= "Timewalker",
 	["faction_standing_legend"] 			= "Legend",
+	-- Azerothian Archives
+	["faction_standing_junior"] 			= "Junior",
+	["faction_standing_capable"] 			= "Capable",
+	["faction_standing_learned"] 			= "Learned",
+	["faction_standing_resident"] 			= "Resident",
+	["faction_standing_tenured"] 			= "Tenured",
 
 
 	-- Global
@@ -146,6 +152,7 @@ LL["enUS"] = {
 
 	-- Dragonflight
 	["f artisan's consortium - dragon isles branch"] = "Artisan's Consortium - Dragon Isles Branch",
+	["f azerothian archives"] 				= "Azerothian Archives",
 	["f cobalt assembly"] 					= "Cobalt Assembly",
 	["f dragonscale expedition"] 			= "Dragonscale Expedition",
 	["f dream wardens"]						= "Dream Wardens",
@@ -409,6 +416,11 @@ LL["enUS"].shorthands = {
 	["artisans consortium"]					= "artisan's consortium - dragon isles branch",
 	["artisans"]							= "artisan's consortium - dragon isles branch",
 	["dragon isles branch"]					= "artisan's consortium - dragon isles branch",
+	["azerothian archive"]					= "azerothian archives",
+	["azeroth archive"]						= "azerothian archives",
+	["azeroth archives"]					= "azerothian archives",
+	["azerothian"]							= "azerothian archives",
+	["archives"]							= "azerothian archives",
 	["assembly"]							= "cobalt assembly",
 	["cobald assembly"]						= "cobalt assembly",
 	["cobald"]								= "cobalt assembly",
@@ -431,6 +443,7 @@ LL["enUS"].shorthands = {
 	["winter furbolgs"]						= "winterpelt furbolg",
 	["winterpelt furbolgs"]					= "winterpelt furbolg",
 	["winterpelt"]							= "winterpelt furbolg",
+	["winterpelts"]							= "winterpelt furbolg",
 	["niffen"]								= "loamm niffen",
 	["nifen"]								= "loamm niffen",
 	["loam"]								= "loamm niffen",

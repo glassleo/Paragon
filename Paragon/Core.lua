@@ -294,6 +294,18 @@ local function updateFactions()
 				else
 					standingId = 1
 				end
+			elseif id == 2615 then -- Azerothian Archives
+				if barValue >= 42000 then
+					standingId = 5
+				elseif barValue >= 32500 then
+					standingId = 4
+				elseif barValue >= 21000 then
+					standingId = 3
+				elseif barValue >= 10500 then
+					standingId = 2
+				else
+					standingId = 1
+				end
 			else -- Default
 				if barValue >= 42000 then
 					standingId = 6
