@@ -761,6 +761,31 @@ function SlashCmdList.PARAGON(msg, editbox)
 			msg = L["shorthands"][string.lower(msg)]
 		elseif guildname and msg and string.lower(msg) == string.lower(guildname) then
 			msg = "guild"
+		-- Since shorthands and guild have failed, try partial match now
+		-- Make sure no valid full faction string is given either
+		elseif not outputFaction(msg, 1, "test") then
+			msg = string.lower(msg)
+			-- Partial string match against the localized faction name strings
+			local found = false
+			for k, l in pairs(T.L) do
+				if k:sub(1, 2) == "f " then
+					if l:lower():find(msg, nil, true) then
+						-- print(format('Paragon Debug: Found "%s" as partial string in faction "%s".', msg, l)) -- Debug
+						msg, found = k:sub(3), true
+						break
+					end
+				end
+			end
+			-- As last resort, partial string match against the shorthand strings
+			if not found and L["shorthands"] then
+				for s, f in pairs(L["shorthands"]) do
+					if s:find(msg, nil, true) then
+						-- print(format('Paragon Debug: Found "%s" as partial string in shorthand "%s".', msg, s)) -- Debug
+						msg = f
+						break
+					end
+				end
+			end
 		end
 
 		if outputFaction(msg, 1, "test") then
