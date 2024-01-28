@@ -322,6 +322,8 @@ T.reputationItemBoA = {
 	[198497] = "valdrakken accord", -- Contract: Valdrakken Accord (Quality 1)
 	[198498] = "valdrakken accord", -- Contract: Valdrakken Accord (Quality 2)
 	[198499] = "valdrakken accord", -- Contract: Valdrakken Accord (Quality 3)
+	[200224] = "sabellian", -- Mark of Sargha (50)
+	[201991] = "wrathion", -- Sargha's Signet (50)
 
 	-- Shadowlands
 	[173062] = "court of harvesters", -- Contract: Court of Harvesters
@@ -540,8 +542,6 @@ T.reputationItemBoP = {
 	[201779] = "valdrakken accord", -- Merithra's Blessing (2500)
 	[201781] = "valdrakken accord", -- Memory of Tyr (2500)
 	[191264] = "sabellian|wrathion|valdrakken accord", -- Restored Obsidian Key (250 Sabellian/Wratghion, 50 Valdrakken)
-	[200224] = "sabellian", -- Mark of Sargha (50)
-	[201991] = "wrathion", -- Sargha's Signet (50)
 	[205254] = "dragonscale expedition", -- Honorary Explorer's Compass (1000)
 	[201782] = "dragonscale expedition", -- Tyr's Blessing (2500)
 	[201411] = "dragonscale expedition", -- Ancient Vault Artifact (30)
