@@ -582,6 +582,22 @@ T.reputationItemBoP = {
 	[187335] = "the archivists' codex", -- Maldraxxus Larva Shell (150)
 	[190339] = "the enlightened", -- Enlightened Offering (75)
 	[190941] = "the enlightened", -- Teachings of the Elders (75)
+	[176114] = "the countess", -- RSVP: The Countess
+	[178686] = "stonehead", -- RSVP: Stonehead
+	[176125] = "sika", -- RSVP: Sika
+	[176118] = "rendle and cudgelface", -- RSVP: Rendle and Cudgelface
+	[176117] = "polemarch adrestes", -- RSVP: Polemarch Adrestes
+	[176124] = "plague deviser marileth", -- RSVP: Plague Deviser Marileth
+	[176113] = "mikanikos", -- RSVP: Mikanikos
+	[176112] = "lady moonberry", -- RSVP: Lady Moonberry
+	[176123] = "kleia and pelagos", -- RSVP: Kleia and Pelagos
+	[176116] = "hunt-captain korayn", -- RSVP: Hunt-Captain Korayn
+	[176122] = "grandmaster vole", -- RSVP: Grandmaster Vole
+	[176121] = "droman aliothe", -- RSVP: Droman Aliothe
+	[176120] = "cryptkeeper kassir", -- RSVP: Cryptkeeper Kassir
+	[176119] = "choofa", -- RSVP: Choofa
+	[176097] = "baroness vashj", -- RSVP: Baroness Vashj
+	[176115] = "alexandros mograine", -- RSVP: Alexandros Mograine
 
 	-- Battle for Azeroth
 	[170184] = "the unshackled|waveblade ankoan", -- Ancient Reefwalker Bark (350 The Unshackled/Waveblade Ankoan)
@@ -761,10 +777,27 @@ T.faction = {
 	["the ascended"]						= { ["id"] = 2407, 	["icon"] = 3257748, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["the avowed"]							= { ["id"] = 2439, 	["icon"] = 3601526, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["the enlightened"]						= { ["id"] = 2478, 	["icon"] = 4226232, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
-	["the ember court"]						= { ["id"] = 2445, 	["icon"] = 3641397, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
+	["the ember court"]						= { ["id"] = 2445, 	["icon"] = 3257751, 	["paragon"] = false, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["the undying army"]					= { ["id"] = 2410, 	["icon"] = 3492310, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["the wild hunt"]						= { ["id"] = 2465, 	["icon"] = 3575389, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false, },
 	["ve'nari"]								= { ["id"] = 2432, 	["icon"] = 3527519, 	["paragon"] = true, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	-- The Ember Court
+	["alexandros mograine"]					= { ["id"] = 2450, 	["icon"] = 3675493, 	["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["baroness vashj"]						= { ["id"] = 2446, 	["icon"] = 3675493, 	["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["choofa"]								= { ["id"] = 2454, 	["icon"] = 3675493, 	["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["cryptkeeper kassir"]					= { ["id"] = 2455, 	["icon"] = 3675493, 	["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["droman aliothe"]						= { ["id"] = 2456, 	["icon"] = 3675493, 	["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["grandmaster vole"]					= { ["id"] = 2457, 	["icon"] = 3675493, 	["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["hunt-captain korayn"]					= { ["id"] = 2451, 	["icon"] = 3675493, 	["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["kleia and pelagos"]					= { ["id"] = 2458, 	["icon"] = 3675493, 	["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["lady moonberry"]						= { ["id"] = 2447, 	["icon"] = 3675493, 	["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["mikanikos"]							= { ["id"] = 2448, 	["icon"] = 3675493, 	["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["plague deviser marileth"]				= { ["id"] = 2461, 	["icon"] = 3675493, 	["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["polemarch adrestes"]					= { ["id"] = 2452, 	["icon"] = 3675493, 	["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["rendle and cudgelface"]				= { ["id"] = 2453, 	["icon"] = 3675493, 	["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["sika"]								= { ["id"] = 2459, 	["icon"] = 3675493, 	["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["stonehead"]							= { ["id"] = 2460, 	["icon"] = 3675493, 	["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
+	["the countess"]						= { ["id"] = 2449, 	["icon"] = 3675493, 	["paragon"] = false, 	["friend"] = 6, ["kind"] = "friendship",	 ["factionGroup"] = false, },
 
 	-- Battle for Azeroth
 	["7th legion"]							= { ["id"] = 2159, 	["icon"] = 2032591, 	["paragon"] = true, 	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = "Alliance", },

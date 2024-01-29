@@ -180,6 +180,23 @@ LL["enUS"] = {
 	["f the undying army"]					= "The Undying Army",
 	["f the wild hunt"]						= "The Wild Hunt",
 	["f ve'nari"]							= "Ve'nari",
+	-- The Ember Court
+	["f alexandros mograine"]				= "Alexandros Mograine",
+	["f baroness vashj"]					= "Baroness Vashj",
+	["f choofa"]							= "Choofa",
+	["f cryptkeeper kassir"]				= "Cryptkeeper Kassir",
+	["f droman aliothe"]					= "Droman Aliothe",
+	["f grandmaster vole"]					= "Grandmaster Vole",
+	["f hunt-captain korayn"]				= "Hunt-Captain Korayn",
+	["f kleia and pelagos"]					= "Kleia and Pelagos",
+	["f lady moonberry"]					= "Lady Moonberry",
+	["f mikanikos"]							= "Mikanikos",
+	["f plague deviser marileth"]			= "Plague Deviser Marileth",
+	["f polemarch adrestes"]				= "Polemarch Adrestes",
+	["f rendle and cudgelface"]				= "Rendle and Crudgelface",
+	["f sika"]								= "Sika",
+	["f stonehead"]							= "Stonehead",
+	["f the countess"]						= "The Countess",
 
 	-- Battle for Azeroth
 	["f 7th legion"]						= "7th Legion",
