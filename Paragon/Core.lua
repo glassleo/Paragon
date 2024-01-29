@@ -470,7 +470,7 @@ local function outputFaction(factionName, limit, outputFormat, currentLine)
 
 	-- Check if the faction exists
 	if not setContains(T.faction, faction) then
-		return -- Break
+		return false
 	elseif outputFormat == "test" then
 		return true
 	end
@@ -763,15 +763,15 @@ function SlashCmdList.PARAGON(msg, editbox)
 			msg = "guild"
 		-- Since shorthands and guild have failed, try partial match now
 		-- Make sure no valid full faction string is given either
-		elseif not outputFaction(msg, 1, "test") then
+		else --if not outputFaction(msg, 1, "test") then
 			msg = string.lower(msg)
 			-- Partial string match against the localized faction name strings
 			local found = false
-			for k, l in pairs(T.L) do
-				if k:sub(1, 2) == "f " then
-					if l:lower():find(msg, nil, true) then
-						-- print(format('Paragon Debug: Found "%s" as partial string in faction "%s".', msg, l)) -- Debug
-						msg, found = k:sub(3), true
+			for f, _ in pairs(T.faction) do
+				if L["f "..f] then
+					if L["f "..f]:lower():find(msg, nil, true) then
+						--print(format('Paragon Debug: Found "%s" as partial string in faction "%s".', msg, L["f "..f])) -- Debug
+						msg, found = L["f "..f], true
 						break
 					end
 				end
@@ -780,7 +780,7 @@ function SlashCmdList.PARAGON(msg, editbox)
 			if not found and L["shorthands"] then
 				for s, f in pairs(L["shorthands"]) do
 					if s:find(msg, nil, true) then
-						-- print(format('Paragon Debug: Found "%s" as partial string in shorthand "%s".', msg, s)) -- Debug
+						--print(format('Paragon Debug: Found "%s" as partial string in shorthand "%s".', msg, s)) -- Debug
 						msg = f
 						break
 					end
@@ -789,7 +789,7 @@ function SlashCmdList.PARAGON(msg, editbox)
 		end
 
 		if outputFaction(msg, 1, "test") then
-			outputFaction(msg, tonumber(ParagonDB2["config"]["chat_output_limit"]), "ui")
+			outputFaction(msg, 0, "ui")
 		else
 			DEFAULT_CHAT_FRAME:AddMessage(L["/paragon help"])
 		end
