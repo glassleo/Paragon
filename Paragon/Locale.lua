@@ -106,6 +106,7 @@ LL["enUS"] = {
 	-- Global
 	["highest reputation"] 					= "Highest Reputation",
 	["lowest reputation"] 					= "Lowest Reputation",
+	["warband"]								= REPUTATION_SORT_TYPE_ACCOUNT, -- Warband
 
 	-- Tooltips
 	["hold shift for more"] 				= "<Hold Shift for More>",
