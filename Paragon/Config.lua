@@ -233,4 +233,7 @@ end
 cfgFrame:Hide()
 cfgFrame:SetScript("OnShow", Paragon_cfgInitView)
 cfgFrame.name, cfgFrame.okay, cfgFrame.default = "Paragon", Paragon_cfgSaveView, Paragon_cfgSetDefaults
-InterfaceOptions_AddCategory(cfgFrame)
+
+local category, layout = Settings.RegisterCanvasLayoutCategory(cfgFrame, cfgFrame.name)
+Settings.RegisterAddOnCategory(category)
+T.SettingsID = category:GetID()
