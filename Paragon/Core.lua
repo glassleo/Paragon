@@ -3,6 +3,7 @@ local L = T.L
 
 SLASH_PARAGON1 = "/paragon"
 SLASH_PARAGON2 = "/par"
+local WARBAND_ICON = CreateAtlasMarkup("warbands-icon")
 
 -- Default settings
 T.defaults = {
@@ -328,7 +329,10 @@ local function updateFactions()
 			barMax = data.renownLevelThreshold or 2500
 			name = data.name or name
 		else
-			name, _, standingId, barMin, barMax, barValue = GetFactionInfoByID(id)
+			local factionData = C_Reputation.GetFactionDataByID(id)
+			if factionData then
+				name, standingId, barMin, barMax, barValue = factionData.name, factionData.reaction, factionData.currentReactionThreshold, factionData.nextReactionThreshold, factionData.currentStanding
+			end
 		end
 
 		local currentValue, threshold, _, hasRewardPending = C_Reputation.GetFactionParagonInfo(id)
@@ -500,7 +504,7 @@ local function outputFaction(factionName, limit, outputFormat, currentLine)
 		local d = ParagonDB2["character"][char]
 		local standingId = factionTable[char]["standingId"]
 
-		if (not (ParagonDB2["config"]["tooltip_hide_exalted"] and standingId == 8) and not (ParagonDB2["config"]["tooltip_hide_neutral"] and standingId == 4) and not (ParagonDB2["config"]["tooltip_hide_unfriendly"] and standingId <= 3)) or outputFormat == "ui" then
+		if (not T.faction[faction]["warband"] and not (ParagonDB2["config"]["tooltip_hide_exalted"] and standingId == 8) and not (ParagonDB2["config"]["tooltip_hide_neutral"] and standingId == 4) and not (ParagonDB2["config"]["tooltip_hide_unfriendly"] and standingId <= 3)) or outputFormat == "ui" then
 			i = i + 1
 
 			if i == 1 then
@@ -520,7 +524,7 @@ local function outputFaction(factionName, limit, outputFormat, currentLine)
 				end
 			end
 
-			if i <= limit or outputFormat == "ui" then
+			if ((i <= limit or outputFormat == "ui") and not T.faction[faction]["warband"]) or (T.faction[faction]["warband"] and char == T.charStr) then
 				local displayAmount = FormatLargeNumber(factionTable[char]["current"]) .. " / " .. FormatLargeNumber(factionTable[char]["max"])
 				if T.faction[faction]["kind"] == "renown" then
 					if standingId == 0 or (standingId == T.faction[faction]["friend"] and not T.faction[faction]["paragon"]) then
@@ -535,6 +539,8 @@ local function outputFaction(factionName, limit, outputFormat, currentLine)
 				local line = line1 .. (displayAmount ~= "" and "  " .. line2 or "")
 
 				if outputFormat == "ui" then
+					if T.faction[faction]["warband"] and char == T.charStr then i = 1 end
+
 					local offset = (i - 1) * -24
 
 					local rowBg = CreateFrame("Frame", nil, resultsContent, BackdropTemplateMixin and "BackdropTemplate")
@@ -555,7 +561,11 @@ local function outputFaction(factionName, limit, outputFormat, currentLine)
 					-- Character Name
 					local label = rowBg:CreateFontString("OVERLAY", nil, "GameFontNormalSmall")
 					label:SetPoint("TOPLEFT", 10, 0)
-					label:SetText("|c" .. RAID_CLASS_COLORS[d["class"]].colorStr .. ellipsis(d["name"] .. format_realm(d["realm"]), 23) .. "|r")
+					if T.faction[faction]["warband"] then
+						label:SetText(WARBAND_ICON .. " |cff00ccff" .. L["warband"] .. "|r")
+					else
+						label:SetText("|c" .. RAID_CLASS_COLORS[d["class"]].colorStr .. ellipsis(d["name"] .. format_realm(d["realm"]), 23) .. "|r")
+					end
 					label:SetHeight(24)
 					label:SetJustifyV("MIDDLE")
 
@@ -576,6 +586,8 @@ local function outputFaction(factionName, limit, outputFormat, currentLine)
 						label:SetJustifyH("LEFT")
 						label:SetJustifyV("MIDDLE")
 					end
+
+					if T.faction[faction]["warband"] and char == T.charStr then break end
 				elseif outputFormat == "tooltip" and i == currentLine then
 					return "|cff808080" .. i .. ".|r " .. line1, line2
 				else
@@ -665,7 +677,7 @@ local function OnTooltipSetItem(tooltip, data)
 				totalFactions = totalFactions + 1
 
 				tooltip:AddLine(" ")
-				tooltip:AddLine("|cffffffff" .. L["f "..faction] .. "|r")
+				tooltip:AddLine("|cffffffff" .. (T.faction[faction]["warband"] and (WARBAND_ICON .. " ") or "") .. L["f "..faction] .. "|r")
 
 				local displayAmount = FormatLargeNumber(d[faction]["current"]) .. " / " .. FormatLargeNumber(d[faction]["max"])
 				if T.faction[faction]["kind"] == "renown" then
@@ -751,7 +763,7 @@ function SlashCmdList.PARAGON(msg, editbox)
 	end
 
 	if cmd == "config" or cmd == "cfg" or cmd == "settings" or cmd == "options" then
-		InterfaceOptionsFrame_OpenToCategory("Paragon")
+		Settings.OpenToCategory(T.SettingsID)
 	elseif cmd == "delete" or cmd == "del" then
 		deleteCharacter(args, true)
 	else
