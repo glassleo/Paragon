@@ -295,6 +295,18 @@ T.friendStanding["the weaver"] = T.friendStanding["the general"]
 -- Reputation item IDs - BoA and BoE
 T.reputationItemBoA = {
 	-- The War Within
+	[222599] = "council of dornogal", -- Contract: Council of Dornogal (Quality 3)
+	[222598] = "council of dornogal", -- Contract: Council of Dornogal (Quality 2)
+	[222597] = "council of dornogal", -- Contract: Council of Dornogal (Quality 1)
+	[222600] = "the assembly of the deeps", -- Contract: Assembly of the Deeps (Quality 1)
+	[222601] = "the assembly of the deeps", -- Contract: Assembly of the Deeps (Quality 2)
+	[222602] = "the assembly of the deeps", -- Contract: Assembly of the Deeps (Quality 3)
+	[222605] = "hallowfall arathi", -- Contract: Hallowfall Arathi (Quality 3)
+	[222604] = "hallowfall arathi", -- Contract: Hallowfall Arathi (Quality 2)
+	[222603] = "hallowfall arathi", -- Contract: Hallowfall Arathi (Quality 1)
+	[222608] = "the severed threads", -- Contract: The Severed Threads (Quality 3)
+	[222607] = "the severed threads", -- Contract: The Severed Threads (Quality 2)
+	[222606] = "the severed threads", -- Contract: The Severed Threads (Quality 1)
 
 	-- Dragonflight
 	[213536] = "azerothian archives", -- Priceless Artifact (1000)
