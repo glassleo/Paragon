@@ -3,7 +3,7 @@ local L = T.L
 
 SLASH_PARAGON1 = "/paragon"
 SLASH_PARAGON2 = "/par"
-local WARBAND_ICON = CreateAtlasMarkup("warbands-icon")
+local WARBAND_ICON = CreateAtlasMarkup("questlog-questtypeicon-account")
 
 -- Default settings
 T.defaults = {
@@ -196,130 +196,150 @@ local function updateFactions()
 			name = friendship.name or name
 
 			if id == 1740 or id == 1738 or id == 1733 or id == 1741 or id == 1737 or id == 1736 or id == 1739 then -- Garrison Bodyguards
-				if barValue >= 20000 then
-					standingId = 3
-				elseif barValue >= 10000 then
-					standingId = 2
-				else
-					standingId = 1
+				if barValue >= 20000 then standingId = 3
+				elseif barValue >= 10000 then standingId = 2
+				else standingId = 1
 				end
 			elseif id == 2135 then -- Chromie
-				if barValue >= 15000 then
-					standingId = 7
-				elseif barValue >= 10000 then
-					standingId = 6
-				elseif barValue >= 7000 then
-					standingId = 5
-				elseif barValue >= 4500 then
-					standingId = 4
-				elseif barValue >= 2500 then
-					standingId = 3
-				elseif barValue >= 1000 then
-					standingId = 2
-				else
-					standingId = 1
+				if barValue >= 15000 then standingId = 7
+				elseif barValue >= 10000 then standingId = 6
+				elseif barValue >= 7000 then standingId = 5
+				elseif barValue >= 4500 then standingId = 4
+				elseif barValue >= 2500 then standingId = 3
+				elseif barValue >= 1000 then standingId = 2
+				else standingId = 1
 				end
 			elseif id == 2464 or id == 2463 or id == 2462 then -- Court of Night, Marasmius, Stitchmasters
-				if barValue >= 42000 then
-					standingId = 5
-				elseif barValue >= 21000 then
-					standingId = 4
-				elseif barValue >= 9000 then
-					standingId = 3
-				elseif barValue >= 3000 then
-					standingId = 2
-				else
-					standingId = 1
+				if barValue >= 42000 then standingId = 5
+				elseif barValue >= 21000 then standingId = 4
+				elseif barValue >= 9000 then standingId = 3
+				elseif barValue >= 3000 then standingId = 2
+				else standingId = 1
 				end
 			elseif id == 2432 then -- Ve'nari
-				if barValue >= 42000 then
-					standingId = 6
-				elseif barValue >= 21000 then
-					standingId = 5
-				elseif barValue >= 14000 then
-					standingId = 4
-				elseif barValue >= 7000 then
-					standingId = 3
-				elseif barValue >= 1000 then
-					standingId = 2
-				else
-					standingId = 1
+				if barValue >= 42000 then standingId = 6
+				elseif barValue >= 21000 then standingId = 5
+				elseif barValue >= 14000 then standingId = 4
+				elseif barValue >= 7000 then standingId = 3
+				elseif barValue >= 1000 then standingId = 2
+				else standingId = 1
 				end
 			elseif id == 2472 then -- The Archivists' Codex
-				if barValue >= 41000 then
-					standingId = 6
-				elseif barValue >= 25000 then
-					standingId = 5
-				elseif barValue >= 14000 then
-					standingId = 4
-				elseif barValue >= 7500 then
-					standingId = 3
-				elseif barValue >= 3000 then
-					standingId = 2
-				else
-					standingId = 1
+				if barValue >= 41000 then standingId = 6
+				elseif barValue >= 25000 then standingId = 5
+				elseif barValue >= 14000 then standingId = 4
+				elseif barValue >= 7500 then standingId = 3
+				elseif barValue >= 3000 then standingId = 2
+				else standingId = 1
 				end
 			elseif id == 2544 then -- Artisan's Consortium - Dragon Isles Branch
-				if barValue >= 12500 then
-					standingId = 5
-				elseif barValue >= 5500 then
-					standingId = 4
-				elseif barValue >= 2500 then
-					standingId = 3
-				elseif barValue >= 500 then
-					standingId = 2
-				else
-					standingId = 1
+				if barValue >= 12500 then standingId = 5
+				elseif barValue >= 5500 then standingId = 4
+				elseif barValue >= 2500 then standingId = 3
+				elseif barValue >= 500 then standingId = 2
+				else standingId = 1
 				end
 			elseif id == 2550 then -- Cobalt Assembly
-				if barValue >= 10000 then
-					standingId = 5
-				elseif barValue >= 3600 then
-					standingId = 4
-				elseif barValue >= 1200 then
-					standingId = 3
-				elseif barValue >= 300 then
-					standingId = 2
-				else
-					standingId = 1
+				if barValue >= 10000 then standingId = 5
+				elseif barValue >= 3600 then standingId = 4
+				elseif barValue >= 1200 then standingId = 3
+				elseif barValue >= 300 then standingId = 2
+				else standingId = 1
 				end
 			elseif id == 2553 then -- Soridormi
-				if barValue >= 42000 then
-					standingId = 5
-				elseif barValue >= 24000 then
-					standingId = 4
-				elseif barValue >= 14000 then
-					standingId = 3
-				elseif barValue >= 7000 then
-					standingId = 2
-				else
-					standingId = 1
+				if barValue >= 42000 then standingId = 5
+				elseif barValue >= 24000 then standingId = 4
+				elseif barValue >= 14000 then standingId = 3
+				elseif barValue >= 7000 then standingId = 2
+				else standingId = 1
 				end
 			elseif id == 2615 then -- Azerothian Archives
-				if barValue >= 42000 then
-					standingId = 5
-				elseif barValue >= 32500 then
-					standingId = 4
-				elseif barValue >= 21000 then
-					standingId = 3
-				elseif barValue >= 10500 then
-					standingId = 2
-				else
-					standingId = 1
+				if barValue >= 42000 then standingId = 5
+				elseif barValue >= 32500 then standingId = 4
+				elseif barValue >= 21000 then standingId = 3
+				elseif barValue >= 10500 then standingId = 2
+				else standingId = 1
+				end
+			elseif id == 2605 or id == 2607 or id == 2601 then -- The General, The Vizier, The Weaver
+				if barValue >= 20000 then standingId = 9
+				elseif barValue >= 17500 then standingId = 8
+				elseif barValue >= 15000 then standingId = 7
+				elseif barValue >= 12500 then standingId = 6
+				elseif barValue >= 10000 then standingId = 5
+				elseif barValue >= 7500 then standingId = 4
+				elseif barValue >= 5000 then standingId = 3
+				elseif barValue >= 2500 then standingId = 2
+				else standingId = 1
+				end
+			elseif id == 2640 then -- Brann Bronzebeard
+				if barValue >= 676997 then standingId = 60
+				elseif barValue >= 664497 then standingId = 59
+				elseif barValue >= 651997 then standingId = 58
+				elseif barValue >= 639497 then standingId = 57
+				elseif barValue >= 626997 then standingId = 56
+				elseif barValue >= 614497 then standingId = 55
+				elseif barValue >= 601997 then standingId = 54
+				elseif barValue >= 589497 then standingId = 53
+				elseif barValue >= 576997 then standingId = 52
+				elseif barValue >= 564497 then standingId = 51
+				elseif barValue >= 551997 then standingId = 50
+				elseif barValue >= 539497 then standingId = 49
+				elseif barValue >= 526997 then standingId = 48
+				elseif barValue >= 514497 then standingId = 47
+				elseif barValue >= 501997 then standingId = 46
+				elseif barValue >= 489497 then standingId = 45
+				elseif barValue >= 476997 then standingId = 44
+				elseif barValue >= 464497 then standingId = 43
+				elseif barValue >= 451997 then standingId = 42
+				elseif barValue >= 439497 then standingId = 41
+				elseif barValue >= 426997 then standingId = 40
+				elseif barValue >= 414497 then standingId = 39
+				elseif barValue >= 401997 then standingId = 38
+				elseif barValue >= 389497 then standingId = 37
+				elseif barValue >= 376997 then standingId = 36
+				elseif barValue >= 364497 then standingId = 35
+				elseif barValue >= 351997 then standingId = 34
+				elseif barValue >= 339497 then standingId = 33
+				elseif barValue >= 326997 then standingId = 32
+				elseif barValue >= 314497 then standingId = 31
+				elseif barValue >= 301997 then standingId = 30
+				elseif barValue >= 289497 then standingId = 29
+				elseif barValue >= 276997 then standingId = 28
+				elseif barValue >= 264497 then standingId = 27
+				elseif barValue >= 251997 then standingId = 26
+				elseif barValue >= 239497 then standingId = 25
+				elseif barValue >= 226997 then standingId = 24
+				elseif barValue >= 214497 then standingId = 23
+				elseif barValue >= 201997 then standingId = 22
+				elseif barValue >= 189497 then standingId = 21
+				elseif barValue >= 176997 then standingId = 20
+				elseif barValue >= 164497 then standingId = 19
+				elseif barValue >= 151997 then standingId = 18
+				elseif barValue >= 139497 then standingId = 17
+				elseif barValue >= 126997 then standingId = 16
+				elseif barValue >= 114497 then standingId = 15
+				elseif barValue >= 101997 then standingId = 14
+				elseif barValue >= 89497 then standingId = 13
+				elseif barValue >= 76997 then standingId = 12
+				elseif barValue >= 64497 then standingId = 11
+				elseif barValue >= 51997 then standingId = 10
+				elseif barValue >= 41248 then standingId = 9
+				elseif barValue >= 32290 then standingId = 8
+				elseif barValue >= 24825 then standingId = 7
+				elseif barValue >= 18604 then standingId = 6
+				elseif barValue >= 13420 then standingId = 5
+				elseif barValue >= 9100 then standingId = 4
+				elseif barValue >= 5500 then standingId = 3
+				elseif barValue >= 2500 then standingId = 2
+				else standingId = 1
 				end
 			else -- Default
-				if barValue >= 42000 then
-					standingId = 6
-				elseif barValue >= 33600 then
-					standingId = 5
-				elseif barValue >= 25200 then
-					standingId = 4
-				elseif barValue >= 16800 then
-					standingId = 3
-				elseif barValue >= 8400 then
-					standingId = 2
-				else
-					standingId = 1
+				if barValue >= 42000 then standingId = 6
+				elseif barValue >= 33600 then standingId = 5
+				elseif barValue >= 25200 then standingId = 4
+				elseif barValue >= 16800 then standingId = 3
+				elseif barValue >= 8400 then standingId = 2
+				else standingId = 1
 				end
 			end
 		elseif kind == "renown" then
@@ -415,6 +435,14 @@ local function standing(standingId, faction)
 			else
 				return L["faction_standing_undiscovered"]
 			end
+		elseif faction == "brann bronzebeard" then
+			if standingId == T.faction[faction]["friend"] then
+				return T.standing[9] -- Paragon
+			elseif standingId > 0 then
+				return L["faction_standing_level %d"]:format(standingId)
+			else
+				return L["faction_standing_undiscovered"]
+			end
 		elseif T.faction[faction]["friend"] ~= 0 then
 			if setContains(T.friendStanding, faction) then
 				if T.friendStanding[faction][standingId] then
@@ -448,6 +476,18 @@ local function standingColor(standingId, faction)
 				return T.standingColor[5]
 			else
 				return T.standingColor[4] -- Undiscovered
+			end
+		elseif faction == "brann bronzebeard" then
+			if standingId == T.faction[faction]["friend"] then
+				return T.standingColor[8] -- Max level
+			elseif standingId >= 50 then
+				return T.standingColor[7]
+			elseif standingId >= 30 then
+				return T.standingColor[6]
+			elseif standingId > 1 then
+				return T.standingColor[5]
+			else
+				return T.standingColor[4] -- Level 1
 			end
 		elseif T.faction[faction]["friend"] ~= 0 then
 			if setContains(T.friendStandingColor, faction) then
