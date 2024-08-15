@@ -22,6 +22,7 @@ LL["enUS"] = {
 	["faction_standing_exalted"] 			= FACTION_STANDING_LABEL8, -- Exalted
 	["faction_standing_paragon"] 			= "Paragon",
 	["faction_standing_renown %d"] 			= "Renown %d",
+	["faction_standing_level %d"] 			= "Level %d",
 	["faction_standing_undiscovered"] 		= "Undiscovered",
 	["faction_standing_unknown"] 			= "Saved data is out of date",
 	-- Defaults (also used by Halfhill factions, etc)
@@ -101,6 +102,14 @@ LL["enUS"] = {
 	["faction_standing_learned"] 			= "Learned",
 	["faction_standing_resident"] 			= "Resident",
 	["faction_standing_tenured"] 			= "Tenured",
+	-- The Severed Threads
+	["faction_standing_crony"] 				= "Crony",
+	["faction_standing_accomplice"] 		= "Accomplice",
+	["faction_standing_collaborator"] 		= "Collaborator",
+	["faction_standing_accessory"] 			= "Accessory",
+	["faction_standing_abettor"] 			= "Abettor",
+	["faction_standing_conspirator"] 		= "Conspirator",
+	["faction_standing_mastermind"] 		= "Mastermind",
 
 
 	-- Global
@@ -150,6 +159,17 @@ LL["enUS"] = {
 
 	-- Guild
 	["f guild"] 							= "Guild",
+
+	-- The War Within
+	["f council of dornogal"] 				= "Council of Dornogal",
+	["f earthen"] 							= "Earthen",
+	["f hallowfall arathi"] 				= "Hallowfall Arathi",
+	["f the assmebly of the deeps"] 		= "The Assembl of the Deeps",
+	["f the severed threads"] 				= "The Severed Threads",
+	["f the general"] 						= "The General",
+	["f the vizier"] 						= "The Vizier",
+	["f the weaver"] 						= "The Weaver",
+	["f brann bronzebeard"] 				= "Brann Bronzebeard",
 
 	-- Dragonflight
 	["f artisan's consortium - dragon isles branch"] = "Artisan's Consortium - Dragon Isles Branch",
@@ -400,6 +420,53 @@ LL["enUS"] = {
 LL["enUS"].shorthands = {
 	-- This column should be translated		| This column should be in English
 
+	-- The War Within
+	["dornogal"] = "council of dornogal",
+	["dorn"] = "council of dornogal",
+	["earthen"] = "council of dornogal",
+	["the earthen"] = "council of dornogal",
+	["dornogal council"] = "council of dornogal",
+	["isle of dorn"] = "council of dornogal",
+	["arathi"] = "hallowfall arathi",
+	["hallowfall"] = "hallowfall arathi",
+	["hallow"] = "hallowfall arathi",
+	["hallow fall"] = "hallowfall arathi",
+	["hallow fall arathi"] = "hallowfall arathi",
+	["assembly of the deeps"] = "the assembly of the deeps",
+	["assembly of the deep"] = "the assembly of the deeps",
+	["the assembly of the deep"] = "the assembly of the deeps",
+	["the assembly of deep"] = "the assembly of the deeps",
+	["the assembly of deeps"] = "the assembly of the deeps",
+	["assembly of deep"] = "the assembly of the deeps",
+	["assembly of deeps"] = "the assembly of the deeps",
+	["ringing deep"] = "the assembly of the deeps",
+	["ringing deeps"] = "the assembly of the deeps",
+	["severed threads"] = "the severed threads",
+	["severed thread"] = "the severed threads",
+	["severed"] = "the severed threads",
+	["the severed thread"] = "the severed threads",
+	["nerubians"] = "the severed threads",
+	["nerubian"] = "the severed threads",
+	["nerub'ar"] = "the severed threads",
+	["nerub-ar"] = "the severed threads",
+	["azj-kahet"] = "the severed threads",
+	["azj kahet"] = "the severed threads",
+	["azj'kahet"] = "the severed threads",
+	["general"] = "the general",
+	["vizier"] = "the vizier",
+	["weaver"] = "the weaver",
+	["brann"] = "brann bronzebeard",
+	["bran"] = "brann bronzebeard",
+	["bronzebeard"] = "brann bronzebeard",
+	["bran bronzebeard"] = "brann bronzebeard",
+	["bran bronze beard"] = "brann bronzebeard",
+	["brann bronze beard"] = "brann bronzebeard",
+	["bronze beard"] = "brann bronzebeard",
+	["bronzan"] = "brann bronzebeard",
+	["bronzen"] = "brann bronzebeard",
+	["delve"] = "brann bronzebeard",
+	["delves"] = "brann bronzebeard",
+
 	-- Dragonflight
 	["dragon exp"]							= "dragonscale expedition",
 	["dragon expedition"]					= "dragonscale expedition",
@@ -439,7 +506,6 @@ LL["enUS"].shorthands = {
 	["azeroth archives"]					= "azerothian archives",
 	["azerothian"]							= "azerothian archives",
 	["archives"]							= "azerothian archives",
-	["assembly"]							= "cobalt assembly",
 	["cobald assembly"]						= "cobalt assembly",
 	["cobald"]								= "cobalt assembly",
 	["cobalt"]								= "cobalt assembly",

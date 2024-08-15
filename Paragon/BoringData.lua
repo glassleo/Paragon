@@ -104,8 +104,19 @@ T.friendStandingColor = {
         [4] = T.standingColor[7], -- Resident
         [5] = T.standingColor[8], -- Tenured
 	},
+	["the general"] = {
+		[1] = T.standingColor[4], -- Stranger
+        [2] = T.standingColor[5], -- Acquaintance
+        [3] = T.standingColor[5], -- Crony
+        [4] = T.standingColor[6], -- Accomplice
+        [5] = T.standingColor[6], -- Collaborator
+        [6] = T.standingColor[6], -- Accessory
+        [7] = T.standingColor[7], -- Abettor
+        [8] = T.standingColor[7], -- Conspirator
+        [9] = T.standingColor[8], -- Mastermind
+	},
 }
--- Reuse Bodyguard colors
+-- Reuse colors
 T.friendStandingColor["aeda brightdawn"] = T.friendStandingColor["vivianne"]
 T.friendStandingColor["defender illona"] = T.friendStandingColor["vivianne"]
 T.friendStandingColor["delvar ironfist"] = T.friendStandingColor["vivianne"]
@@ -115,6 +126,8 @@ T.friendStandingColor["tormmok"] = T.friendStandingColor["vivianne"]
 T.friendStandingColor["marasmius"] = T.friendStandingColor["court of night"]
 T.friendStandingColor["stitchmasters"] = T.friendStandingColor["court of night"]
 T.friendStandingColor["wrathion"] = T.friendStandingColor["sabellian"]
+T.friendStandingColor["the vizier"] = T.friendStandingColor["the general"]
+T.friendStandingColor["the weaver"] = T.friendStandingColor["the general"]
 
 -- Localized standing
 T.standing = {
@@ -247,6 +260,17 @@ T.friendStanding = {
 		[4] = "faction_standing_resident",
 		[5] = "faction_standing_tenured",
 	},
+	["the general"] = {
+		[1] = "faction_standing_stranger",
+		[2] = "faction_standing_acquaintance",
+		[3] = "faction_standing_crony",
+		[4] = "faction_standing_accomplice",
+		[5] = "faction_standing_collaborator",
+		[6] = "faction_standing_accessory",
+		[7] = "faction_standing_abettor",
+		[8] = "faction_standing_conspirator",
+		[9] = "faction_standing_mastermind",
+	},
 }
 
 T.friendStanding["conjurer margoss"] = T.friendStanding["nat pagle"]
@@ -264,10 +288,14 @@ T.friendStanding["tormmok"] = T.friendStanding["vivianne"]
 T.friendStanding["marasmius"] = T.friendStanding["court of night"]
 T.friendStanding["stitchmasters"] = T.friendStanding["court of night"]
 T.friendStanding["wrathion"] = T.friendStanding["sabellian"]
+T.friendStanding["the vizier"] = T.friendStanding["the general"]
+T.friendStanding["the weaver"] = T.friendStanding["the general"]
 
 
 -- Reputation item IDs - BoA and BoE
 T.reputationItemBoA = {
+	-- The War Within
+
 	-- Dragonflight
 	[213536] = "azerothian archives", -- Priceless Artifact (1000)
 	[210423] = "dream wardens", -- Dream Wardens Insignia (2500)
@@ -752,6 +780,15 @@ T.faction = {
 	["guild"] 								= { ["id"] = 1168, 	["icon"] = 135026, 		["paragon"] = false,	["friend"] = 0, ["kind"] = "reputation",	 ["factionGroup"] = false,		["warband"] = false, },
 
 	-- The War Within
+	["council of dornogal"] 				= { ["id"] = 2590, 	["icon"] = 5891369, 	["paragon"] = true, 	["friend"] = 25, ["kind"] = "renown", 		 ["factionGroup"] = false,		["warband"] = true, },
+	--["earthen"] 							= { ["id"] = 2645, 	["icon"] = 5359645, 	["paragon"] = false, 	["friend"] = 0,  ["kind"] = "reputation",	 ["factionGroup"] = false,		["warband"] = true, }, -- seems to be scrapped
+	["hallowfall arathi"] 					= { ["id"] = 2570, 	["icon"] = 5891368, 	["paragon"] = true, 	["friend"] = 25, ["kind"] = "renown", 		 ["factionGroup"] = false,		["warband"] = true, },
+	["the assmebly of the deeps"] 			= { ["id"] = 2594, 	["icon"] = 6029027, 	["paragon"] = true, 	["friend"] = 25, ["kind"] = "renown", 		 ["factionGroup"] = false,		["warband"] = true, },
+	["the severed threads"] 				= { ["id"] = 2600, 	["icon"] = 5891370, 	["paragon"] = true, 	["friend"] = 25, ["kind"] = "renown", 		 ["factionGroup"] = false,		["warband"] = true, },
+	["the general"] 						= { ["id"] = 2605, 	["icon"] = 5862762, 	["paragon"] = true, 	["friend"] = 9,  ["kind"] = "friendship",    ["factionGroup"] = false,		["warband"] = true, },
+	["the vizier"] 							= { ["id"] = 2607, 	["icon"] = 5862763, 	["paragon"] = true, 	["friend"] = 9,  ["kind"] = "friendship",    ["factionGroup"] = false,		["warband"] = true, },
+	["the weaver"] 							= { ["id"] = 2601, 	["icon"] = 5862764, 	["paragon"] = true, 	["friend"] = 9,  ["kind"] = "friendship",    ["factionGroup"] = false,		["warband"] = true, },
+	["brann bronzebeard"] 					= { ["id"] = 2640, 	["icon"] = 236444,  	["paragon"] = false, 	["friend"] = 60, ["kind"] = "friendship",    ["factionGroup"] = false,		["warband"] = true, },
 
 	-- Dragonflight
 	["artisan's consortium - dragon isles branch"] = { ["id"] = 2544, ["icon"] = 4557373, ["paragon"] = false, 	["friend"] = 5,  ["kind"] = "friendship",	 ["factionGroup"] = false,		["warband"] = true, },
