@@ -272,51 +272,51 @@ local function updateFactions()
 				else standingId = 1
 				end
 			elseif id == 2640 then -- Brann Bronzebeard
-				if barValue >= 676997 then standingId = 60
-				elseif barValue >= 664497 then standingId = 59
-				elseif barValue >= 651997 then standingId = 58
-				elseif barValue >= 639497 then standingId = 57
-				elseif barValue >= 626997 then standingId = 56
-				elseif barValue >= 614497 then standingId = 55
-				elseif barValue >= 601997 then standingId = 54
-				elseif barValue >= 589497 then standingId = 53
-				elseif barValue >= 576997 then standingId = 52
-				elseif barValue >= 564497 then standingId = 51
-				elseif barValue >= 551997 then standingId = 50
-				elseif barValue >= 539497 then standingId = 49
-				elseif barValue >= 526997 then standingId = 48
-				elseif barValue >= 514497 then standingId = 47
-				elseif barValue >= 501997 then standingId = 46
-				elseif barValue >= 489497 then standingId = 45
-				elseif barValue >= 476997 then standingId = 44
-				elseif barValue >= 464497 then standingId = 43
-				elseif barValue >= 451997 then standingId = 42
-				elseif barValue >= 439497 then standingId = 41
-				elseif barValue >= 426997 then standingId = 40
-				elseif barValue >= 414497 then standingId = 39
-				elseif barValue >= 401997 then standingId = 38
-				elseif barValue >= 389497 then standingId = 37
-				elseif barValue >= 376997 then standingId = 36
-				elseif barValue >= 364497 then standingId = 35
-				elseif barValue >= 351997 then standingId = 34
-				elseif barValue >= 339497 then standingId = 33
-				elseif barValue >= 326997 then standingId = 32
-				elseif barValue >= 314497 then standingId = 31
-				elseif barValue >= 301997 then standingId = 30
-				elseif barValue >= 289497 then standingId = 29
-				elseif barValue >= 276997 then standingId = 28
-				elseif barValue >= 264497 then standingId = 27
-				elseif barValue >= 251997 then standingId = 26
-				elseif barValue >= 239497 then standingId = 25
-				elseif barValue >= 226997 then standingId = 24
-				elseif barValue >= 214497 then standingId = 23
-				elseif barValue >= 201997 then standingId = 22
-				elseif barValue >= 189497 then standingId = 21
-				elseif barValue >= 176997 then standingId = 20
-				elseif barValue >= 164497 then standingId = 19
-				elseif barValue >= 151997 then standingId = 18
-				elseif barValue >= 139497 then standingId = 17
-				elseif barValue >= 126997 then standingId = 16
+				if barValue >= 8172935 then standingId = 60
+				elseif barValue >= 7297935 then standingId = 59
+				elseif barValue >= 6485435 then standingId = 58
+				elseif barValue >= 5797935 then standingId = 57
+				elseif barValue >= 5235435 then standingId = 56
+				elseif barValue >= 4797935 then standingId = 55
+				elseif barValue >= 4491685 then standingId = 54
+				elseif barValue >= 4191685 then standingId = 53
+				elseif barValue >= 3897935 then standingId = 52
+				elseif barValue >= 3610435 then standingId = 51
+				elseif barValue >= 3329185 then standingId = 50
+				elseif barValue >= 3054185 then standingId = 49
+				elseif barValue >= 2785435 then standingId = 48
+				elseif barValue >= 2522935 then standingId = 47
+				elseif barValue >= 2266685 then standingId = 46
+				elseif barValue >= 2016685 then standingId = 45
+				elseif barValue >= 1927497 then standingId = 44
+				elseif barValue >= 1838497 then standingId = 43
+				elseif barValue >= 1749685 then standingId = 42
+				elseif barValue >= 1661060 then standingId = 41
+				elseif barValue >= 1572622 then standingId = 40
+				elseif barValue >= 1484372 then standingId = 39
+				elseif barValue >= 1396310 then standingId = 38
+				elseif barValue >= 1308435 then standingId = 37
+				elseif barValue >= 1220747 then standingId = 36
+				elseif barValue >= 1133247 then standingId = 35
+				elseif barValue >= 1069060 then standingId = 34
+				elseif barValue >= 1005060 then standingId = 33
+				elseif barValue >= 941247 then standingId = 32
+				elseif barValue >= 877622 then standingId = 31
+				elseif barValue >= 814185 then standingId = 30
+				elseif barValue >= 750935 then standingId = 29
+				elseif barValue >= 687872 then standingId = 28
+				elseif barValue >= 624997 then standingId = 27
+				elseif barValue >= 562310 then standingId = 26
+				elseif barValue >= 499810 then standingId = 25
+				elseif barValue >= 460435 then standingId = 24
+				elseif barValue >= 421247 then standingId = 23
+				elseif barValue >= 382247 then standingId = 22
+				elseif barValue >= 343435 then standingId = 21
+				elseif barValue >= 304810 then standingId = 20
+				elseif barValue >= 266372 then standingId = 19
+				elseif barValue >= 228122 then standingId = 18
+				elseif barValue >= 190060 then standingId = 17
+				elseif barValue >= 152185 then standingId = 16
 				elseif barValue >= 114497 then standingId = 15
 				elseif barValue >= 101997 then standingId = 14
 				elseif barValue >= 89497 then standingId = 13
@@ -436,9 +436,7 @@ local function standing(standingId, faction)
 				return L["faction_standing_undiscovered"]
 			end
 		elseif faction == "brann bronzebeard" then
-			if standingId == T.faction[faction]["friend"] then
-				return T.standing[9] -- Paragon
-			elseif standingId > 0 then
+			if standingId > 0 then
 				return L["faction_standing_level %d"]:format(standingId)
 			else
 				return L["faction_standing_undiscovered"]
