@@ -541,6 +541,7 @@ T.reputationItemBoA = {
 -- Reputation item IDs - Soulbound
 T.reputationItemBoP = {
 	-- Dragonflight
+	[211131] = "dream wardens", -- Delicately Curated Blossoms (750)
 	[210920] = "dream wardens", -- Gift of Amirdrassil (2500)
 	[210916] = "dream wardens", -- Ember of Fyrakk (2500)
 	[210847] = "dream wardens", -- Tears of the Eye (2500)
