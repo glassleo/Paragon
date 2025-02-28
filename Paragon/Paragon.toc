@@ -1,7 +1,7 @@
-## Interface: 110500
+## Interface: 110100
 ## Title: Paragon
 ## Notes: Keeps track of reputation for all your characters
-## Version: Diamond 2
+## Version: Diamond 3
 ## Author: Leo
 ## IconTexture: 236681
 
