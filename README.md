@@ -4,8 +4,6 @@
 Releases can be downloaded from:
 
 - [CurseForge](https://www.curseforge.com/wow/addons/paragon)
-- [Wago Addons](https://addons.wago.io/addons/paragon)
-- [WoWInterface](https://www.wowinterface.com/downloads/info24564-Paragon.html)
 - [GitHub](https://github.com/glassleo/Paragon/releases)
 
 ## Item Tooltips
@@ -30,3 +28,4 @@ You can customize what is (and isn't) displayed in your tooltips via the in-game
 ## Issues and Suggestions
 
 Please use the [issue tracker](https://github.com/glassleo/Paragon/issues) for bugs, suggestions and feature requests.
+
